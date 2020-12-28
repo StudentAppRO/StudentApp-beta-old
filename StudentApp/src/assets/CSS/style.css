@@ -1,0 +1,37 @@
+/*
+ @Author: theCYBERbro
+ @Website: --
+ @Version: 1.0
+*/
+
+body{
+  background-color: var(--dark);
+}
+#navbarHeader{
+  background-color: var(--dark);
+}
+#sticky-footer {
+  flex-shrink: none;
+}
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("../images/menu_button.png");
+}
+.navbar-toggler{
+  border: none;
+}
+.bg-green {
+  background-color: var(--green) !important;
+}
+.card-body {
+  padding: 2%;
+}
+.card-text{
+  color: var(--white);
+}
+.card{
+  margin-top: 10%;
+  background-color: var(--gray);
+}
+img{
+  padding: 2%;
+}
