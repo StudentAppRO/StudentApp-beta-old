@@ -8,6 +8,11 @@ window.onload = function () {
 
 };
 
+$(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+});
+
 function updateCurrentYear(){//by theCYBERbro
     // var year;
     // var date = new Date();   
