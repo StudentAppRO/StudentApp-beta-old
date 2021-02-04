@@ -45,5 +45,6 @@ img{
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_6.gif) center no-repeat var(--green);
+	background: url("../images/ic_launcher.png") center no-repeat var(--green);
+/* TODO: fix this background shit */
 }
