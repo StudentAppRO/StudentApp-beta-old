@@ -1,3 +1,5 @@
+let start = performance.now();
+
 window.onload = function() {
 
     /**
@@ -14,7 +16,7 @@ $(window).load(function() {
 });
 
 function aboutHeaderText() {
-    aboutTxt = document.getElementById('ab_txt');
+    aboutTxt = document.getElementsByClassName("ab_txt")[0];
     aboutTxt.innerHTML = "This app is designed to help young students with learning. The app can give a lot of good sources to learn and to make your homework dumbass."
 }
 
@@ -27,3 +29,8 @@ function updateCurrentYear() { //by theCYBERbro
     //$("#year").html(year);
 
 }
+
+
+//outputs core.js performance miliseconds 
+let end = performance.now();
+console.log(end - start + ' miliseconds took to execute core.js')
