@@ -4,47 +4,67 @@
  @Version: 1.0
 */
 
-body{
-  background-color: var(--dark);
+body {
+    background-color: var(--dark);
 }
-#navbarHeader{
-  background-color: var(--dark);
+
+#navbarHeader {
+    background-color: var(--dark);
 }
+
 #sticky-footer {
-  flex-shrink: none;
+    flex-shrink: none;
 }
+
 .navbar-dark .navbar-toggler-icon {
-  background-image: url("../images/menu_button.png");
+    background-image: url("../images/menu_button.png");
 }
-.navbar-toggler{
-  border: none;
+
+.navbar-toggler {
+    border: none;
 }
+
 .bg-green {
-  background-color: var(--green) !important;
+    background-color: var(--green) !important;
 }
+
 .card-body {
-  padding: 2%;
+    padding: 2%;
 }
-.card-text{
-  color: var(--white);
+
+.card-text {
+    color: var(--white);
 }
-.card{
-  margin-top: 10%;
-  background-color: var(--gray);
+
+.card {
+    margin-top: 10%;
+    background-color: var(--gray);
 }
-img{
-  padding: 2%;
+
+img {
+    padding: 2%;
 }
+
+
 /* loading screen css */
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+
+.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
 .se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url("../images/ic_launcher.png") center no-repeat var(--green);
-/* TODO: fix this background shit */
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url("../images/loading.gif") center no-repeat var(--green);
 }
