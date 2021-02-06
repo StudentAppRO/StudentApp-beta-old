@@ -21,74 +21,6 @@
     <!-- Google adds: -->
     <!-- <script data-ad-client="ca-pub-1451725678972854" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 </head>
-<!-- Content Ideas:
-
-Content for StudentApp:
-
-//TODO: arrange categories and find content
-//FIXME:fix search engine
-
-CATEGORIES:
-
-1 Lectures:
--apps:
-buzzfeed
-quora
-reddit
-
-2 coding:
--apps:
-
-3 homework:
--apps:
-
-4 Schedule:
--apps:
-pocket schedule planer
-myHomework Student Planner
-The Homework app
--links:
--leaks:z
-
-5 foreign languages (new):
--apps:
-reverso context
-google translate
-Quizlet
--links:
-
-6 Math:
--apps:
-photomath
-microsoft math
-mathway
-socratic by google
-photostudy
--links:
-base-search.net
-
--leaks:
-
-
-LINKS:
- 
-https://fontawesome.com/icons
-
-https://isometric.online/
-
-https://youtu.be/ukLnPbIffxE
-
-https://youtu.be/TcAJoZFtBUU
-
-https://www.topuniversities.com/blog/33-useful-websites-students
-
-https://www.lifehack.org/articles/productivity/25-most-useful-websites-and-apps-for-college-students-that-will-make-you-smarter-and-more-productive.html
-
-https://www.savethestudent.org/extra-guides/useful-student-websites.html
-
-https://www.studyinternational.com/news/26-life-hacks-every-student-should-master/
-
- -->
 
 <body>
     <!-- loading screen -->
@@ -150,89 +82,24 @@ https://www.studyinternational.com/news/26-life-hacks-every-student-should-maste
          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
        </p>
      </div>
-   </section> -->
+     </section> -->
         <!-- eticheta -->
 
         <div class="album bg-dark">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-6">
-                        <div class="card mb-6 shadow-md">
-                            <img src="src/assets/images/books.png" class="img-fluid" alt="Responsive image" />
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <button onclick="window.location.href='lectures.html';" type="button" class="btn btn-outline-secondary btn-success btn-md btn-block">
-                      Lectures
-                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    Search Tool
+                </div>
+                <div class="row">
+                    <form action="/search/" method="GET">
+                        <input required type="search" name="q" />
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="row">
 
-                    <div class="col-sm-6 col-6">
-                        <div class="card mb-6 shadow-md">
-                            <img src="src/assets/images/calendar.png" class="img-fluid" alt="Responsive image" />
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <button onclick="window.location.href='schedule.html';" type="button" class="btn btn-outline-secondary btn-success btn-md btn-block">
-                      Schedule
-                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ol id="search-results"></ol>
 
-                    <div class="col-sm-6 col-6">
-                        <div class="card mb-6 shadow-md">
-                            <img src="src/assets/images/coding.png" class="img-fluid" alt="Responsive image" />
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <button onclick="window.location.href='#';" type="button" class="btn btn-outline-secondary btn-success btn-md btn-block">
-                      Coding
-                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-6">
-                        <div class="card mb-6 shadow-md">
-                            <img src="src/assets/images/coffee.png" class="img-fluid" alt="Responsive image" />
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <button onclick="window.location.href='#';" type="button" class="btn btn-outline-secondary btn-success btn-md btn-block">
-                      Homework
-                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-6">
-                        <div class="card mb-6 shadow-md">
-                            <img src="src/assets/images/online.png" class="img-fluid" alt="Responsive image" />
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <button onclick="window.location.href='#';" type="button" class="btn btn-outline-secondary btn-success btn-md btn-block">
-                      Languages
-                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-6">
-                        <div class="card mb-6 shadow-md">
-                            <img src="src/assets/images/math.png" class="img-fluid" alt="Responsive image" />
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <button onclick="window.location.href='#';" type="button" class="btn btn-outline-secondary btn-success btn-md btn-block">
-                      Math
-                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -275,6 +142,21 @@ https://www.studyinternational.com/news/26-life-hacks-every-student-should-maste
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+
+    <script>
+        window.pages = {
+            {% for page in site.pages %}
+                "{{ page.url | slugify }}": {
+                    "title": "{{ page.title | xml_escape }}",
+                    "content": {{ page.content | markdownify | strip_newlines | strip_html | jsonify }},
+                    "url": "{{ site.url | append: page.url | xml_escape }}",
+                    "path": "{{ page.url | xml_escape }}"
+                }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        };
+    </script>
+    <script src="src/assets/JS/search.js"></script>
 
     <!-- Load core JS -->
     <script src="src/assets/JS/core.js"></script>
