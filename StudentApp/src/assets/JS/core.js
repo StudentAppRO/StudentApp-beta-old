@@ -7,8 +7,7 @@ window.onload = function() {
      * It will be executed, when website is loaded.
      */
     getCurrentDate();
-    display_c();
-
+    getUserLocation();
 };
 
 $(window).load(function() {
@@ -53,8 +52,8 @@ function getCurrentDate() {
     if (second < 10) { second = '0' + second; }
     var time = hour + ':' + minute + ':' + second
 
-    document.getElementById('time').innerHTML = time;
-    document.getElementById('date').innerHTML = date;
+    document.getElementById('time').innerHTML = "⏳" + time;
+    document.getElementById('date').innerHTML = "📅" + date;
 
     //this basically makes the function to repeat itself every 1s
     refreshDate();
@@ -65,6 +64,21 @@ function refreshDate() {
     mytime = setTimeout('getCurrentDate()', refresh);
 }
 
+function getUserLocation() {
+    var requestUrl = "http://ip-api.com/json";
+
+    $.ajax({
+        url: requestUrl,
+        type: 'GET',
+        success: function(json) {
+            document.getElementById('userLocation').innerHTML = "🌍" + json.country;
+            console.log("My country is: " + json.country);
+        },
+        error: function(err) {
+            console.log("Request failed, error= " + err);
+        }
+    });
+}
 
 
 //outputs core.js performance miliseconds 
