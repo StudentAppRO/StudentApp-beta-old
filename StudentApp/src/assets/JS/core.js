@@ -52,7 +52,7 @@ function getCurrentDate() {
     if (second < 10) { second = '0' + second; }
     var time = hour + ':' + minute + ':' + second
 
-    document.getElementById('time').innerHTML = "⏳" + time;
+    document.getElementById('time').innerHTML = "🕐" + time;
     document.getElementById('date').innerHTML = "📅" + date;
 
     //this basically makes the function to repeat itself every 1s
@@ -66,11 +66,13 @@ function refreshDate() {
 
 function getUserLocation() {
     var requestUrl = "https://api.ipdata.co?api-key=test";
+    //documentation:
     //https://jsfiddle.net/ipdata/6wtf0q4g/922/
     $.ajax({
         url: requestUrl,
         type: 'GET',
         success: function(json) {
+            //var img = "";
             document.getElementById('userLocation').innerHTML = "🌍" + json.country_name;
             console.log("My country is: " + json.country_name);
         },
