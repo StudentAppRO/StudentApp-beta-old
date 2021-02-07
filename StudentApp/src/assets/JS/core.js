@@ -65,19 +65,20 @@ function refreshDate() {
 }
 
 function getUserLocation() {
-    var requestUrl = "http://ip-api.com/json";
-
+    var requestUrl = "https://api.ipdata.co?api-key=test";
+    //https://jsfiddle.net/ipdata/6wtf0q4g/922/
     $.ajax({
         url: requestUrl,
         type: 'GET',
         success: function(json) {
-            document.getElementById('userLocation').innerHTML = "🌍" + json.country;
-            console.log("My country is: " + json.country);
+            document.getElementById('userLocation').innerHTML = "🌍" + json.country_name;
+            console.log("My country is: " + json.country_name);
         },
         error: function(err) {
             console.log("Request failed, error= " + err);
         }
     });
+
 }
 
 
