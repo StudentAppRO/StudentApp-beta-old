@@ -41,8 +41,20 @@ body {
     background-color: var(--gray);
 }
 
+.col-6 {
+    display: inline-block;
+    float: left;
+}
+
 img {
     padding: 2%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--green);
 }
 
 
