@@ -44,6 +44,7 @@ body {
 .col-6 {
     display: inline-block;
     float: left;
+    padding: 0 15px 0 15px;
 }
 
 img {
@@ -54,6 +55,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 p {
     color: var(--green);
 }
