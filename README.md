@@ -4,7 +4,7 @@ This app is designed to help teenagers and adults with learning. The app has a l
 
 ## 📥Installation
 
-The app is currently in development but a preview can be accessed [here](https://student-app228.netlify.app).
+The app is currently in development but a preview can be accessed [here](https://student-app228.netlify.app) or [here](https://thecyberbro.github.io/StudentApp/StudentApp/).
 
 ## 👩🏻‍💻Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
