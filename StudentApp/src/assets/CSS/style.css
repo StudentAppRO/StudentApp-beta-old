@@ -73,6 +73,39 @@ h5 {
     top: 0;
 }
 
+.contact_form {
+    align-items: center;
+    width: 100%;
+    /* text-align: center; */
+}
+
+.contact_form h2,
+p {
+    text-align: center;
+    color: var(--green);
+}
+
+.form_in {
+    border-width: 10px;
+    border-color: var(--green);
+    margin: auto;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #495057;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
 .se-pre-con {
     position: fixed;
     left: 0px;
