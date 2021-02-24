@@ -5,6 +5,7 @@ window.onload = function() {
      * These functions/code
      * will be executed, when website is loaded.
      */
+
     aboutHeaderText();
     updateCurrentYear();
     getCurrentDate();

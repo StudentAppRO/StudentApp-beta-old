@@ -79,8 +79,7 @@ h5 {
     /* text-align: center; */
 }
 
-.contact_form h2,
-p {
+.contact_form>h2>p {
     text-align: center;
     color: var(--green);
 }
