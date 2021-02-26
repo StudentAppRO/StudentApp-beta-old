@@ -79,7 +79,12 @@ h5 {
     /* text-align: center; */
 }
 
-.contact_form>h2>p {
+.contact_form {
+    padding: 0px;
+}
+
+.contact_form_header {
+    padding: 0px;
     text-align: center;
     color: var(--green);
 }
@@ -94,15 +99,57 @@ h5 {
     display: block;
     width: 100%;
     height: calc(1.5em + 0.75rem + 2px);
-    padding: 0.375rem 0.75rem;
+    /* padding: 0.375rem 0.75rem; */
+    padding: 10px 10px 10px 10px;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: #fff;
-    background-color: #495057;
+    background-color: var(--gray);
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid var(--green);
     border-radius: 0.25rem;
+}
+
+
+/* .form-control:active,
+.form-control:focus,
+.form-control:focus:active {
+    background-color: #96d3ec!important;
+    border-color: #96d3ec;
+    color: white;
+} */
+
+.form-control:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #495057;
+}
+
+.form-control:valid {
+    background-color: var(--gray)!important;
+}
+
+input:not(:placeholder-shown) {
+    background-color: var(--gray)!important;
+}
+
+input:placeholder-shown {
+    background-color: var(--gray)!important;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: var(--gray);
+    border-color: #ffffff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--green);
+}
+
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-color: var(--gray) !important;
+    background-image: none !important;
+    color: -internal-light-dark(white, var(--gray)) !important;
 }
 
 .se-pre-con {

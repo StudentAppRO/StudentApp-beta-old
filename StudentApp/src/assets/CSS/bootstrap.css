@@ -2153,7 +2153,7 @@ pre code {
     background-color: #fff;
     border-color: #80bdff;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 0.2rem var(--green);
 }
 
 .form-control::-webkit-input-placeholder {
@@ -2183,7 +2183,7 @@ pre code {
 
 .form-control:disabled,
 .form-control[readonly] {
-    background-color: #e9ecef;
+    background-color: var(--grey);
     opacity: 1;
 }
 
@@ -2198,7 +2198,7 @@ input[type="month"].form-control {
 
 select.form-control:focus::-ms-value {
     color: #495057;
-    background-color: #fff;
+    background-color: #000;
 }
 
 .form-control-file,
