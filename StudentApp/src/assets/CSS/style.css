@@ -42,7 +42,7 @@ body {
 }
 
 .col-6 {
-    display: inline-block;
+    display: block;
     float: left;
     padding: 0 15px 0 15px;
 }
@@ -104,7 +104,7 @@ h5 {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #fff;
+    color: var(--white);
     background-color: var(--gray);
     background-clip: padding-box;
     border: 1px solid var(--green);
@@ -138,7 +138,7 @@ input:placeholder-shown {
 }
 
 .form-control:focus {
-    color: #495057;
+    color: var(--white);
     background-color: var(--gray);
     border-color: #ffffff;
     outline: 0;
@@ -149,7 +149,7 @@ input:-internal-autofill-selected {
     appearance: menulist-button;
     background-color: var(--gray) !important;
     background-image: none !important;
-    color: -internal-light-dark(white, var(--gray)) !important;
+    /* color: -internal-light-dark(white, var(--gray)) !important; */
 }
 
 .se-pre-con {
