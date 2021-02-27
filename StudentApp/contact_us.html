@@ -88,18 +88,22 @@
         <div class="row" style="margin: auto;">
             <div class="contact_form">
                 <div class="col contact_form_header">
-                    <br>
-                    <div class="col-sm-10 col-md-8 col-xs-12 mx-auto">
-                        <h2>Contact Us</h2>
-                        <p>Using this form you will help us to improve the app. You can suggest some modifications, report bugs and help other students.</p>
-                    </div>
-                    <br>
+
                     <div class="container form-top ">
+                        <br>
+                        <div class="col-8 mx-auto">
+                            <h2>Contact Us</h2>
+                            <p>Using this form you will help us to improve the app. You can suggest some modifications, report bugs and help other students.</p>
+                        </div>
+                        <br>
                         <div class="row">
                             <div class="form_in col-sm-10 col-md-8 col-xs-12 ">
                                 <div class="panel panel-danger">
                                     <div class="panel-body">
-                                        <form id='contact' name='contact' method='POST' data-netlify-recaptcha="true" data-netlify="true" action="/StudentApp/success/success.html">
+
+                                        <form id='contact' name='contact' method='POST' data-netlify-recaptcha="true" data-netlify="true">
+                                            <!-- Currently with no action="/StudentApp/success/success.html" tag in <form> -->
+                                            <!-- it gives 405 error -->
                                             <input type='hidden' name='form-name' value='contact' />
                                             <div class="form-group">
                                                 <!-- <label><i class="fa fa-user" aria-hidden="true"></i> Name</label> -->
@@ -113,6 +117,8 @@
                                                 <!-- <label><i class="fa fa-comment" aria-hidden="true"></i> Message</label> -->
                                                 <textarea rows="3" name="message" class="form-control" placeholder="Your message..."></textarea>
                                             </div>
+                                            <!-- Recaptcha -->
+                                            <div netlify-recaptcha></div>
 
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-raised btn-block btn-success">Send →</button>
@@ -123,11 +129,11 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-            <!-- Recaptcha -->
-            <div netlify-recaptcha></div>
+
         </div>
 
     </main>
