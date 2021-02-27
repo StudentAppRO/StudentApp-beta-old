@@ -120,6 +120,12 @@ h5 {
     color: white;
 } */
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 .form-control:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 #495057;
