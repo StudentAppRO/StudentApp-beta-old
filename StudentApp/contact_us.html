@@ -88,20 +88,20 @@
         <div class="row" style="margin: auto;">
             <div class="contact_form">
                 <div class="col contact_form_header">
-
+                    <br>
+                    <div class="col-sm-10 col-md-8 col-xs-12 mx-auto">
+                        <h2>Contact Us</h2>
+                        <p>Using this form you will help us to improve the app. You can suggest some modifications, report bugs and help other students.</p>
+                    </div>
+                    <br>
                     <div class="container form-top ">
-                        <br>
-                        <div class="col-8 mx-auto">
-                            <h2>Contact Us</h2>
-                            <p>Using this form you will help us to improve the app. You can suggest some modifications, report bugs and help other students.</p>
-                        </div>
-                        <br>
+
                         <div class="row">
                             <div class="form_in col-sm-10 col-md-8 col-xs-12 ">
                                 <div class="panel panel-danger">
                                     <div class="panel-body">
 
-                                        <form id='contact' name='contact' method='POST' data-netlify-recaptcha="true" data-netlify="true">
+                                        <form id='contact' name='contact' method='POST' data-netlify-recaptcha="true" data-netlify="true" action="/StudentApp/success/success.html">
                                             <!-- Currently with no action="/StudentApp/success/success.html" tag in <form> -->
                                             <!-- it gives 405 error -->
                                             <input type='hidden' name='form-name' value='contact' />
@@ -119,7 +119,7 @@
                                             </div>
                                             <!-- Recaptcha -->
                                             <div netlify-recaptcha></div>
-
+                                            <br>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-raised btn-block btn-success">Send →</button>
                                             </div>
