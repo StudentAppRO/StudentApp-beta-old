@@ -6,10 +6,10 @@ window.onload = function() {
      * will be executed, when website is loaded.
      */
 
-    aboutHeaderText();
-    updateCurrentYear();
-    getCurrentDate();
-    getUserLocation();
+    // aboutHeaderText();
+    // updateCurrentYear();
+    // getCurrentDate();
+    // getUserLocation();
 };
 
 $(window).load(function() {
