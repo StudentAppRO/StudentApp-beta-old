@@ -86,6 +86,7 @@ body {
 
 .content_card {
     margin-top: 1rem;
+    min-height: 180px !important;
 }
 
 img {
