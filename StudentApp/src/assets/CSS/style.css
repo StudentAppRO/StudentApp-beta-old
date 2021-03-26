@@ -64,11 +64,20 @@ body {
   float: left;
 }
 
-.cardx{
+/* literally all cards */
+.cardx{ 
+  
   padding: 0px;
   margin-bottom: 1rem;
+  /* margin: 0.5rem 0rem 0.5rem 1rem; */
   display: block;
   float: left;
+  
+}
+/* this is the same as mr-2 ml-2 seted to next div inside the cardzzzzzzz*/
+.cardx > div{
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .col-12 {
