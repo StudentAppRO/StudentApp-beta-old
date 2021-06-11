@@ -67,7 +67,9 @@ function refreshDate() {
 }
 
 function getUserLocation() {
-    var requestUrl = "https://api.ipdata.co?api-key=test";
+    var API_KEY = "d4ee10122f91777258657df189f1bf7f21ae00a6a4b3ae6b2d3d750a";
+    var requestUrl = "https://api.ipdata.co?api-key="+API_KEY;
+    
     //documentation:
     //https://jsfiddle.net/ipdata/6wtf0q4g/922/
     $.ajax({
