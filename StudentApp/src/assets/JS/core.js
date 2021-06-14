@@ -22,6 +22,25 @@ function aboutHeaderText() {
     aboutTxt.innerHTML = "This app is designed to help young students with learning. The app can give a lot of good sources to learn and to make your homework dumbass."
 }
 
+//url param---------
+const queryString = window.location.search;
+
+const page = urlParams.get('page');
+const subPpage = urlParams.get('subpage');
+
+switch(expression) {
+    case x:
+      // code block
+      break;
+    case y:
+      // code block
+      break;
+    default:
+      // code block
+}
+
+
+//------------------
 function updateCurrentYear() { //by theCYBERbro
     // var year;
     // var date = new Date();   
