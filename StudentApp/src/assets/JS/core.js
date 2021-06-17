@@ -31,15 +31,15 @@ function urlParams() {
 
   const page = urlParams.get("page");
 
-//   var number = getUrlVars()[""];
+  //   var number = getUrlVars()[""];
 
   //const subPpage = urlParams.get("subpage");
   //TODO: complete switch
   switch (page) {
     case "math":
-        var yourElement = document.getElementById('materials');
-        yourElement.setAttribute('href', '#url');//TODO
-    break;
+      var yourElement = document.getElementById("materials");
+      yourElement.setAttribute("href", "#url"); //TODO
+      break;
     case y:
       // code block
       break;
@@ -92,8 +92,8 @@ function getCurrentDate() {
   }
   var time = hour + ":" + minute + ":" + second;
 
-  document.getElementById("time").innerHTML = "🕐" + time;
-  document.getElementById("date").innerHTML = "📅" + date;
+  document.getElementById("time").innerHTML =  time;
+  document.getElementById("date").innerHTML =  date;
 
   //this basically makes the function to repeat itself every 1s
   refreshDate();
