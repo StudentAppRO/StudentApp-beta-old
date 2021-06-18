@@ -19,12 +19,13 @@ h6,
   font-family: "Ubuntu", Helvetica, Arial !important;
 }
 
+/* background color */
 body {
-  background-color: var(--dark);
+  background-color: var(--dark-gray);
 }
 
 #navbarHeader {
-  background-color: var(--dark);
+  background-color: var(--dark-gray);
 }
 
 #sticky-footer {
@@ -43,6 +44,11 @@ body {
   background-color: var(--green) !important;
 }
 
+.bg-dark {
+  background-color: var(--dark-gray) !important;
+}
+
+
 .card-body {
   padding: 2%;
 }
@@ -51,10 +57,25 @@ body {
   color: var(--white);
 }
 
+/* color of all cards */
+
 .card {
-  /* margin-top: 10%; */
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
   background-color: var(--gray);
+  background-clip: border-box;
+  /* border: 1px solid rgba(0, 0, 0, 0.125); */
+  /* border: 1px solid var(--lime-green); */
+  box-shadow: 3px 3px 5px var(--green);
+
+  border-radius: 1rem;
 }
+
 
 .col-md-4 .col-lg-6, .col-6 {
   /* padding: 0 15px 0 15px; */

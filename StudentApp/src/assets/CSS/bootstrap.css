@@ -22,7 +22,8 @@
     --gray-dark: #343a40;
     --primary: #007bff;
     --secondary: #6c757d;
-    --success: #11c717;/**/
+    /* --success: #11c717; old colour */
+    --success: #11c717;
     --info: #17a2b8;
     --warning: #ffc107;
     --danger: #dc3545;
@@ -37,13 +38,26 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-:root {
-    /* StudentApp colors */
+/* StudentApp old colors  */
+/* :root {
     --green: #11c717;
     --dark: #0a0c0e;
     --white: #fafafa;
     --gray: #292b2d;
+} 
+*/
+
+:root {
+    /* StudentApp new colors */
+    --red: #FE5F55;
+    --lime-green: #B0E000;
+    --green:#60B159;
+    --dark: #0a0c0e;
+    --white: #fafafa;
+    --gray: #2f323a;
+    --dark-gray: #18191D;
 }
+
 
 *,
 *::before,
@@ -5006,20 +5020,6 @@ input[type="button"].btn-block {
     color: #fff;
 }
 
-.card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
-}
-
 .card>hr {
     margin-right: 0;
     margin-left: 0;
@@ -7143,9 +7143,6 @@ button.bg-light:focus {
     background-color: #dae0e5 !important;
 }
 
-.bg-dark {
-    background-color: var(--dark) !important;
-}
 
 a.bg-dark:hover,
 a.bg-dark:focus,
