@@ -40,7 +40,7 @@ function urlParams() {
       var yourElement = document.getElementById("materials");
       yourElement.setAttribute("href", "#url"); //TODO link to page for materials
       break;
-    case y:
+    case "":
       // code block
       break;
     default:
