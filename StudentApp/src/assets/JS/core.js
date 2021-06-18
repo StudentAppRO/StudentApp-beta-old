@@ -38,12 +38,13 @@ function urlParams() {
   switch (page) {
     case "math":
       var yourElement = document.getElementById("materials");
-      yourElement.setAttribute("href", "#url"); //TODO
+      yourElement.setAttribute("href", "#url"); //TODO link to page for materials
       break;
     case y:
       // code block
       break;
     default:
+        //error page
     // code block
   }
 
