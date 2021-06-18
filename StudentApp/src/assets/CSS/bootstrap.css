@@ -2787,12 +2787,7 @@ fieldset:disabled a.btn {
     box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
 }
 
-.btn-success {
-    color: var(--dark);
-    background-color: var(--green);
-    border-color: #000000;
-    font-weight: 600;
-}
+
 
 
 /* .btn-success:hover {
