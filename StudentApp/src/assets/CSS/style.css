@@ -85,6 +85,15 @@ body {
   float: left;
 }
 
+.btn-success {
+  color: var(--dark);
+  background-color: var(--green);
+  border-color: #000000;
+  font-weight: 600;
+  border-radius: 1rem;
+
+}
+
 /* literally all cards */
 .cardx{ 
   
