@@ -32,6 +32,10 @@ body {
   flex-shrink: none;
 }
 
+.link-no-dec{
+  text-decoration: none !important;
+}
+
 .navbar-dark .navbar-toggler-icon {
   background-image: url("../images/menu_button.png");
 }
@@ -94,6 +98,13 @@ body {
 }
 
 /* literally all cards */
+
+.card-btn{
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+
 .cardx{ 
   
   padding: 0px;
@@ -191,15 +202,16 @@ h5 {
 
 /*margin right/ left  20% on pc only*/
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
 
 .form-control:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #495057;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .form-control:valid {
