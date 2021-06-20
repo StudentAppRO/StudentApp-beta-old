@@ -23,10 +23,18 @@ function aboutHeaderText() {
     "This app is designed to help young students with learning. The app can give a lot of good sources to learn and to make your homework dumbass.";
 }
 
+//TODO testing dont use 
+
+function getFragment(id, path){
+    $(document).ready(function() {
+        $(id).load(path);
+    });
+}
+
 function urlParams() {
   //url param---------
   const queryString = window.location.search;
-  console.log(queryString);
+//   console.log(queryString);
   const urlParams = new URLSearchParams(queryString);
 
   const page = urlParams.get("page");
