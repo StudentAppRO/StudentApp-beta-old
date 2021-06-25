@@ -45,10 +45,27 @@ function urlParams() {
   //TODO: complete switch
   switch (page) {
     case "math":
-      var yourElement = document.getElementById("materials");
-      yourElement.setAttribute("href", "#url"); //TODO link to page for materials
+      //pageName
+      var pName = document.getElementById("pageName");
+      pName.innerHTML="Matematica";
+      //clasa IX
+      var cl9 = document.getElementById("cl9");
+      cl9.setAttribute("href", "data.html?page=math&subpage=cl9"); 
+      //clasa X
+      var cl10 = document.getElementById("cl10");
+      cl10.setAttribute("href", "#url");
+      //clasa XI 
+      var cl11 = document.getElementById("cl11");
+      cl11.setAttribute("href", "#url");
+      //clasa XII 
+      var cl12 = document.getElementById("cl12");
+      cl12.setAttribute("href", "#url"); 
+      
       break;
-    case "":
+    case "chemestry":
+        //pageName
+        var pName = document.getElementById("pageName");
+        pName.innerHTML="Chimia";
       // code block
       break;
     default:
