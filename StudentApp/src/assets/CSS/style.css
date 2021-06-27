@@ -34,7 +34,7 @@ body {
 }
 
 
-.navbar-dark .navbar-toggler-icon {
+.navbar-light .navbar-toggler-icon {
   background-image: url("../images/menu_button.png");
 }
 
@@ -42,10 +42,19 @@ body {
   border: none;
 }
 
+a.nav-link{
+  text-align: right;
+}
 
 /* colors ============================================*/
 .bg-green {
   background-color: var(--green) !important;
+}
+
+.bg-green-gradient {
+  /* background-color: var(--green) !important; */
+  background-image: linear-gradient(var(--green), var(--lime-green));
+
 }
 
 .bg-dark {
