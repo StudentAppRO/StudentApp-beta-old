@@ -28,57 +28,56 @@
     <!--Content start-->
 
     <header>
-        <div class="collapse bg-black" id="navbarHeader">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-glass shadow-sm ">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 col-md-7 py-4">
-                        <h4 class="text-white">About</h4>
-                        <p class="text-muted ab_txt">no txt</p>
-                        <!-- Edit in JS -->
-                    </div>
-                    <div class="col-sm-4 offset-md-1 py-4">
-                        <h4 class="text-white">Contact</h4>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="https://www.instagram.com/the_cyber_bro/" target="_blank" class="text-white">
-                                    <i class="fab fa-instagram"></i>-Follow on Instagram</a>
-                            </li>
-                            <li>
-                                <a href="https://t.me/BlackHatGiveawaysandmore" target="_blank" class="text-white">
-                                    <i class="fa fa-telegram"></i>-Follow on Telegram</a>
-                            </li>
-                            <li>
-                                <a href="mailto:thecyberbro@gmail.com" target="_blank" class="text-white">
-                                    <i class="fa fa-envelope-o"></i>-Email us</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="navbar navbar-dark bg-green shadow-sm">
-            <div class="container d-flex justify-content-between">
                 <a href="index.html" class="navbar-brand d-flex align-items-center">
                     <img src="src/assets/images/ic_launcher.png" class="img-fluid" width="30" height="30" />
                     <strong class="text-dark">StudentApp</strong>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
-                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-home"></i> Home</a>
+                        </li>
+                        <!-- TODO: ADD NAV ITEMS AND ICONS  -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-android"></i>App</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">
+                                <i class="fa fa-envelope"></i>Contacte</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-info-circle"></i>Despre Noi</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+
+        </nav>
     </header>
 
     <main role="main">
         <!-- main container  -->
-        <div class="container" style="margin-bottom: 100px;">
+        <div class="container" >
             <!-- Row start-->
 
             <div class="row">
                 <div class="col-sm-12 col-12">
                     <br>
-                    <h3 class="card-title-green text-center" id="pageName">Page</h3>
+                    <h3 class="text-center" id="pageName">Page</h3>
 
                 </div>
             </div>
@@ -93,7 +92,7 @@
                             <div class="card-body">
                                 <br>
                                 <br>
-                                <h2 class="card-title-green text-center">Clasa a IX-a</h2>
+                                <h2 class="text-center">Clasa a IX-a</h2>
                                 <br>
                                 <br>
                             </div>
@@ -107,7 +106,7 @@
                             <div class="card-body">
                                 <br>
                                 <br>
-                                <h2 class="card-title-green text-center">Clasa a X-a</h2>
+                                <h2 class="text-center">Clasa a X-a</h2>
                                 <br>
                                 <br>
                             </div>
@@ -121,7 +120,7 @@
                             <div class="card-body">
                                 <br>
                                 <br>
-                                <h2 class="card-title-green text-center">Clasa a XI-a</h2>
+                                <h2 class="text-center">Clasa a XI-a</h2>
                                 <br>
                                 <br>
                             </div>
@@ -135,7 +134,7 @@
                             <div class="card-body">
                                 <br>
                                 <br>
-                                <h2 class="card-title-green text-center">Clasa a XII-a</h2>
+                                <h2 class="text-center">Clasa a XII-a</h2>
                                 <br>
                                 <br>
                             </div>
@@ -150,12 +149,12 @@
     </main>
 
     <!-- Footer: -->
-    <footer id="sticky-footer" class="footer py-4 bg-dark text-white-50 fixed-bottom">
-        <div class="container text-center ">
-            <p style="font-size: small ">
+    <footer id="sticky-footer " class="footer py-4 text-dark-50">
+        <div class="container text-center">
+            <p style="font-size: small">
                 &copy;Copyright
-                <a href="https://thecyberbro.netlify.app/ "><strong>theCYBERbro</strong></a>
-                <span id="year "></span>
+                <a href="#"><strong>Student App</strong></a>
+                <span id="year"></span>
             </p>
         </div>
     </footer>

@@ -22,6 +22,9 @@ h6,
 /* background color */
 body {
   background-color: var(--dark-gray);
+  /* background-image: linear-gradient(to bottom right, var(--blue), var(--pink)); */
+  background-image: linear-gradient(to bottom right,  var(--col1), var(--col2) );
+
 }
 
 /* navbar */
@@ -51,9 +54,14 @@ a.nav-link{
   background-color: var(--green) !important;
 }
 
+.bg-glass{
+  background-color: rgba(255, 255, 255, .15);  
+  backdrop-filter: blur(5px);
+}
+
 .bg-green-gradient {
   /* background-color: var(--green) !important; */
-  background-image: linear-gradient(var(--green), var(--lime-green));
+  background-image: linear-gradient(var(--blue), var(--pink));
 
 }
 
@@ -106,11 +114,16 @@ a.nav-link{
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
+
   background-color: var(--gray);
+  background-color: rgba(255, 255, 255, .15);  
+  backdrop-filter: blur(5px);
+  /* background-image: linear-gradient(var(--blue), var(--pink)); */
+
   background-clip: border-box;
   /* border: 1px solid rgba(0, 0, 0, 0.125); */
   /* border: 1px solid var(--lime-green); */
-  box-shadow: 3px 3px 5px var(--green);
+  box-shadow: 3px 3px 5px var(--gray);
   
   border-radius: 1rem;
 }
@@ -129,9 +142,18 @@ a.nav-link{
 }
 
 /* buttons ============================================*/
+/* old btn succes */
 .btn-success {
   color: var(--dark);
   background-color: var(--green);
+  border-color: #000000;
+  font-weight: 600;
+  border-radius: 1rem;
+}
+/* new btn */
+.btn-success {
+  color: var(--dark);
+  background-color: rgba(255, 255, 255, 0);
   border-color: #000000;
   font-weight: 600;
   border-radius: 1rem;
@@ -147,7 +169,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: var(--green);
+  color: var(--dark);
 }
 
 .link-no-dec{
