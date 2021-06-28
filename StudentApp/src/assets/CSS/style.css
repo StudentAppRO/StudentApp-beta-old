@@ -27,8 +27,15 @@ body {
   /* background-image: linear-gradient(to bottom right,  #BBFBAC, #66E3AE, #00C8B8, #00ABC4, #008BCA, #006AC2); */
   /* background-image: linear-gradient(  white, rgb(212, 212, 212) ); */
   /* background-image: linear-gradient(  white, rgba(255, 233, 213, 0.938) ); */
-  background-image: linear-gradient(  white, rgba(245, 242, 214, 1) );
+  background-image: linear-gradient(  white, #e6ffee );
   
+}
+
+/* dark mode switch */
+/* enter here all css to be changed when its dark mode */
+.dark-mode{
+  background-image: linear-gradient(to bottom right, var(--pink), var(--blue) );
+
 }
 
 /* navbar */
@@ -300,5 +307,6 @@ input:-internal-autofill-selected {
   width: 100%;
   height: 100%;
   z-index: 99;
-  background: url("../images/green-loading.gif") center no-repeat var(--gray);
+  background: url("../images/green-loading.gif") center no-repeat rgba(255, 255, 255, .15);
+  backdrop-filter:  blur(10px);
 }

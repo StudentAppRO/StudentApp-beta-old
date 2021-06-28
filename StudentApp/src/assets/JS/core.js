@@ -17,6 +17,26 @@ $(window).load(function () {
   $(".se-pre-con").fadeOut("slow");
 });
 
+//dark mode switch
+//TODO
+var switchStatus = false;
+$("#darkModeSwitch").on('change', function() {
+    if ($(this).is(':checked')) {
+        switchStatus = $(this).is(':checked');
+        switchStatus = $(this).is(":checked");
+        if ((switchStatus == true)) {
+          var element = document.body;
+          element.classList.toggle("dark-mode");
+        }
+    }
+    else {
+       switchStatus = $(this).is(':checked');
+       if ((switchStatus == false)) {
+         var element = document.body;
+         element.classList.remove("dark-mode");
+       }    }
+});
+
 function aboutHeaderText() {
   aboutTxt = document.getElementsByClassName("ab_txt")[0];
   aboutTxt.innerHTML =

@@ -43,24 +43,27 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <p class=" nav-link custom-control custom-switch">
+                                <input class="custom-control-input custom-control-input-success" id="darkModeSwitch" type="checkbox" unchecked>
+                                <label class="custom-control-label font-italic" for="darkModeSwitch">Dark mode</label>
+                            </p>
+                        </li>
+
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">
-                                <i class="fa fa-home"></i> Home</a>
+                            <a class="nav-link" href="index.html"> Home</a>
                         </li>
-                        <!-- TODO: ADD NAV ITEMS AND ICONS  -->
                         <li class="nav-item">
-                            <a class="nav-link" href="app.html">
-                                <i class="fa fa-android"></i>App</a>
+                            <a class="nav-link" href="app.html">App</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="#">
-                                <i class="fa fa-envelope"></i>Contacte</a>
+                            <a class="nav-link " href="#">Contacte</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-info-circle"></i>Despre Noi</a>
+                            <a class="nav-link" href="#">Despre Noi</a>
                         </li>
                     </ul>
                 </div>
@@ -80,13 +83,12 @@
                 <div class="col-sm-12 col-12">
                     <br>
                     <div class=" jumbotron bg-glass">
-                        <h1 class="display-4">Hello, world!</h1>
-                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra
-                            attention to featured content or information.</p>
+                        <h1 class="display-5">Un nou mod de a învăța!</h1>
+                        <p class="lead">Materie de BAC pe înțelesul tuturor.</p>
                         <hr class="my-4">
                         <p>It uses utility classes for typography and spacing to space content out within the larger
                             container.</p>
-                        <a class="btn btn-success btn-lg" href="#" role="button">Learn more</a>
+                        <a class="btn btn-success btn-lg" href="#" role="button">Încearca aplicația</a>
                     </div>
                 </div>
             </div>
@@ -95,18 +97,22 @@
                 <div class="col-sm-12 col-12 col-lg-12">
 
                     <!-- rest of cards: -->
-                    <div class="col-12 ">
+                    <div class="col-12 card">
+
+                        <h2 class="text-center mx-auto my-3"><i class="fa fa-info-circle"></i> FAQ</h2>
 
                         <div id="accordion" class="mx-3 my-3">
                             <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-success" data-toggle="collapse"
-                                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Collapsible Group Item #1
-                                        </button>
-                                    </h5>
-                                </div>
+                                <a class="link-no-dec" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <b>
+                                                intrebare ???????????????? idk txt #1
+                                            </b>
+                                        </h5>
+                                    </div>
+                                </a>
 
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                     data-parent="#accordion">
@@ -122,17 +128,20 @@
                                     </div>
                                 </div>
                             </div>
-<br>
+
+                            <br>
+
                             <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-success collapsed" data-toggle="collapse"
-                                            data-target="#collapseTwo" aria-expanded="false"
-                                            aria-controls="collapseTwo">
-                                            Collapsible Group Item #2
-                                        </button>
-                                    </h5>
-                                </div>
+                                <a class="link-no-dec" data-toggle="collapse" data-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <b>
+                                                intrebare ???????????????? idk txt #1
+                                            </b>
+                                        </h5>
+                                    </div>
+                                </a>
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                     data-parent="#accordion">
                                     <div class="card-body">
@@ -149,15 +158,17 @@
                             </div>
                             <br>
                             <div class="card">
-                                <div class="card-header" id="headingThree">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-success collapsed" data-toggle="collapse"
-                                            data-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">
-                                            Collapsible Group Item #3
-                                        </button>
-                                    </h5>
-                                </div>
+
+                                <a class="link-no-dec" data-toggle="collapse" data-target="#collapseThree"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <b>
+                                                intrebare ???????????????? idk txt #1
+                                            </b>
+                                        </h5>
+                                    </div>
+                                </a>
                                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                     data-parent="#accordion">
                                     <div class="card-body">
@@ -178,7 +189,7 @@
 
                 </div>
 
-                
+
             </div>
         </div>
         </div>
@@ -219,10 +230,10 @@
     <script src="src/assets/JS/core.js "></script>
     <script>
         // aboutHeaderText();
-        updateCurrentYear();
-        getCurrentDate();
-        getUserLocation();
-        // urlParams();
+        // updateCurrentYear();
+        // getCurrentDate();
+        // getUserLocation();
+        urlParams();
 
     </script>
 </body>
