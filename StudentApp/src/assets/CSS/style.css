@@ -34,7 +34,9 @@ body {
 /* dark mode switch */
 /* enter here all css to be changed when its dark mode */
 .dark-mode{
-  background-image: linear-gradient(to bottom right, var(--pink), var(--blue) );
+  /* background-image: linear-gradient(to bottom right, var(--pink), var(--blue) ); */
+  background-image: linear-gradient(to bottom right, var(--gray-dark), var(--green) );
+  
 
 }
 
@@ -56,8 +58,9 @@ body {
   border: none;
 }
 
-a.nav-link{
+a.nav-link, p.nav-link{
   text-align: right;
+  margin-bottom: 0;
 }
 
 /* colors ============================================*/
