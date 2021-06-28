@@ -21,10 +21,14 @@ h6,
 
 /* background color */
 body {
-  background-color: var(--dark-gray);
-  /* background-image: linear-gradient(to bottom right, var(--blue), var(--pink)); */
-  background-image: linear-gradient(to bottom right,  var(--col1), var(--col2) );
-
+  background-color: var(--white);
+  /* background-image: linear-gradient(to bottom right, white, rgb(196, 196, 196)); */
+  /* background-image: linear-gradient(to bottom right,  var(--col1), var(--col2) ); */
+  /* background-image: linear-gradient(to bottom right,  #BBFBAC, #66E3AE, #00C8B8, #00ABC4, #008BCA, #006AC2); */
+  /* background-image: linear-gradient(  white, rgb(212, 212, 212) ); */
+  /* background-image: linear-gradient(  white, rgba(255, 233, 213, 0.938) ); */
+  background-image: linear-gradient(  white, rgba(245, 242, 214, 1) );
+  
 }
 
 /* navbar */
@@ -89,10 +93,20 @@ a.nav-link{
 }
 /* this is the same as mr-2 ml-2 seted to next div inside the cardzzzzzzz*/
 .cardx > div{
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
+  margin: 0rem 0.75rem 0rem 0.75rem;
+  /* mergin right and left 1rem */
 }
 
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  /* background-color: #e9ecef; */
+  border-radius: 1rem;
+  box-shadow: 3px 3px 5px var(--gray);
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  margin: 0rem 1rem 2rem 1rem;
+}
 
 .content_card {
   margin-top: 1rem;
