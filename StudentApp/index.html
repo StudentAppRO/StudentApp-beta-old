@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="src/assets/CSS/bootstrap.css" />
     <link rel="stylesheet" href="src/assets/CSS/style.css" />
 
+
+  
+
     <!-- Google adds: (currently off)-->
     <!-- <script data-ad-client="ca-pub-1451725678972854" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 </head>
@@ -46,8 +49,10 @@
 
                         <li class="nav-item">
                             <p class=" nav-link custom-control custom-switch">
-                                <input class="custom-control-input custom-control-input-success" id="darkModeSwitch" type="checkbox" unchecked>
-                                <label class="custom-control-label font-italic" for="darkModeSwitch">Dark mode</label>
+                                <input class="custom-control-input custom-control-input-success" 
+                                id="darkModeSwitch" type="checkbox" unchecked>
+                                <label class="custom-control-label font-italic" 
+                                for="darkModeSwitch">Dark mode</label>
                             </p>
                         </li>
 
@@ -88,7 +93,7 @@
                         <hr class="my-4">
                         <p>It uses utility classes for typography and spacing to space content out within the larger
                             container.</p>
-                        <a class="btn btn-success btn-lg" href="#" role="button">Încearca aplicația</a>
+                        <a class="btn btn-success btn-lg" href="app.html" role="button">Încearcă aplicația</a>
                     </div>
                 </div>
             </div>
@@ -226,6 +231,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js "></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js "></script> -->
 
+      <!-- cookies -->
+      <script src="src/assets/JS/cookies.js "></script>
+
     <!-- Load core JS -->
     <script src="src/assets/JS/core.js "></script>
     <script>
@@ -234,7 +242,9 @@
         // getUserLocation();
         updateCurrentYear();
         urlParams();
-
+        //=====
+        // checkCookie();
+        console.log(getCurrentSwitchMode ());
     </script>
 </body>
 

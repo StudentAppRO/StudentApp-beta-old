@@ -20,21 +20,22 @@ $(window).load(function () {
 //dark mode switch
 //TODO
 var switchStatus = false;
-$("#darkModeSwitch").on('change', function() {
-    if ($(this).is(':checked')) {
-        switchStatus = $(this).is(':checked');
-        switchStatus = $(this).is(":checked");
-        if ((switchStatus == true)) {
-          var element = document.body;
-          element.classList.toggle("dark-mode");
-        }
+$("#darkModeSwitch").on("change", function () {
+  if ($(this).is(":checked")) {
+    switchStatus = $(this).is(":checked");
+    // switchStatus = $(this).is(":checked");
+    if (switchStatus == true) {
+      var element = document.body;
+      element.classList.toggle("dark-mode");
     }
-    else {
-       switchStatus = $(this).is(':checked');
-       if ((switchStatus == false)) {
-         var element = document.body;
-         element.classList.remove("dark-mode");
-       }    }
+
+  } else {
+    switchStatus = $(this).is(":checked");
+    if (switchStatus == false) {
+      var element = document.body;
+      element.classList.remove("dark-mode");
+    }
+  }
 });
 
 function aboutHeaderText() {
@@ -43,18 +44,18 @@ function aboutHeaderText() {
     "This app is designed to help young students with learning. The app can give a lot of good sources to learn and to make your homework dumbass.";
 }
 
-//TODO testing dont use 
+//TODO testing dont use
 
-function getFragment(id, path){
-    $(document).ready(function() {
-        $(id).load(path);
-    });
+function getFragment(id, path) {
+  $(document).ready(function () {
+    $(id).load(path);
+  });
 }
 
 function urlParams() {
   //url param---------
   const queryString = window.location.search;
-//   console.log(queryString);
+  //   console.log(queryString);
   const urlParams = new URLSearchParams(queryString);
 
   const page = urlParams.get("page");
@@ -67,29 +68,29 @@ function urlParams() {
     case "math":
       //pageName
       var pName = document.getElementById("pageName");
-      pName.innerHTML="Matematica";
+      pName.innerHTML = "Matematica";
       //clasa IX
       var cl9 = document.getElementById("cl9");
-      cl9.setAttribute("href", "data.html?page=math&subpage=cl9"); 
+      cl9.setAttribute("href", "data.html?page=math&subpage=cl9");
       //clasa X
       var cl10 = document.getElementById("cl10");
       cl10.setAttribute("href", "#url");
-      //clasa XI 
+      //clasa XI
       var cl11 = document.getElementById("cl11");
       cl11.setAttribute("href", "#url");
-      //clasa XII 
+      //clasa XII
       var cl12 = document.getElementById("cl12");
-      cl12.setAttribute("href", "#url"); 
-      
+      cl12.setAttribute("href", "#url");
+
       break;
     case "chemestry":
-        //pageName
-        var pName = document.getElementById("pageName");
-        pName.innerHTML="Chimia";
+      //pageName
+      var pName = document.getElementById("pageName");
+      pName.innerHTML = "Chimia";
       // code block
       break;
     default:
-        //error page
+    //error page
     // code block
   }
 
@@ -138,8 +139,8 @@ function getCurrentDate() {
   }
   var time = hour + ":" + minute + ":" + second;
 
-  document.getElementById("time").innerHTML =  time;
-  document.getElementById("date").innerHTML =  date;
+  document.getElementById("time").innerHTML = time;
+  document.getElementById("date").innerHTML = date;
 
   //this basically makes the function to repeat itself every 1s
   refreshDate();

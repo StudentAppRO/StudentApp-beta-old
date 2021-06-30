@@ -10653,7 +10653,7 @@ a.text-dark:focus {
 /* toggle switches with bootstrap default colors */
 .custom-control-input-success:checked ~ .custom-control-label::before {
     background-color: var(--spring-green) !important;
-    border-color: var(--green) !important;
+    border-color: var(--dark) !important;
 }
 
 .custom-control-input-danger:checked ~ .custom-control-label::before {
