@@ -31,6 +31,13 @@ body {
   
 }
 
+main{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height: 85vh;
+}
+
 /* dark mode switch */
 /* enter here all css to be changed when its dark mode */
 .dark-mode{
@@ -47,7 +54,13 @@ body {
 
 #sticky-footer {
   flex-shrink: none;
+
 }
+/* 
+footer{
+  position:fixed;
+  bottom:0;
+} */
 
 
 .navbar-light .navbar-toggler-icon {
