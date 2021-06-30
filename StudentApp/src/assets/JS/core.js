@@ -18,31 +18,25 @@ $(window).load(function () {
 });
 
 //dark mode switch
-//TODO
-var switchStatus = false;
-$("#darkModeSwitch").on("change", function () {
-  if ($(this).is(":checked")) {
-    switchStatus = $(this).is(":checked");
-    // switchStatus = $(this).is(":checked");
-    if (switchStatus == true) {
-      var element = document.body;
-      element.classList.toggle("dark-mode");
-    }
+///TODO
+const toggleButton = document.querySelector("#darkModeSwitch")
+const element = document.body;
+const localstorage = window.localStorage
+toggleButton.checked = localstorage.getItem('dark') == 'true'
+var switchStatus
 
-  } else {
-    switchStatus = $(this).is(":checked");
-    if (switchStatus == false) {
-      var element = document.body;
-      element.classList.remove("dark-mode");
+function toggle() {
+    switchStatus = toggleButton.checked
+    if (switchStatus) {
+        element.classList = ['dark-mode']
+    } else {
+        element.classList = ['']
     }
-  }
-});
-
-function aboutHeaderText() {
-  aboutTxt = document.getElementsByClassName("ab_txt")[0];
-  aboutTxt.innerHTML =
-    "This app is designed to help young students with learning. The app can give a lot of good sources to learn and to make your homework dumbass.";
+    localstorage.setItem('dark', toggleButton.checked)
 }
+toggle()
+toggleButton.addEventListener('change', toggle)
+
 
 //TODO testing dont use
 
