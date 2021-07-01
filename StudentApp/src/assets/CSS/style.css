@@ -45,8 +45,6 @@ main{
   background-image: linear-gradient(to bottom right, var(--gray-dark), var(--green) );
   background-image: linear-gradient(to bottom right,#999999, #777777);
 
-  
-
 }
 
 /* navbar */
@@ -166,6 +164,21 @@ a.nav-link, p.nav-link{
   
   border-radius: 1rem;
 }
+
+.card-blank {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+
+  background-color: var(--transparent);
+
+  background-clip: border-box;
+}
+
 
 /* columns ============================================*/
 .col-md-4 .col-lg-6, .col-6 {
