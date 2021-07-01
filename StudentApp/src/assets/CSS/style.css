@@ -43,6 +43,8 @@ main{
 .dark-mode{
   /* background-image: linear-gradient(to bottom right, var(--pink), var(--blue) ); */
   background-image: linear-gradient(to bottom right, var(--gray-dark), var(--green) );
+  background-image: linear-gradient(to bottom right,#999999, #777777);
+
   
 
 }

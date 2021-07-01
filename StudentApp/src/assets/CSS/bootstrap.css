@@ -22,8 +22,6 @@
     --gray-dark: #343a40;
     --primary: #007bff;
     --secondary: #6c757d;
-    /* --success: #11c717; old colour */
-    --success: #11c717;
     --info: #17a2b8;
     --warning: #ffc107;
     --danger: #dc3545;
@@ -60,6 +58,7 @@
 
 /* StudentApp better colors */
 :root {
+    --success: #11c717;
     --blue: #5d74ff;
     --pink:#ef6cff;
     --spring-green: #00fb79;
