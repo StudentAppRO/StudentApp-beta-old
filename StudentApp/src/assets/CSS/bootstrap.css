@@ -4940,7 +4940,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: rgba(0, 0, 0, 0.5);
+    color: black;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -4956,7 +4956,7 @@ input[type="button"].btn-block {
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active {
-    color: rgba(0, 0, 0, 0.9);
+    color: black;
 }
 
 .navbar-light .navbar-toggler {
@@ -10651,7 +10651,7 @@ a.text-dark:focus {
 */
 /* toggle switches with bootstrap default colors */
 .custom-control-input-success:checked ~ .custom-control-label::before {
-    background-color: var(--spring-green) !important;
+    background-color: var(--success) !important;
     border-color: var(--dark) !important;
 }
 

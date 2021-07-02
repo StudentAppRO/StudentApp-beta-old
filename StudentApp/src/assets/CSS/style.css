@@ -47,6 +47,20 @@ main{
 
 }
 
+/* custom ============================= */
+.active{
+  font-weight: bold;
+}
+/* 
+footer{
+  position:fixed;
+  bottom:0;
+} */
+
+a{
+  color: var(--success);
+}
+
 /* navbar */
 #navbarHeader {
   background-color: var(--dark-gray);
@@ -56,11 +70,7 @@ main{
   flex-shrink: none;
 
 }
-/* 
-footer{
-  position:fixed;
-  bottom:0;
-} */
+
 
 
 .navbar-light .navbar-toggler-icon {
