@@ -206,6 +206,16 @@ a.nav-link, p.nav-link{
 
 /* buttons ============================================*/
 /* old btn succes */
+
+.animated-btn{
+  animation: mymove 1.5s infinite;
+}
+@keyframes mymove {
+  0%   {background-color: var(--transparent);}
+  50%   {background-color: var(--success);}
+  100%   {background-color: var(--transparent);}
+}
+
 .btn-success {
   color: var(--dark);
   background-color: var(--green);
