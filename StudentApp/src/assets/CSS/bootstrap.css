@@ -59,12 +59,12 @@
 /* StudentApp better colors */
 :root {
     --success: #11c717;
-    --blue: #5d74ff;
-    --pink:#ef6cff;
+    /* --blue: #5d74ff;
+    --pink:#ef6cff; */
     --spring-green: #00fb79;
     --lime-green: #B0E000;
-    --col1: #d6fab2;
-    --col2: #b7eae3;
+    /* --col1: #d6fab2;
+    --col2: #b7eae3; */
     --green:#60B159;
     --dark: #0a0c0e;
     --white: #fafafa;
