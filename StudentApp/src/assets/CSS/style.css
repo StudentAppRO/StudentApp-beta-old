@@ -208,12 +208,24 @@ a.nav-link, p.nav-link{
 /* old btn succes */
 
 .animated-btn{
-  animation: mymove 1.5s infinite;
+  animation: btnglow 3.5s infinite;
 }
-@keyframes mymove {
-  0%   {background-color: var(--transparent);}
+@keyframes btnglow {
+  /* 0%   {background-color: var(--transparent);}
   50%   {background-color: var(--success);}
-  100%   {background-color: var(--transparent);}
+  100%   {background-color: var(--transparent);} */
+  0% {
+    background-color: var(--success);
+    box-shadow: 0 0 3px var(--success);
+  }
+  50% {
+    background-color: var(--spring-green);
+    box-shadow: 0 0 10px var(--spring-green);
+  }
+  100% {
+    background-color: var(--success);
+    box-shadow: 0 0 3px var(--success);
+  }
 }
 
 .btn-success {
