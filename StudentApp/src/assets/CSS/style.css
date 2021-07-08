@@ -27,7 +27,8 @@ body {
   /* background-image: linear-gradient(to bottom right,  #BBFBAC, #66E3AE, #00C8B8, #00ABC4, #008BCA, #006AC2); */
   /* background-image: linear-gradient(  white, rgb(212, 212, 212) ); */
   /* background-image: linear-gradient(  white, rgba(255, 233, 213, 0.938) ); */
-  background-image: linear-gradient(  white, #e6ffee );
+  /* background-image: linear-gradient(  white, #e6ffee ); */
+  /* background-image: linear-gradient(  white, #e6ffee ); */
   
 }
 
@@ -42,8 +43,9 @@ main{
 /* enter here all css to be changed when its dark mode */
 .dark-mode{
   /* background-image: linear-gradient(to bottom right, var(--pink), var(--blue) ); */
-  background-image: linear-gradient(to bottom right, var(--gray-dark), var(--green) );
+  /* background-image: linear-gradient(to bottom right, var(--success), var(--spring-green) ); */
   background-image: linear-gradient(to bottom right,#999999, #777777);
+
 
 }
 
@@ -58,7 +60,7 @@ footer{
 } */
 
 a{
-  color: var(--success);
+  color: var(--black);
 }
 
 /* navbar */
@@ -219,8 +221,8 @@ a.nav-link, p.nav-link{
     box-shadow: 0 0 3px var(--success);
   }
   50% {
-    background-color: var(--spring-green);
-    box-shadow: 0 0 10px var(--spring-green);
+    background-color: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
   }
   100% {
     background-color: var(--success);

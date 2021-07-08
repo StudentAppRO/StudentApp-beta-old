@@ -58,17 +58,25 @@
 
 /* StudentApp better colors */
 :root {
-    --success: #11c717;
-    /* --blue: #5d74ff;
-    --pink:#ef6cff; */
-    --spring-green: #00fb79;
-    --lime-green: #B0E000;
-    /* --col1: #d6fab2;
-    --col2: #b7eae3; */
-    --green:#60B159;
+    /*
+         --yellow:#f4b942;
+    --success: #97d8c4;
+ 
+    --spring-green: #6B9AC4;
+
+    --green: #4059AD;
+    */
+    
+    --green: #94fbab;
+    --yellow:#f4b942;
+    --success: #97d8c4;
+    --cyan: #6B9AC4;
+    --blue: #4059AD;
+
+
+
     --dark: #0a0c0e;
-    --white: #fafafa;
-    /* --gray: #2f323a; */
+    --white: #eff2f1;
     --gray: #505050;
     --dark-gray: #18191D;
     --transparent: rgba(0,0,0,0);
@@ -10651,7 +10659,7 @@ a.text-dark:focus {
 */
 /* toggle switches with bootstrap default colors */
 .custom-control-input-success:checked ~ .custom-control-label::before {
-    background-color: var(--success) !important;
+    background-color: var(--cyan) !important;
     border-color: var(--dark) !important;
 }
 
