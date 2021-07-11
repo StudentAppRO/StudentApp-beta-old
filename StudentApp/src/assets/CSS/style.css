@@ -116,6 +116,12 @@ a.nav-link, p.nav-link{
   margin-left: 0.5rem;
 }
 
+/* on click: */
+.card-btn:active{
+  background-color: var(--lite-gray) !important;
+  box-shadow: 3px 3px 5px var(--dark) !important;
+
+}
 
 .cardx{ 
   
@@ -229,6 +235,7 @@ a.nav-link, p.nav-link{
     box-shadow: 0 0 3px var(--success);
   }
 }
+
 
 .btn-success {
   color: var(--dark);

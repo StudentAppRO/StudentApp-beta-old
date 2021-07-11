@@ -1,156 +1,130 @@
-<!-- TODO: add page -->
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
+    <title>Drive API Quickstart</title>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Git Login App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="upload.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
+  </head>
+  <body>
+    <p>Drive API Quickstart</p>
 
-        $(document).ready(function () {
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
 
+    <pre id="content" style="white-space: pre-wrap;"></pre>
 
-            const urlParams = new URLSearchParams(window.location.search);
-            const code = urlParams.get('code');
-            const redirect_uri = "" // replace with your redirect_uri;
-            const client_secret = ""; // replace with your client secret
-            const scope = "https://www.googleapis.com/auth/drive";
-            var access_token = "";
-            var client_id = ""// replace it with your client id;
+    <script type="text/javascript">
+      // Client ID and API key from the Developer Console
+      var CLIENT_ID = '714270931752-b5rd6t21l4dep875cei62mvpihab1k89.apps.googleusercontent.com';
+      var API_KEY = 'AIzaSyCF6XcxoRMziY1ovd5L6cK9EhtpDTdi5Gg';
 
+      // Array of API discovery doc URLs for APIs used by the quickstart
+      var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
 
-            $.ajax({
-                type: 'POST',
-                url: "https://www.googleapis.com/oauth2/v4/token",
-                data: {
-                    code: code
-                    , redirect_uri: redirect_uri,
-                    client_secret: client_secret,
-                    client_id: client_id,
-                    scope: scope,
-                    grant_type: "authorization_code"
-                },
-                dataType: "json",
-                success: function (resultData) {
+      // Authorization scopes required by the API; multiple scopes can be
+      // included, separated by spaces.
+      var SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly';
 
+      var authorizeButton = document.getElementById('authorize_button');
+      var signoutButton = document.getElementById('signout_button');
 
-                    localStorage.setItem("accessToken", resultData.access_token);
-                    localStorage.setItem("refreshToken", resultData.refreshToken);
-                    localStorage.setItem("expires_in", resultData.expires_in);
-                    window.history.pushState({}, document.title, "/GitLoginApp/" + "upload.html");
+      /**
+       *  On load, called to load the auth2 library and API client library.
+       */
+      function handleClientLoad() {
+        gapi.load('client:auth2', initClient);
+      }
 
+      /**
+       *  Initializes the API client library and sets up sign-in state
+       *  listeners.
+       */
+      function initClient() {
+        gapi.client.init({
+          apiKey: API_KEY,
+          clientId: CLIENT_ID,
+          discoveryDocs: DISCOVERY_DOCS,
+          scope: SCOPES
+        }).then(function () {
+          // Listen for sign-in state changes.
+          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
-
-
-                }
-            });
-
-            function stripQueryStringAndHashFromPath(url) {
-                return url.split("?")[0].split("#")[0];
-            }
-
-            var Upload = function (file) {
-                this.file = file;
-            };
-
-            Upload.prototype.getType = function () {
-                localStorage.setItem("type", this.file.type);
-                return this.file.type;
-            };
-            Upload.prototype.getSize = function () {
-                localStorage.setItem("size", this.file.size);
-                return this.file.size;
-            };
-            Upload.prototype.getName = function () {
-                return this.file.name;
-            };
-            Upload.prototype.doUpload = function () {
-                var that = this;
-                var formData = new FormData();
-
-                // add assoc key values, this will be posts values
-                formData.append("file", this.file, this.getName());
-                formData.append("upload_file", true);
-
-                $.ajax({
-                    type: "POST",
-                    beforeSend: function (request) {
-                        request.setRequestHeader("Authorization", "Bearer" + " " + localStorage.getItem("accessToken"));
-
-                    },
-                    url: "https://www.googleapis.com/upload/drive/v2/files",
-                    data: {
-                        uploadType: "media"
-                    },
-                    xhr: function () {
-                        var myXhr = $.ajaxSettings.xhr();
-                        if (myXhr.upload) {
-                            myXhr.upload.addEventListener('progress', that.progressHandling, false);
-                        }
-                        return myXhr;
-                    },
-                    success: function (data) {
-                        console.log(data);
-                    },
-                    error: function (error) {
-                        console.log(error);
-                    },
-                    async: true,
-                    data: formData,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    timeout: 60000
-                });
-            };
-
-            Upload.prototype.progressHandling = function (event) {
-                var percent = 0;
-                var position = event.loaded || event.position;
-                var total = event.total;
-                var progress_bar_id = "#progress-wrp";
-                if (event.lengthComputable) {
-                    percent = Math.ceil(position / total * 100);
-                }
-                // update progressbars classes so it fits your code
-                $(progress_bar_id + " .progress-bar").css("width", +percent + "%");
-                $(progress_bar_id + " .status").text(percent + "%");
-            };
-
-            $("#upload").on("click", function (e) {
-                var file = $("#files")[0].files[0];
-                var upload = new Upload(file);
-
-                // maby check size or type here with upload.getSize() and upload.getType()
-
-                // execute upload
-                upload.doUpload();
-            });
-
-
-
-
+          // Handle the initial sign-in state.
+          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          authorizeButton.onclick = handleAuthClick;
+          signoutButton.onclick = handleSignoutClick;
+        }, function(error) {
+          appendPre(JSON.stringify(error, null, 2));
         });
+      }
+
+      /**
+       *  Called when the signed in status changes, to update the UI
+       *  appropriately. After a sign-in, the API is called.
+       */
+      function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+          authorizeButton.style.display = 'none';
+          signoutButton.style.display = 'block';
+          listFiles();
+        } else {
+          authorizeButton.style.display = 'block';
+          signoutButton.style.display = 'none';
+        }
+      }
+
+      /**
+       *  Sign in the user upon button click.
+       */
+      function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
+      }
+
+      /**
+       *  Sign out the user upon button click.
+       */
+      function handleSignoutClick(event) {
+        gapi.auth2.getAuthInstance().signOut();
+      }
+
+      /**
+       * Append a pre element to the body containing the given message
+       * as its text node. Used to display the results of the API call.
+       *
+       * @param {string} message Text to be placed in pre element.
+       */
+      function appendPre(message) {
+        var pre = document.getElementById('content');
+        var textContent = document.createTextNode(message + '\n');
+        pre.appendChild(textContent);
+      }
+
+      /**
+       * Print files.
+       */
+      function listFiles() {
+        gapi.client.drive.files.list({
+          'pageSize': 10,
+          'fields': "nextPageToken, files(id, name)"
+        }).then(function(response) {
+          appendPre('Files:');
+          var files = response.result.files;
+          if (files && files.length > 0) {
+            for (var i = 0; i < files.length; i++) {
+              var file = files[i];
+              appendPre(file.name + ' (' + file.id + ')');
+            }
+          } else {
+            appendPre('No files found.');
+          }
+        });
+      }
 
     </script>
-</head>
 
-<body>
-    <div>
-        <input id="files" type="file" name="files[]" multiple />
-        <button id="upload">Upload</button>
-        <div id="progress-wrp">
-            <div class="progress-bar"></div>
-            <div class="status">0%</div>
-        </div>
-    </div>
-    <div id="result">
-
-    </div>
-</body>
-
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+  </body>
 </html>
