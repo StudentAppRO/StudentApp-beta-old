@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="src/assets/CSS/bootstrap.css" />
     <link rel="stylesheet" href="src/assets/CSS/style.css" />
 
-
-
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <!-- Google adds: (currently off)-->
     <!-- <script data-ad-client="ca-pub-1451725678972854" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
@@ -32,6 +32,7 @@
 
     <header>
 
+        
         <nav class="navbar navbar-expand-lg navbar-light bg-glass shadow-sm ">
             <div class="container">
                 <a href="index.html" class="navbar-brand d-flex align-items-center">
@@ -47,33 +48,38 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
 
-                        <li class="nav-item">
-                            <p class=" nav-link custom-control custom-switch">
-                                <input class="custom-control-input custom-control-input-success" id="darkModeSwitch"
-                                    type="checkbox" unchecked>
-                                <label class="custom-control-label font-italic" for="darkModeSwitch">Dark mode</label>
-                            </p>
-                        </li>
-
+                        
                         <li class="nav-item ">
                             <a class="nav-link" href="index.html"> Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="app.html">App</a>
                         </li>
-
+                        
+                        <li class="nav-item active">
+                            <a class="nav-link " href="contact_us.html">Contacte</a>
+                        </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link active" href="contact_us.html">Contacte</a>
+                            <a class="nav-link" href="index.html#despre-noi">Despre Noi</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Despre Noi</a>
+                        <li class="nav-item ml-5">
+                            <p class=" nav-link custom-control custom-switch">
+                                <input class="custom-control-input custom-control-input-success" id="darkModeSwitch"
+                                    type="checkbox" unchecked>
+                                <label class="custom-control-label font-italic" for="darkModeSwitch">
+                                    <!-- <i class="fa fa-moon-o" aria-hidden="true"></i> -->
+                                    <i class="bi bi-moon-stars"></i>
+
+                                </label>
+                            </p>
                         </li>
                     </ul>
                 </div>
             </div>
-
         </nav>
+
     </header>
 
     <main role="main">
