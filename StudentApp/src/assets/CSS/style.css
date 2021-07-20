@@ -214,28 +214,31 @@ a.nav-link, p.nav-link{
 
 /* buttons ============================================*/
 /* old btn succes */
-
 .animated-btn{
-  animation: btnglow 3.5s infinite;
+  animation: btnglow 2.5s infinite;
+  /* transition: 0.5s; */
+  background-size: 200% auto;
+  background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);  
 }
+
+.animated-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+/* TODO: fix animation */
 @keyframes btnglow {
   /* 0%   {background-color: var(--transparent);}
   50%   {background-color: var(--success);}
   100%   {background-color: var(--transparent);} */
   0% {
-    background-color: var(--success);
-    box-shadow: 0 0 3px var(--success);
-  }
-  50% {
-    background-color: var(--cyan);
-    box-shadow: 0 0 10px var(--cyan);
+    background-position: right center; /* change the direction of the change here */
   }
   100% {
-    background-color: var(--success);
-    box-shadow: 0 0 3px var(--success);
-  }
-}
+    background-position: initial; 
 
+  }
+ 
+}
 
 .btn-success {
   color: var(--dark);
