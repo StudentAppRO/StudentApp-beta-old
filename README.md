@@ -1,6 +1,6 @@
 # 👨🏻‍🎓StudentApp
 
-This app is designed to help teenagers and adults with learning. The app has a lot of good resources to support students in any possible way.
+This app is designed to help teenagers and adults with learning. The app has a lot of good resources to support students in every possible way.
 
 ## 📥Installation
 
