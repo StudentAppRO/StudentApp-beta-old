@@ -8,6 +8,31 @@
 
 */
 
+/* StudentApp better colors */
+:root {
+  /*
+         --yellow:#f4b942;
+    --success: #97d8c4;
+ 
+    --spring-green: #6B9AC4;
+
+    --green: #4059AD;
+    */
+
+  --green: #94fbab;
+  --yellow: #f4b942;
+  --success: #97d8c4;
+  --cyan: #6b9ac4;
+  --blue: #4059ad;
+
+  --dark: #0a0c0e;
+  --white: #eff2f1;
+  --gray: #505050;
+  --lite-gray: #888888;
+  --dark-gray: #18191d;
+  --transparent: rgba(0, 0, 0, 0);
+}
+
 
 body,
 h1,
@@ -360,4 +385,163 @@ input:-internal-autofill-selected {
   z-index: 99;
   background: url("../images/green-loading.gif") center no-repeat rgba(255, 255, 255, .15);
   backdrop-filter:  blur(10px);
+}
+
+/* edited bootstrap ========================================= */
+
+	
+/* .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--green);
+} */
+
+	/* .btn:focus,
+.btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+} */
+
+/* .btn-success:hover {
+    background-color: var(--dark) !important;
+    color: var(--green);
+} */
+/* .btn-success:focus,
+.btn-success.focus {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+    box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
+.btn-success.disabled,
+.btn-success:disabled {
+    color: var(--dark);
+    background-color: var(--green);
+    border-color: #000000; 
+  }
+*/
+.show > .btn-success.dropdown-toggle {
+  color: var(--dark);
+  /* background-color: var(--green); */
+  border-color: #000000;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: var(--grey);
+  opacity: 1;
+}
+
+select.form-control:focus::-ms-value {
+  color: #495057;
+  background-color: #000;
+}
+
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.btn-success:not(:disabled):not(.disabled).active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+  /* box-shadow: 0 0 0 0.2rem var(--green); */
+  background-color: var(--dark-gray);
+  color: var(--white);
+  border-radius: 1rem;
+  border-width: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: black;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+  color: var(--light);
+}
+.card-title-green {
+  margin-bottom: 0.75rem;
+  color: var(--green);
+}
+.card-header {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  /* border-radius: 1rem; */
+}
+
+.card-header:first-child {
+  border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
+}
+
+.card-footer:last-child {
+  border-radius: 0 0 calc(1rem - 1px) calc(1rem - 1px);
+}
+
+.text-white {
+  margin-top: 10px;
+  color: #fff !important;
+} 
+	
+.text-dark {
+  color: var(--dark) !important;
+}
+a.text-dark:hover,
+a.text-dark:focus {
+  color: var(--dark) !important;
+}
+
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+* used to design dark mode switch
+*/
+/* toggle switches with bootstrap default colors */
+.custom-control-input-success:checked ~ .custom-control-label::before {
+  background-color: var(--cyan) !important;
+  border-color: var(--dark) !important;
+}
+.custom-control-input-danger:checked ~ .custom-control-label::before {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+}
+.custom-control-input-warning:checked ~ .custom-control-label::before {
+  background-color: #ffc107 !important;
+  border-color: #ffc107 !important;
+}
+.custom-control-input-info:checked ~ .custom-control-label::before {
+  background-color: #17a2b8 !important;
+  border-color: #17a2b8 !important;
+}
+/* Large toggl switches */
+.custom-switch-lg .custom-control-label::before {
+  left: -2.25rem;
+  width: 3rem;
+  border-radius: 1.5rem;
+}
+.custom-switch-lg .custom-control-label::after {
+  top: calc(0.25rem + 3px);
+  left: calc(-2.25rem + 4px);
+  width: calc(1.5rem - 6px);
+  height: calc(1.5rem - 6px);
+  border-radius: 1.5rem;
+}
+.custom-switch-lg .custom-control-input:checked ~ .custom-control-label::after {
+  transform: translateX(1.4rem);
+}
+.custom-switch-lg .custom-control-label::before {
+  height: 1.5rem;
+}
+.custom-switch-lg .custom-control-label {
+  padding-left: 1.5rem;
+  line-height: 1.7rem;
 }
