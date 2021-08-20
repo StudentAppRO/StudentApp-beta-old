@@ -1,5 +1,9 @@
 let start = performance.now();
 
+/*
+  Biggest JS file, js big bro, here are all functions
+*/
+
 window.onload = function () {
   /**
    * These functions/code

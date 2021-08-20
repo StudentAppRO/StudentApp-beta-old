@@ -1,8 +1,14 @@
 /*
  @Author: theCYBERbro
- @Website: --
+ @Website: Student App
  @Version: 1.0
+
+  This CSS code makes the page look better than you imagined and 
+  overrites Bootstrap code
+
 */
+
+
 body,
 h1,
 h2,
@@ -22,14 +28,6 @@ h6,
 /* background color */
 body {
   background-color: var(--white);
-  /* background-image: linear-gradient(to bottom right, white, rgb(196, 196, 196)); */
-  /* background-image: linear-gradient(to bottom right,  var(--col1), var(--col2) ); */
-  /* background-image: linear-gradient(to bottom right,  #BBFBAC, #66E3AE, #00C8B8, #00ABC4, #008BCA, #006AC2); */
-  /* background-image: linear-gradient(  white, rgb(212, 212, 212) ); */
-  /* background-image: linear-gradient(  white, rgba(255, 233, 213, 0.938) ); */
-  /* background-image: linear-gradient(  white, #e6ffee ); */
-  /* background-image: linear-gradient(  white, #e6ffee ); */
-  
 }
 
 main{
@@ -42,14 +40,11 @@ main{
 /* dark mode switch */
 /* enter here all css to be changed when its dark mode */
 .dark-mode{
-  /* background-image: linear-gradient(to bottom right, var(--pink), var(--blue) ); */
-  /* background-image: linear-gradient(to bottom right, var(--success), var(--spring-green) ); */
   background-image: linear-gradient(to bottom right,#999999, #777777);
-
-
 }
 
 /* custom ============================= */
+/* navbar active tab */
 .active{
   font-weight: bold;
 }
@@ -58,7 +53,7 @@ footer{
   position:fixed;
   bottom:0;
 } */
-
+/* default text/link color */
 a{
   color: var(--black);
 }
@@ -72,9 +67,7 @@ a{
   flex-shrink: none;
 
 }
-
-
-
+/* changed default navbar toggle icon  */
 .navbar-light .navbar-toggler-icon {
   background-image: url("../images/menu_button.png");
 }
@@ -137,7 +130,7 @@ a.nav-link, p.nav-link{
   margin: 0rem 0.75rem 0rem 0.75rem;
   /* mergin right and left 1rem */
 }
-
+/* this is a card too, just different, dont be racist */
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
@@ -256,7 +249,6 @@ a.nav-link, p.nav-link{
   border-radius: 1rem;
 }
 
-
 img {
   padding: 2%;
   display: block;
@@ -333,16 +325,6 @@ h5 {
   color: var(--dark-gray);
   opacity: 1;
 }
-/* .form-control:active,
-.form-control:focus,
-.form-control:focus:active {
-    background-color: #96d3ec!important;
-    border-color: #96d3ec;
-    color: white;
-} */
-
-/*margin right/ left  20% on pc only*/
-
 
 .form-control:-moz-focusring {
   color: transparent;
@@ -361,21 +343,12 @@ input:placeholder-shown {
   background-color: var(--transparent) !important;
 }
 
-/* .form-control:focus {
-  color: var(--dark);
-  background-color: var(--transparent);
-  border-color: #ffffff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem var(--green);
-} */
-
 input:-internal-autofill-selected {
   appearance: menulist-button;
   background-color: var(--gray) !important;
   background-image: none !important;
   /* color: -internal-light-dark(white, var(--gray)) !important; */
 }
-
 
 /* loading gif  ============================================ */
 .se-pre-con {
