@@ -242,7 +242,7 @@ a.nav-link, p.nav-link{
 
 .btn-success:hover{
   background-color: var(--cyan);
-   color: var(--gray) !important;
+   color: var(--dark-gray) !important;
   border-color: var(--dark-gray);   
 }
 
