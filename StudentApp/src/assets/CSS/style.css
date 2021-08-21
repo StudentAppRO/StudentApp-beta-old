@@ -161,7 +161,8 @@ a.nav-link, p.nav-link{
   margin-bottom: 2rem;
   /* background-color: #e9ecef; */
   border-radius: 1rem;
-  box-shadow: 3px 3px 5px var(--gray);
+  border: 1px solid rgba(0,0,0,.225)!important;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.01)!important;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
   margin: 0rem 1rem 2rem 1rem;
@@ -191,13 +192,10 @@ a.nav-link, p.nav-link{
   background-color: var(--gray);
   background-color: rgba(255, 255, 255, .15);  
   backdrop-filter: blur(5px);
-  /* background-image: linear-gradient(var(--blue), var(--pink)); */
-
   background-clip: border-box;
-  /* border: 1px solid rgba(0, 0, 0, 0.125); */
-  /* border: 1px solid var(--lime-green); */
-  box-shadow: 3px 3px 5px var(--gray);
-  
+  /* box-shadow: 3px 3px 5px var(--gray); */
+  border: 1px solid rgba(0,0,0,.225)!important;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.01)!important;
   border-radius: 1rem;
 }
 
@@ -233,8 +231,7 @@ a.nav-link, p.nav-link{
 /* buttons ============================================*/
 /* old btn succes */
 .animated-btn{
-  animation: btnglow 2.5s infinite;
-  /* transition: 0.5s; */
+  transition: all 0.5s;
   background-size: 200% auto;
   background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);  
 }
@@ -247,21 +244,6 @@ a.nav-link, p.nav-link{
   background-color: var(--cyan);
    color: var(--gray) !important;
   border-color: var(--dark-gray);   
-}
-
-/* TODO: fix animation */
-@keyframes btnglow {
-  /* 0%   {background-color: var(--transparent);}
-  50%   {background-color: var(--success);}
-  100%   {background-color: var(--transparent);} */
-  0% {
-    background-position: right center; /* change the direction of the change here */
-  }
-  100% {
-    background-position: initial; 
-
-  }
- 
 }
 
 .btn-success {
