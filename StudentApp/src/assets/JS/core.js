@@ -42,14 +42,6 @@ toggle()
 toggleButton.addEventListener('change', toggle)
 
 
-//TODO testing dont use
-
-function getFragment(id, path) {
-  $(document).ready(function () {
-    $(id).load(path);
-  });
-}
-
 function urlParams() {
   //url param---------
   const queryString = window.location.search;
