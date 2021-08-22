@@ -136,6 +136,15 @@ function refreshDate() {
   mytime = setTimeout("getCurrentDate()", refresh);
 }
 
+// Disable right click on web page
+$("html").on("contextmenu",function(e){
+  return false;
+});
+// Disable cut, copy and paste on web page
+$('html').bind('cut copy paste', function (e) {
+   e.preventDefault();
+});
+
 //outputs core.js performance miliseconds
 let end = performance.now();
 console.log(end - start + " miliseconds took to execute core.js");
