@@ -33,7 +33,6 @@
   --transparent: rgba(0, 0, 0, 0);
 }
 
-
 body,
 h1,
 h2,
@@ -55,22 +54,22 @@ body {
   background-color: var(--white);
 }
 
-main{
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 85vh;
 }
 
 /* dark mode switch */
 /* enter here all css to be changed when its dark mode */
-.dark-mode{
-  background-image: linear-gradient(to bottom right,#999999, #777777);
+.dark-mode {
+  background-image: linear-gradient(to bottom right, #999999, #777777);
 }
 
 /* custom ============================= */
 /* navbar active tab */
-.active{
+.active {
   font-weight: bold;
 }
 /* 
@@ -79,7 +78,7 @@ footer{
   bottom:0;
 } */
 /* default text/link color */
-a{
+a {
   color: var(--black);
 }
 
@@ -90,7 +89,6 @@ a{
 
 #sticky-footer {
   flex-shrink: none;
-
 }
 /* changed default navbar toggle icon  */
 .navbar-light .navbar-toggler-icon {
@@ -101,7 +99,8 @@ a{
   border: none;
 }
 
-a.nav-link, p.nav-link{
+a.nav-link,
+p.nav-link {
   text-align: right;
   margin-bottom: 0;
 }
@@ -111,15 +110,14 @@ a.nav-link, p.nav-link{
   background-color: var(--green) !important;
 }
 
-.bg-glass{
-  background-color: rgba(255, 255, 255, .15);  
+.bg-glass {
+  background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
 }
 
 .bg-green-gradient {
   /* background-color: var(--green) !important; */
   background-image: linear-gradient(var(--blue), var(--pink));
-
 }
 
 .bg-dark {
@@ -129,29 +127,26 @@ a.nav-link, p.nav-link{
 /* cards ============================================*/
 /* literally all cards */
 
-.card-btn{
+.card-btn {
   margin-right: 0.5rem;
   margin-left: 0.5rem;
 }
 
 /* on click: */
-.card-btn:active{
+.card-btn:active {
   background-color: var(--lite-gray) !important;
   box-shadow: 3px 3px 5px var(--dark) !important;
-
 }
 
-.cardx{ 
-  
-  padding: 0px;
+.cardx {
+  padding: 0.5rem;
   margin-bottom: 1rem;
   /* margin: 0.5rem 0rem 0.5rem 1rem; */
   display: block;
   float: left;
-  
 }
 /* this is the same as mr-2 ml-2 seted to next div inside the cardzzzzzzz*/
-.cardx > div{
+.cardx > div {
   margin: 0rem 0.75rem 0rem 0.75rem;
   /* mergin right and left 1rem */
 }
@@ -161,8 +156,8 @@ a.nav-link, p.nav-link{
   margin-bottom: 2rem;
   /* background-color: #e9ecef; */
   border-radius: 1rem;
-  border: 1px solid rgba(0,0,0,.225)!important;
-  box-shadow: 0 .125rem .25rem rgba(0,0,0,.01)!important;
+  border: 1px solid rgba(0, 0, 0, 0.225) !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.01) !important;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
   margin: 0rem 1rem 2rem 1rem;
@@ -188,14 +183,14 @@ a.nav-link, p.nav-link{
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-
+  padding: 0.5rem;
   background-color: var(--gray);
-  background-color: rgba(255, 255, 255, .15);  
+  background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
   background-clip: border-box;
   /* box-shadow: 3px 3px 5px var(--gray); */
-  border: 1px solid rgba(0,0,0,.225)!important;
-  box-shadow: 0 .125rem .25rem rgba(0,0,0,.01)!important;
+  border: 1px solid rgba(0, 0, 0, 0.225) !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.01) !important;
   border-radius: 1rem;
 }
 
@@ -213,9 +208,9 @@ a.nav-link, p.nav-link{
   background-clip: border-box;
 }
 
-
 /* columns ============================================*/
-.col-md-4 .col-lg-6, .col-6 {
+.col-md-4 .col-lg-6,
+.col-6 {
   /* padding: 0 15px 0 15px; */
   padding: 0px;
   margin-bottom: 1rem;
@@ -230,20 +225,25 @@ a.nav-link, p.nav-link{
 
 /* buttons ============================================*/
 /* old btn succes */
-.animated-btn{
+.animated-btn {
   transition: all 0.5s;
   background-size: 200% auto;
-  background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);  
+  background-image: linear-gradient(
+    to right,
+    #a1c4fd 0%,
+    #c2e9fb 51%,
+    #a1c4fd 100%
+  );
 }
 
 .animated-btn:hover {
   background-position: right center; /* change the direction of the change here */
 }
 
-.btn-success:hover{
+.btn-success:hover {
   background-color: var(--cyan);
-   color: var(--dark-gray) !important;
-  border-color: var(--dark-gray);   
+  color: var(--dark-gray) !important;
+  border-color: var(--dark-gray);
 }
 
 .btn-success {
@@ -278,7 +278,7 @@ h5 {
   color: var(--dark);
 }
 
-.link-no-dec{
+.link-no-dec {
   text-decoration: none !important;
 }
 /* loading screen css ============================================*/
@@ -331,7 +331,7 @@ h5 {
   background-color: var(--transparent);
   background-clip: padding-box;
   border: 1px solid var(--dark);
-  border-radius: 0.25rem;  
+  border-radius: 0.25rem;
 }
 
 .form-control::placeholder {
@@ -360,10 +360,12 @@ input:-internal-autofill-selected {
   appearance: menulist-button;
   background-color: var(--gray) !important;
   background-image: none !important;
-  /* color: -internal-light-dark(white, var(--gray)) !important; */
 }
 
-/* loading gif  ============================================ */
+/* media queries =============================*/
+
+
+/* loading screen  ============================================ */
 .se-pre-con {
   position: fixed;
   left: 0px;
@@ -371,14 +373,12 @@ input:-internal-autofill-selected {
   width: 100%;
   height: 100%;
   z-index: 99;
-  /* background: url("../images/green-loading.gif") center no-repeat rgba(255, 255, 255, .15); */
-  background: rgba(255, 255, 255, .15);
-  backdrop-filter:  blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
 }
 
 /* edited bootstrap ========================================= */
 
-	
 /* .form-control:focus {
     color: #495057;
     background-color: #fff;
@@ -387,7 +387,7 @@ input:-internal-autofill-selected {
     box-shadow: 0 0 0 0.2rem var(--green);
 } */
 
-	/* .btn:focus,
+/* .btn:focus,
 .btn.focus {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
@@ -476,8 +476,8 @@ select.form-control:focus::-ms-value {
 .text-white {
   margin-top: 10px;
   color: #fff !important;
-} 
-	
+}
+
 .text-dark {
   color: var(--dark) !important;
 }
@@ -485,7 +485,6 @@ a.text-dark:hover,
 a.text-dark:focus {
   color: var(--dark) !important;
 }
-
 
 /*
 *
