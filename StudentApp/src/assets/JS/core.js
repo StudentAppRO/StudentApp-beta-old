@@ -136,28 +136,6 @@ function refreshDate() {
   mytime = setTimeout("getCurrentDate()", refresh);
 }
 
-//FIXME
-function getUserLocation() {
-  var API_KEY = "d4ee10122f91777258657df189f1bf7f21ae00a6a4b3ae6b2d3d750a";
-  var requestUrl = "https://api.ipdata.co?api-key=" + API_KEY;
-
-  //documentation:
-  //https://jsfiddle.net/ipdata/6wtf0q4g/922/
-  $.ajax({
-    url: requestUrl,
-    type: "GET",
-    success: function (json) {
-      //var img = "";
-      document.getElementById("userLocation").innerHTML =
-        "🌍" + json.country_name;
-      console.log("My country is: " + json.country_name);
-    },
-    error: function (err) {
-      console.log("Request failed, error= " + err);
-    },
-  });
-}
-
 //outputs core.js performance miliseconds
 let end = performance.now();
 console.log(end - start + " miliseconds took to execute core.js");
