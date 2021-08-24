@@ -197,9 +197,13 @@ p.nav-link {
 	backdrop-filter: blur(5px);
 	background-clip: border-box;
 	/* box-shadow: 3px 3px 5px var(--gray); */
-	border: none !important;
+	border: 1px solid rgba(0, 0, 0, 0.125);
 	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.01) !important;
 	border-radius: 1rem;
+}
+
+.acc-card{
+	border: none !important;
 }
 
 .card-blank {
@@ -471,10 +475,6 @@ select.form-control:focus::-ms-value {
 	background-color: transparent;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 	/* border-radius: 1rem; */
-}
-
-#accordian .card {
-	border: none !important;
 }
 
 .card-header:first-child {
