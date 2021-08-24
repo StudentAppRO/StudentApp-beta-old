@@ -67,11 +67,16 @@ main {
   background-image: linear-gradient(to bottom right, #999999, #777777);
 }
 
+.container {
+  background: #f3f3f3;
+}
+
 /* custom ============================= */
 /* navbar active tab */
 .active {
   font-weight: bold;
 }
+
 /* 
 footer{
   position:fixed;
@@ -90,6 +95,7 @@ a {
 #sticky-footer {
   flex-shrink: none;
 }
+
 /* changed default navbar toggle icon  */
 .navbar-light .navbar-toggler-icon {
   background-image: url("../images/menu_button.png");
@@ -145,11 +151,13 @@ p.nav-link {
   display: block;
   float: left;
 }
+
 /* this is the same as mr-2 ml-2 seted to next div inside the cardzzzzzzz*/
 .cardx > div {
   margin: 0rem 0.75rem 0rem 0.75rem;
   /* mergin right and left 1rem */
 }
+
 /* this is a card too, just different, dont be racist */
 .jumbotron {
   padding: 2rem 1rem;
@@ -167,6 +175,7 @@ p.nav-link {
   margin-top: 1rem;
   min-height: 180px !important;
 }
+
 .card-body {
   padding: 2%;
 }
@@ -184,12 +193,11 @@ p.nav-link {
   min-width: 0;
   word-wrap: break-word;
   padding: 0.5rem;
-  background-color: var(--gray);
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: transparent;
   backdrop-filter: blur(5px);
   background-clip: border-box;
   /* box-shadow: 3px 3px 5px var(--gray); */
-  border: 1px solid rgba(0, 0, 0, 0.225) !important;
+  border: none !important;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.01) !important;
   border-radius: 1rem;
 }
@@ -221,6 +229,7 @@ p.nav-link {
 .col-12 {
   padding: 0px;
 }
+
 /* row ==================*/
 
 /* buttons ============================================*/
@@ -237,7 +246,8 @@ p.nav-link {
 }
 
 .animated-btn:hover {
-  background-position: right center; /* change the direction of the change here */
+  background-position: right center;
+  /* change the direction of the change here */
 }
 
 .btn-success:hover {
@@ -253,6 +263,7 @@ p.nav-link {
   font-weight: 600;
   border-radius: 1rem;
 }
+
 /* new btn */
 .btn-success {
   color: var(--dark);
@@ -276,11 +287,13 @@ h3,
 h4,
 h5 {
   color: var(--dark);
+  margin: 0;
 }
 
 .link-no-dec {
   text-decoration: none !important;
 }
+
 /* loading screen css ============================================*/
 
 .no-js #loader {
@@ -397,6 +410,7 @@ input:-internal-autofill-selected {
   border-color: var(--dark);
   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
 }
+
 .btn-success.disabled,
 .btn-success:disabled {
   color: var(--dark);
@@ -446,16 +460,23 @@ select.form-control:focus::-ms-value {
   margin-bottom: 0.75rem;
   color: var(--light);
 }
+
 .card-title-green {
   margin-bottom: 0.75rem;
   color: var(--green);
 }
+
 .card-header {
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  /*padding: 0.75rem 1.25rem;*/
+  /*margin-bottom: 0;*/
+  margin: 0 0.3rem;
+  background-color: transparent;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   /* border-radius: 1rem; */
+}
+
+#accordian .card {
+  border: none !important;
 }
 
 .card-header:first-child {
@@ -474,6 +495,7 @@ select.form-control:focus::-ms-value {
 .text-dark {
   color: var(--dark) !important;
 }
+
 a.text-dark:hover,
 a.text-dark:focus {
   color: var(--dark) !important;
@@ -491,24 +513,29 @@ a.text-dark:focus {
   background-color: var(--cyan) !important;
   border-color: var(--dark) !important;
 }
+
 .custom-control-input-danger:checked ~ .custom-control-label::before {
   background-color: #dc3545 !important;
   border-color: #dc3545 !important;
 }
+
 .custom-control-input-warning:checked ~ .custom-control-label::before {
   background-color: #ffc107 !important;
   border-color: #ffc107 !important;
 }
+
 .custom-control-input-info:checked ~ .custom-control-label::before {
   background-color: #17a2b8 !important;
   border-color: #17a2b8 !important;
 }
+
 /* Large toggl switches */
 .custom-switch-lg .custom-control-label::before {
   left: -2.25rem;
   width: 3rem;
   border-radius: 1.5rem;
 }
+
 .custom-switch-lg .custom-control-label::after {
   top: calc(0.25rem + 3px);
   left: calc(-2.25rem + 4px);
@@ -516,12 +543,15 @@ a.text-dark:focus {
   height: calc(1.5rem - 6px);
   border-radius: 1.5rem;
 }
+
 .custom-switch-lg .custom-control-input:checked ~ .custom-control-label::after {
   transform: translateX(1.4rem);
 }
+
 .custom-switch-lg .custom-control-label::before {
   height: 1.5rem;
 }
+
 .custom-switch-lg .custom-control-label {
   padding-left: 1.5rem;
   line-height: 1.7rem;
