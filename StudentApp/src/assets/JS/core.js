@@ -18,7 +18,7 @@ window.onload = function () {
 
 $(window).load(function () {
   // Animate loader off screen
-  $('.loading').removeClass('loading')
+  $(".se-pre-con").fadeOut("slow");
 });
 
 //dark mode switch
