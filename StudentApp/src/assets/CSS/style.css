@@ -15,8 +15,6 @@
     --success: #97d8c4;
     --cyan: #6b9ac4;
     --blue: #4059ad;
-    --loading: #a1a1a1;
-    --loading-bar: #dddddd;
     --text: #0a0c0e;
     --content-bg: #eff2f1;
     --card-border: #d1d4d3;
@@ -33,16 +31,20 @@
     --success: #97d8c4;
     --cyan: #6b9ac4;
     --blue: #4059ad;
-    --loading: #1a1a1a;
-    --loading-bar: #333333;
     --text: #f1f1f1;
-    --body-bg: #111111;
+    --body-bg: #0D1117;
     --card-border: #ffffff;
-    --content-bg: #171310;
+    --content-bg: #161B22;
     --gray: #505050;
     --lite-gray: #888888;
     --transparent: rgba(0, 0, 0, 0);
 }
+
+/* 
+#0D1117
+#161B22
+#21262D
+*/
 
 body,
 h1,
@@ -163,7 +165,7 @@ p.nav-link {
 .jumbotron {
     padding: 2rem 1rem;
     border-radius: 1rem;
-    border: 1px solid var(--card-border) !important;
+    /* border: 1px solid var(--card-border) !important; */
     margin: 0rem 1rem 2rem 1rem;
 }
 
@@ -240,6 +242,10 @@ p.nav-link {
             #a1c4fd 100%);
 }
 
+.btn-lg{
+    color: black !important;
+}
+
 .animated-btn:hover {
     background-position: right center;
     /* change the direction of the change here */
@@ -248,7 +254,7 @@ p.nav-link {
 .btn-success {
     color: var(--text);
     background-color: rgba(255, 255, 255, 0);
-    border-color: #000000;
+    border-color: var(--text);
     font-weight: 600;
     border-radius: 1rem;
 }
@@ -259,15 +265,6 @@ p.nav-link {
     border-color: var(--text);
 }
 
-/* new btn */
-/* 
-.btn-success {
-    color: var(--text);
-    background-color: rgba(255, 255, 255, 0);
-    border-color: #000000;
-    font-weight: 600;
-    border-radius: 1rem;
-} */
 
 img {
     padding: 2%;
@@ -336,19 +333,18 @@ h5 {
 
 .form-control {
     display: block;
-    width: 100%;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 10px;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--text);
-    background-color: var(--transparent);
-    background-clip: padding-box;
-    border-bottom: 1px solid var(--text);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
+	width: 100%;
+	height: calc(1.5em + 0.75rem + 2px);
+	/* padding: 0.375rem 0.75rem; */
+	padding: 10px 10px 10px 10px;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--dark);
+	background-color: var(--transparent);
+	background-clip: padding-box;
+	border: 1px solid var(--dark);
+	border-radius: 0.25rem;
 }
 
 .form-control::placeholder {
@@ -410,7 +406,7 @@ input:-internal-autofill-selected {
 .show>.btn-success.dropdown-toggle {
     color: var(--text);
     background-color: var(--cyan);
-    border-color: #000000;
+    border-color: var(--text);
 }
 
 .form-control:disabled,
