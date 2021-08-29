@@ -114,9 +114,7 @@ a {
 }
 
 /* changed default navbar toggle icon  */
-.navbar-light .navbar-toggler-icon {
-    background-image: url("../images/menu_button.png");
-}
+
 
 .navbar-toggler {
     border: none;
