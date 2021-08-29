@@ -15,10 +15,10 @@
     --success: #97d8c4;
     --cyan: #6b9ac4;
     --blue: #4059ad;
-    --text: #0a0c0e;
-    --content-bg: #eff2f1;
+    --text: #222;
+    --content-bg: #fafafa;
     --card-border: #d1d4d3;
-    --body-bg: #e9ecef;
+    --body-bg: #E6E6E6;
     --gray: #505050;
     --lite-gray: #888888;
     --transparent: rgba(0, 0, 0, 0);
@@ -296,7 +296,7 @@ h5 {
 	top: 0px;
 	width: 100%;
 	height: 100%;
-	z-index: 99;
+	z-index: 101;
 	background: rgba(255, 255, 255, 0.15);
 	backdrop-filter: blur(10px);
 }
