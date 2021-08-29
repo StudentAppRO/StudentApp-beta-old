@@ -20,7 +20,7 @@ $(window).load(function () {
   // Animate loader off screen
   $(".se-pre-con").fadeOut("slow");
 });
-
+$('.toggler').click(()=>{$('.toggler').toggleClass('open')})
 //dark mode switch
 ///TODO
 const toggleButton = document.querySelector("#darkModeSwitch")

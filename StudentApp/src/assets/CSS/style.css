@@ -113,6 +113,58 @@ a {
     flex-shrink: none;
 }
 
+.navbar-toggler {
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.toggler {
+    height: .1rem;
+    width: 1.3rem;
+    background: var(--text);
+    border-radius: 5px;
+    position: absolute;
+    transition: all .3s;
+}
+
+.toggler::before,
+.toggler::after {
+    content: "";
+    height: .1rem;
+    width: 1.3rem;
+    background: var(--text);
+    border-radius: 5px;
+    display: block;
+    transition: all .3s;
+    position: absolute;
+    }
+
+.toggler::before {
+    transform: translateY(-.5rem);
+}
+
+.toggler::after {
+    transform: translateY(.5rem);
+}
+
+.open.toggler {
+    transform: translateX(-1rem);
+    background: transparent;
+}
+
+.open.toggler::before {
+    transform: translateY(0) translateX(1rem) rotate(45deg);
+}
+
+.open.toggler::after {
+    transform: translateY(0) translateX(1rem) rotate(-45deg);
+}
+
 /* changed default navbar toggle icon  */
 
 
