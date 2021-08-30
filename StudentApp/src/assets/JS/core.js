@@ -92,50 +92,6 @@ function updateCurrentYear() {
   document.getElementById("year").innerHTML = new Date().getFullYear();
 }
 
-function getCurrentDate() {
-  // var curDate = new Date();
-  // document.getElementById("date").innerHTML = curDate.toString();
-  var x = new Date();
-
-  // date part ///
-  var month = x.getMonth() + 1;
-  var day = x.getDate();
-  var year = x.getFullYear();
-  if (month < 10) {
-    month = "0" + month;
-  }
-  if (day < 10) {
-    day = "0" + day;
-  }
-  var date = month + "." + day + "." + year;
-
-  // time part //
-  var hour = x.getHours();
-  var minute = x.getMinutes();
-  var second = x.getSeconds();
-  if (hour < 10) {
-    hour = "0" + hour;
-  }
-  if (minute < 10) {
-    minute = "0" + minute;
-  }
-  if (second < 10) {
-    second = "0" + second;
-  }
-  var time = hour + ":" + minute + ":" + second;
-
-  document.getElementById("time").innerHTML = time;
-  document.getElementById("date").innerHTML = date;
-
-  //this basically makes the function to repeat itself every 1s
-  refreshDate();
-}
-
-function refreshDate() {
-  var refresh = 1000; // Refresh rate in milli seconds
-  mytime = setTimeout("getCurrentDate()", refresh);
-}
-
 // Disable right click on web page
 $("html").on("contextmenu",function(e){
   return false;

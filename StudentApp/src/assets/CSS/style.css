@@ -31,7 +31,7 @@
     --success: #97d8c4;
     --cyan: #6b9ac4;
     --blue: #4059ad;
-    --text: #f1f1f1;
+    --text: #e2e2e2;
     --body-bg: #0D1117;
     --card-border: #ffffff;
     --content-bg: #161B22;
@@ -39,12 +39,6 @@
     --lite-gray: #888888;
     --transparent: rgba(0, 0, 0, 0);
 }
-
-/* 
-#0D1117
-#161B22
-#21262D
-*/
 
 body,
 h1,
