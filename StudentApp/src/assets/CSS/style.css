@@ -22,6 +22,8 @@
     --gray: #505050;
     --lite-gray: #888888;
     --transparent: rgba(0, 0, 0, 0);
+    /* for logo */
+    --logo-filter: none;
 }
 
 /* colors to be changed in dark mode */
@@ -38,6 +40,8 @@
     --gray: #505050;
     --lite-gray: #888888;
     --transparent: rgba(0, 0, 0, 0);
+    /* for logo */
+    --logo-filter: brightness(0) invert(1);
 }
 
 /* dark theme transition animation */
@@ -103,6 +107,9 @@ a {
     background: var(--content-bg);
 }
 
+.navbar-brand img {
+    filter: var(--logo-filter);
+}
 
 #navbarHeader {
     background-color: var(--text);
