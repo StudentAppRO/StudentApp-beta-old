@@ -45,11 +45,11 @@ function toggle() {
     var isDark = localStorage.getItem('dark') == 'true'
     if (!isDark) {
         body.classList = ['dark-mode']
-        toggleButton.innerHTML = '<i class="fa fa-sun"></i>'
+        toggleButton.innerHTML = '<i class="fa fa-sun-o" aria-hidden="true"></i>'
 
     } else {
         body.classList = ['']
-        toggleButton.innerHTML = '<i class="bi bi-moon-stars"></i>'
+        toggleButton.innerHTML = '<i class="fa fa-moon-o" aria-hidden="true"></i>'
     }
     localStorage.setItem('dark', !isDark)
 }
@@ -122,7 +122,6 @@ function urlParams() {
 }
 
 function updateCurrentYear() {
-
     document.getElementById("year").innerHTML = new Date().getFullYear();
 }
 
