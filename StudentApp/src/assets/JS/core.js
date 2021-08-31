@@ -34,10 +34,10 @@ var isAlreadyDark = localStorage.getItem('dark') == 'true'
 function loadTheme() {
     if (isAlreadyDark) {
         body.classList = ['dark-mode']
-        toggleButton.innerHTML = '<i class="fa fa-sun"></i>'
+        toggleButton.innerHTML = '<i class="fa fa-sun-o"></i>'
     } else {
         body.classList = ['']
-        toggleButton.innerHTML = '<i class="bi bi-moon-stars"></i>'
+        toggleButton.innerHTML = '<i class="fa fa-moon-o"></i>'
     }
 }
 
