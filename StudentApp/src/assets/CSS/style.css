@@ -101,6 +101,9 @@ a {
     width: 100%;
     z-index: 100;
 }
+.t-align{
+    text-align: justify;
+}
 
 .navbar,
 .navbar .container {
