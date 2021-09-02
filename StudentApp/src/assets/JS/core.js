@@ -20,8 +20,10 @@ $(window).load(function() {
     // Animate loader off screen
     $(".se-pre-con").fadeOut("slow");
 });
-$('.toggler').click(() => {
-    $('.toggler').toggleClass('open')
+
+$('.navbar-toggler').click(() => {
+    if (!$('.collapsing').length && !$('.show').length) $('.toggler').addClass('open')
+    else if ($('.show').length) $('.toggler').removeClass('open')
 })
 //dark mode switch
 ///TODO
