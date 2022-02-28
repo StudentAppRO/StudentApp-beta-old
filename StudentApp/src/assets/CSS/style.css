@@ -28,18 +28,18 @@
 
 /* colors to be changed in dark mode */
 .dark-mode {
+    --text: #e2e2e2;
+    --body-bg: #0D1117;
+    --content-bg: #161B22;
+    --card-border: #ffffff;
+    --transparent: rgba(0, 0, 0, 0);
+    --lite-gray: #888888;
+    --gray: #505050;
     --green: #94fbab;
     --yellow: #f4b942;
     --success: #97d8c4;
-    --cyan: #6b9ac4;
     --blue: #4059ad;
-    --text: #e2e2e2;
-    --body-bg: #0D1117;
-    --card-border: #ffffff;
-    --content-bg: #161B22;
-    --gray: #505050;
-    --lite-gray: #888888;
-    --transparent: rgba(0, 0, 0, 0);
+    --cyan: #6b9ac4;
     /* for logo */
     --logo-filter: brightness(0) invert(1);
 }
@@ -82,7 +82,7 @@ main {
     background: var(--body-bg);
 }
 
-*/
+
 
 /* custom ============================= */
 /* navbar active tab */
