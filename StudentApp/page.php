@@ -116,6 +116,7 @@ include "includes/head.php";
 
 
             </div>
+            <br>
             <div class="row justify-content-center mt-3">
                 <div class="col-3">
                     <div class="d-flex flex-wrap align-items-center">

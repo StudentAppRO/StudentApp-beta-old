@@ -136,8 +136,6 @@ include "includes/head.php";
                     </div>
                 </div>
                 ';
-
-
                 ?>
                 <!-- Large modal -->
                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#id">Large modal</button> -->
