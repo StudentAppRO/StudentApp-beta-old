@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no,  user-scalable=no" />
+
+    <title>Student App</title>
+    <link rel="shortcut icon" href="src/assets/images/logo/logo_mini.png" />
+
+    <!-- Ubuntu font -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+
+    <!--CSS-->
+    <!-- <link rel="stylesheet" href="src/assets/CSS/bootstrap.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/assets/CSS/style.css" />
+
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- Google adds: (currently off)-->
+    <!-- <script data-ad-client="ca-pub-1451725678972854" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+</head>
+
+<body>
+
+    <!-- loading screen -->
+    <div class="se-pre-con"></div>
+
+    <!--Content start-->
+    <header>
+
+
+        <nav class="navbar navbar-fixed-top navbar-expand-sm shadow-sm ">
+            <div class="container">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="src/assets/images/logo/logo_mini.png" class="img-fluid" width="30" height="30" />
+                    <strong class="text-dark">StudentApp</strong>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <!--<p>
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </p>-->
+                    <div class="toggler"></div>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index.html"> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="app.html">Lecții</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link " href="contact_us.html">Contacte</a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <p id="theme-toggle" class=" nav-link custom-control custom-switch">
+
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main role="main">
+
+        <!-- Form contacteaza-ne -->
+        <div class="row" style="margin: auto;">
+
+
+            <div class="contact_form my-5">
+                <div class="col contact_form_header">
+                    <div class="row">
+                        <div class="card col-10 col-md-8 col-lg-6 mx-auto">
+
+                            <br>
+                            <div class="loading mx-auto">
+                                <h2>Contactează-ne</h2>
+                                <br>
+                                <p>Folosind acest formular ne veți ajuta să îmbunătățim aplicația. Puteți sugera câteva
+                                    modificări,
+                                    raportați erori ca să ajutați alți elevi.</p>
+                                <br>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="container form-top ">
+
+                                <div class="form_in loading">
+                                    <div class="panel panel-danger">
+                                        <div class="panel-body">
+
+                                            <form id='contact' name='contact' method='POST' data-netlify-recaptcha="true" data-netlify="true" netlify-honeypot="bot-field" action="/StudentApp/success.html/?success=true">
+                                                <!-- Currently with no action="/StudentApp/success.html" tag in <form> -->
+                                                <input type='hidden' name='form-name' value='contact' />
+                                                <div class="form-group">
+                                                    <!-- <label><i class="fa fa-user" aria-hidden="true"></i> Name</label> -->
+                                                    <input type="text" name="name" class="form-control" placeholder="Nume">
+                                                </div>
+                                                <div class="form-group">
+                                                    <!-- <label><i class="fa fa-envelope" aria-hidden="true"></i> Email</label> -->
+                                                    <input type="email" name="email" class="form-control" placeholder="Email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <!-- <label><i class="fa fa-comment" aria-hidden="true"></i> Message</label> -->
+                                                    <textarea rows="3" name="message" class="form-control" placeholder="Mesajul dumnevoastră..."></textarea>
+                                                </div>
+                                                <!-- Recaptcha -->
+                                                <div netlify-recaptcha></div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-raised btn-block btn-success">Trimite →</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer: -->
+    <footer id="sticky-footer " class="py-4 text-dark-50">
+        <div class="container text-center">
+            <p style="font-size: small">
+                &copy;Copyright
+                <a href="#"><strong>Student App</strong></a>
+                <span id="year"></span>
+            </p>
+        </div>
+    </footer>
+
+    <!--Content end-->
+
+    <!-- JS SCRIPTS-->
+
+    <!-- JQuery and Pooper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+    <!--Cloud Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/0c6cca2128.js " crossorigin="anonymous "></script>
+
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js "></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js "></script> -->
+
+    <!-- Load core JS -->
+    <script src="src/assets/JS/core.js "></script>
+    <script>
+        updateCurrentYear();
+        urlParams();
+    </script>
+
+
+</body>
+
+</html>
