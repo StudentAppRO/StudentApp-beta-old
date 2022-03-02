@@ -1,28 +1,9 @@
 <!DOCTYPE html>
 <html lang="ro">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no,  user-scalable=no" />
-
-    <title>Student App</title>
-    <link rel="shortcut icon" href="src/assets/images/logo/logo_mini.png" />
-
-    <!-- Ubuntu font -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-
-    <!--CSS-->
-    <!-- <link rel="stylesheet" href="src/assets/CSS/bootstrap.css" /> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/assets/CSS/style.css" />
-
-    <!-- bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-    <!-- Google adds: (currently off)-->
-    <!-- <script data-ad-client="ca-pub-1451725678972854" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
-</head>
+<?php
+include "includes/head.php";
+?>
 
 <body>
 
@@ -31,50 +12,9 @@
 
     <!--Content start-->
 
-    <header>
-
-        <nav class="navbar navbar-expand-sm navbar-fixed-top shadow-sm">
-            <div class="container">
-                <a href="index.html" class="navbar-brand d-flex align-items-center">
-                    <img src="src/assets/images/logo/logo_mini.png" class="img-fluid" width="30" height="30" />
-                    <strong class="text-dark">StudentApp</strong>
-                </a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <!--<p>
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </p>-->
-                    <div class="toggler"></div>
-
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-
-
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html"> Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="app.html">Lecții</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="contact_us.html">Contacte</a>
-                        </li>
-
-                        <li class="nav-item ">
-                            <p id="theme-toggle" class=" nav-link custom-control custom-switch">
-
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-
-    </header>
+    <?php
+    include "includes/header.php";
+    ?>
 
 
     <main role="main">
@@ -87,22 +27,24 @@
                 <div class="col-12">
                     <br>
                     <div class="jumbotron bg-glass">
-                        <div class="row" style="padding: 0 15px 0 15px;">
+                        <div class="row pl-4">
                             <div class=" col-12 col-lg-6 mx-0">
                                 <h1 class="display-5">Un nou mod de a învăța!</h1>
                                 <p class="lead">Materie mișto pe înțelesul tuturor.</p>
                                 <!-- <hr class="my-4"> -->
-                                <p>Lesții liceu & subiecte bac </p>
+                                <p>Lecții liceu & subiecte bac</p>
                                 <br>
-                                <div class="text-center">
-                                    <a class="btn btn-success btn-lg animated-btn " href="app.html" role="button">
+                                <br>
+                                <br>
+                                <div class="text-left">
+                                    <a class="btn btn-success btn-lg animated-btn " href="app.php" role="button">
                                         Descoperă lecțiile</a>
                                 </div>
                                 <br><br>
                             </div>
 
                             <div class="col-12 col-lg-6 text-center mx-0">
-                                <img class="mx-auto " src="src/assets/images/landing_page.png" alt="">
+                                <img class="mx-auto" src="src/assets/images/landing_page.png" alt="">
 
                             </div>
                         </div>
@@ -241,7 +183,7 @@
 
                                 <div class=" col-12 col-md-4 col-lg-4 cardx  ">
                                     <div class="card shadow-sm">
-                                        <img src="src/assets/images/math-n.png " class="img-fluid" alt="Responsive image " />
+                                        <img src="src/assets/images/math.png " class="img-fluid" alt="Responsive image " />
                                         <div class="card-body">
                                             <div class="d-flex flex-wrap align-items-center">
                                                 <a href="page.html?page=math" class="btn btn-success btn-block">Matematica</a>
@@ -314,46 +256,7 @@
         </div>
     </main>
 
-    <!-- Footer: -->
-    <footer id="sticky-footer " class="py-4 text-dark-50">
-        <div class="container text-center">
-            <p style="font-size: small">
-                &copy;Copyright
-                <a href="#"><strong>Student App</strong></a>
-                <span id="year"></span>
-            </p>
-        </div>
-    </footer>
-
-    <!--Content end-->
-
-    <!-- JS SCRIPTS-->
-
-    <!-- JQuery and Pooper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-
-    <!--Cloud Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-
-    <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/0c6cca2128.js " crossorigin="anonymous "></script>
-
-    <!-- Ajax -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js "></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js "></script> -->
-
-    <!-- Load core JS -->
-    <script src="src/assets/JS/core.js "></script>
-    <script>
-        // aboutHeaderText();
-        // getCurrentDate();
-        // getUserLocation();
-        updateCurrentYear();
-        urlParams();
-        //=====
-        // checkCookie();
-    </script>
+    <?php include "includes/footer.php"; ?>
 </body>
 
 </html>
