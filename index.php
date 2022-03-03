@@ -18,10 +18,30 @@ include "includes/head.php";
 
 
     <main role="main">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path class="waves" fill-opacity="1" d="M0,64L15,85.3C30,107,60,149,90,170.7C120,192,150,192,180,181.3C210,171,240,149,270,122.7C300,96,330,64,360,64C390,64,420,96,450,133.3C480,171,510,213,540,208C570,203,600,149,630,149.3C660,149,690,203,720,202.7C750,203,780,149,810,133.3C840,117,870,139,900,170.7C930,203,960,245,990,234.7C1020,224,1050,160,1080,133.3C1110,107,1140,117,1170,138.7C1200,160,1230,192,1260,208C1290,224,1320,224,1350,192C1380,160,1410,96,1425,64L1440,32L1440,0L1425,0C1410,0,1380,0,1350,0C1320,0,1290,0,1260,0C1230,0,1200,0,1170,0C1140,0,1110,0,1080,0C1050,0,1020,0,990,0C960,0,930,0,900,0C870,0,840,0,810,0C780,0,750,0,720,0C690,0,660,0,630,0C600,0,570,0,540,0C510,0,480,0,450,0C420,0,390,0,360,0C330,0,300,0,270,0C240,0,210,0,180,0C150,0,120,0,90,0C60,0,30,0,15,0L0,0Z"></path>
+        </svg>
+
+        <div class=" my-5 justify-content-center">
+            <div class="col-12 text-center">
+                <h1 class="typewrite" data-period="2000" data-type='[ " Student App", " Subiecte BAC"]'>
+                    Student App
+                    <span class="wrap"></span>
+                </h1>
+            </div>
+            <div class="col-12 text-center">
+                <p>Viitorul este acum</p>
+
+            </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path class="waves" fill-opacity="1" d="M0,64L15,85.3C30,107,60,149,90,170.7C120,192,150,192,180,181.3C210,171,240,149,270,122.7C300,96,330,64,360,64C390,64,420,96,450,133.3C480,171,510,213,540,208C570,203,600,149,630,149.3C660,149,690,203,720,202.7C750,203,780,149,810,133.3C840,117,870,139,900,170.7C930,203,960,245,990,234.7C1020,224,1050,160,1080,133.3C1110,107,1140,117,1170,138.7C1200,160,1230,192,1260,208C1290,224,1320,224,1350,192C1380,160,1410,96,1425,64L1440,32L1440,320L1425,320C1410,320,1380,320,1350,320C1320,320,1290,320,1260,320C1230,320,1200,320,1170,320C1140,320,1110,320,1080,320C1050,320,1020,320,990,320C960,320,930,320,900,320C870,320,840,320,810,320C780,320,750,320,720,320C690,320,660,320,630,320C600,320,570,320,540,320C510,320,480,320,450,320C420,320,390,320,360,320C330,320,300,320,270,320C240,320,210,320,180,320C150,320,120,320,90,320C60,320,30,320,15,320L0,320Z"></path>
+        </svg>
+        <hr />
         <!-- main container  -->
         <div class="container">
             <!-- Row start-->
-
 
             <div class="row">
                 <div class="col-12">
@@ -68,7 +88,7 @@ include "includes/head.php";
                                         <div class="card-header d-flex justify-content-between 
                                         align-items-center" id="headingOne">
                                             <h5>
-                                                <b> De ce StudentApp? </b>
+                                                <b> Ce este StudentApp? </b>
                                             </h5>
                                             <p>
                                                 <i class="fa fa-angle-down"></i>
@@ -78,20 +98,8 @@ include "includes/head.php";
                                     <div id="collapse1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div class="card-body">
                                             <p>
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                                                terry
-                                                richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-                                                dolor
-                                                brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                                                tempor,
-                                                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
-                                                anderson
-                                                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                                                lomo.
-                                                Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-                                                nesciunt
-                                                you probably haven't heard of them accusamus labore sustainable VHS.
+                                                StudentApp reprezinta o aplicatie web, creata cu scopul de a ajuta elevii pe parcursul anilor de liceu.
+                                                <!-- De asemenea utilizatorii se pot alatura pentru a descrie  -->
                                             </p>
                                         </div>
                                     </div>
@@ -183,10 +191,10 @@ include "includes/head.php";
 
                                 <div class=" col-12 col-md-4 col-lg-4 cardx  ">
                                     <div class="card shadow-sm">
-                                        <img src="src/assets/images/math.png " class="img-fluid" alt="Responsive image " />
+                                        <img src="src/assets/images/math.png" class="img-fluid" alt="Responsive image " />
                                         <div class="card-body">
                                             <div class="d-flex flex-wrap align-items-center">
-                                                <a href="page.html?page=math" class="btn btn-success btn-block">Matematica</a>
+                                                <a href="page.php?page=math" class="btn btn-success btn-block">Matematica</a>
                                             </div>
                                         </div>
                                     </div>
@@ -197,7 +205,7 @@ include "includes/head.php";
                                         <img src="src/assets/images/coding.png " class="img-fluid" alt="Responsive image " />
                                         <div class="card-body">
                                             <div class="d-flex flex-wrap align-items-center">
-                                                <a href="page.html?page=coding" class="btn btn-success btn-block">Informatica</a>
+                                                <a href="page.php?page=coding" class="btn btn-success btn-block">Informatica</a>
                                             </div>
                                         </div>
                                     </div>
@@ -208,7 +216,7 @@ include "includes/head.php";
                                         <img src="src/assets/images/english.png " class="img-fluid" alt="Responsive image " />
                                         <div class="card-body">
                                             <div class="d-flex flex-wrap align-items-center">
-                                                <a href="page.html?page=english" class="btn btn-success btn-block">Engleza</a>
+                                                <a href="page.php?page=english" class="btn btn-success btn-block">Engleza</a>
                                             </div>
                                         </div>
                                     </div>
@@ -216,10 +224,12 @@ include "includes/head.php";
 
                                 <div class=" col-12 col-md-4 col-lg-4 mx-auto w-100">
                                     <h5 class="d-flex flex-wrap align-items-center mb-3">
-                                        <a href="app.html" class="mx-auto"><u>Mai multe...</u></a>
+                                        <!-- <a href="app.php" class="mx-auto"><u>Mai multe...</u></a> -->
+                                        <a href="app.php" class="mx-auto btn btn-success btn-block">Mai multe...</a>
+
                                     </h5>
                                 </div>
-
+                                
                             </div>
                         </div>
                     </div>

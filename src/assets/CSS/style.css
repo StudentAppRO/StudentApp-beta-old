@@ -75,7 +75,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   min-height: 85vh;
-  padding-top: 3.7rem;
+  padding-top: 3.3rem;
 }
 
 .container {
@@ -83,6 +83,11 @@ main {
 }
 
 /* custom ============================= */
+
+span{
+  color: var(--text);
+}
+
 /* navbar active tab */
 .active {
   font-weight: bold;
@@ -197,6 +202,19 @@ p.nav-link {
     /* margin: auto; */
   }
 }
+
+/* waves custom darkmode enabled color  */
+.waves {
+  fill: var(--content-bg);
+}
+/* .shadow{
+  -webkit-filter: box-shadow(0.25rem rgba(var(--text), 0.4));
+  filter: box-shadow(0.25rem rgba(var(--text), 0.4));
+} */
+.typewrite > .wrap {
+  border-right: 0.08em solid var(--text);
+}
+
 /* cards ============================================*/
 /* literally all cards */
 

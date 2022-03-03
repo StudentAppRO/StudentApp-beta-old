@@ -2,8 +2,8 @@
  <footer id="sticky-footer " class="py-4 text-dark-50">
         <div class="container text-center">
             <p style="font-size: small">
-                &copy;Copyright
-                <a href="#"><strong>Student App</strong></a>
+                Copyright &copy;
+                <a href="index.php#"><strong>Student App</strong></a>
                 <span id="year"></span>
             </p>
         </div>

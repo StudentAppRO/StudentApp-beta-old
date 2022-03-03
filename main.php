@@ -1,5 +1,6 @@
 <!-- file for functions and variables  -->
 <?php
+$alt = "Student App StudentApp learning Romania school";
 
 $card_list = array(
     array(
@@ -46,6 +47,3 @@ $card_list = array(
 
 
 ?>
-
-
-
