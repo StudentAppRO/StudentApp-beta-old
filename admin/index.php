@@ -88,6 +88,9 @@ require($prelink . "main.php");
                                                         <button type="submit" class="btn btn-raised btn-block btn-success"> Log In</button>
                                                     </div>
                                                 </form>
+                                                
+                                                <a href="" class="btn btn-raised btn-block btn-success">Open Admin Panel</a>
+
 
                                             </div>
                                         </div>
