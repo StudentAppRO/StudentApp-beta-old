@@ -1,12 +1,15 @@
+<?php
+$prelink = "";
+require "main.php";
+?>
 <!DOCTYPE html>
 <html lang="ro">
 
-<?php
-$prelink = "";
-include "includes/head.php";
-require "main.php";
-?>
-
+<head>
+    <?php
+    include "includes/head.php";
+    ?>
+</head>
 <body>
 
     <!-- loading screen -->
@@ -93,7 +96,6 @@ require "main.php";
         //return to app.php
         header('Location: app.php');
         exit();
-
     }
 
     ?>
@@ -125,10 +127,9 @@ require "main.php";
                 // File-Name_bac/notBac_grade_id.pdf
                 //
                 $page = $_GET['page'];
-                if(isset($_GET['grade'])){
+                if (isset($_GET['grade'])) {
                     $grade = $_GET['grade'];
-                }else if(isset($_GET['subject'])){
-
+                } else if (isset($_GET['subject'])) {
                 }
 
                 //get into folder
@@ -149,7 +150,7 @@ require "main.php";
                     // $str_arr[0] = strval($str_arr[0]);
                     // $str_arr[1] = intval($str_arr[1]);
                     // $str_arr[2] = intval($str_arr[2])
-                    
+
                     // print_r($str_arr);
                     //0 - name
                     //1 - bac: true/false

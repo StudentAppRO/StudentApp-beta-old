@@ -1,11 +1,15 @@
+<?php
+$prelink = "";
+require "main.php";
+?>
 <!DOCTYPE html>
 <html lang="ro">
 
-<?php
-$prelink = "";
-include "includes/head.php";
-require "main.php";
-?>
+<head>
+    <?php
+    include "includes/head.php";
+    ?>
+</head>
 
 <body>
 
@@ -152,7 +156,7 @@ require "main.php";
                                     <div id="collapse1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div class="card-body">
                                             <p>
-                                              Da, aplicatia este conceputa exclusiv pentru elevi si este gratis. 
+                                                Da, aplicatia este conceputa exclusiv pentru elevi si este gratis.
                                             </p>
                                         </div>
                                     </div>
@@ -174,9 +178,9 @@ require "main.php";
                                     <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div class="card-body">
                                             <p>
-                                            In esenta StudentApp prezinta o colectie de resurse scolare stranse din toate colturile internetului. 
-                                            <br><br>
-                                            In acest mod elevii nu trebuie sa acceseze 20 site-uri diferite pe zi, ci doar unul 🙂
+                                                In esenta StudentApp prezinta o colectie de resurse scolare stranse din toate colturile internetului.
+                                                <br><br>
+                                                In acest mod elevii nu trebuie sa acceseze 20 site-uri diferite pe zi, ci doar unul 🙂
                                             </p>
                                         </div>
                                     </div>
@@ -199,7 +203,7 @@ require "main.php";
                                     <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div class="card-body">
                                             <p>
-                                               Proiectul este open source pe <a href="https://github.com/StudentAppRO/StudentApp"><strong>Github</strong></a> si orcine poate lasa un issue pentru problema intampinata de el.
+                                                Proiectul este open source pe <a href="https://github.com/StudentAppRO/StudentApp"><strong>Github</strong></a> si orcine poate lasa un issue pentru problema intampinata de el.
                                             </p>
                                         </div>
                                     </div>

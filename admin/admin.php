@@ -1,15 +1,16 @@
 <?php
-
+$prelink = "../";
+require($prelink."main.php");
 ?>
 <!DOCTYPE html>
 <html lang="ro">
 
-<?php
-$prelink = "../";
-include($prelink."includes/head.php");
-require($prelink."main.php");
-?>
-<!-- TODO: buggy includes p -->
+<head>
+    <?php
+    include ($prelink."includes/head.php");
+    
+    ?>
+</head>
 
 <body>
 

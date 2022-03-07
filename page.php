@@ -1,11 +1,16 @@
+<?php
+$prelink = "";
+require "main.php";
+?>
+
 <!DOCTYPE html>
 <html lang="ro">
 
-<?php
-$prelink = "";
-include "includes/head.php";
-require "main.php";
-?>
+<head>
+    <?php
+    include "includes/head.php";
+    ?>
+</head>
 
 <body>
 
@@ -27,10 +32,10 @@ require "main.php";
             "2" => "Clasa a X-a",
             "3" => "Clasa a XI-a",
             "4" => "Clasa a XII-a",
-            "1link" => "data.php?page=". $_GET['page']."&grade=9",
-            "2link" => "data.php?page=". $_GET['page']."&grade=10",
-            "3link" => "data.php?page=". $_GET['page']."&grade=11",
-            "4link" => "data.php?page=". $_GET['page']."&grade=12",
+            "1link" => "data.php?page=" . $_GET['page'] . "&grade=9",
+            "2link" => "data.php?page=" . $_GET['page'] . "&grade=10",
+            "3link" => "data.php?page=" . $_GET['page'] . "&grade=11",
+            "4link" => "data.php?page=" . $_GET['page'] . "&grade=12",
         );
         // $title = $_GET['page'];
         //switch case param.page to fill in the data in cards
@@ -96,15 +101,15 @@ require "main.php";
                 <!-- cards with content: -->
                 <?php
 
-                for($id = 1;$id<=4;$id++) {
+                for ($id = 1; $id <= 4; $id++) {
                     echo '
                     <div class="col-12 col-lg-6 col-md-12 col-sm-12 content_card">
-                    <a id="cl9" class="link-no-dec" href="'.$page_cards[$id.'link'].'">
+                    <a id="cl9" class="link-no-dec" href="' . $page_cards[$id . 'link'] . '">
                         <div class="card card-btn mx-3">
                             <div class="card-body">
                                 <br>
                                 <br>
-                                <h2 class="text-center">'.$page_cards[$id].'</h2>
+                                <h2 class="text-center">' . $page_cards[$id] . '</h2>
                                 <br>
                                 <br>
                             </div>
@@ -114,7 +119,7 @@ require "main.php";
                 }
 
                 ?>
-                
+
 
 
             </div>
@@ -123,7 +128,7 @@ require "main.php";
                 <div class="col-3">
                     <div class="d-flex flex-wrap align-items-center">
                         <!-- goet current url params and add ?type=all /grade -->
-                        <a href="data.php?page=<?php echo $_GET['page'];?>&type=all" class="btn btn-success btn-block">Vezi tot</a>
+                        <a href="data.php?page=<?php echo $_GET['page']; ?>&type=all" class="btn btn-success btn-block">Vezi tot</a>
                     </div>
                 </div>
             </div>

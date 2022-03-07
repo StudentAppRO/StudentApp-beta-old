@@ -1,12 +1,15 @@
+<?php
+$prelink = "";
+require "main.php";
+?>
 <!DOCTYPE html>
 <html lang="ro">
 
-<?php
-$prelink = "";
-include "includes/head.php";
-require "main.php";
-?>
-
+<head>
+    <?php
+    include "includes/head.php";
+    ?>
+</head>
 <body>
 
     <!-- loading screen -->

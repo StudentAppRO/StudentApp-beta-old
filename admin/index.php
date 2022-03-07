@@ -1,11 +1,21 @@
+<?php
+//session start
+if (!isset($_SESSION)) {
+    session_start();
+}
+$prelink = "../";
+require($prelink . "main.php");
+?>
+
 <!DOCTYPE html>
 <html lang="ro">
 
-<?php
-$prelink = "../";
-include($prelink . "includes/head.php");
-require($prelink . "main.php");
-?>
+<head>
+    <?php
+    include $prelink . 'includes/head.php';
+    ?>
+    <script src='https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>'></script>
+</head>
 
 <body>
 
@@ -29,24 +39,49 @@ require($prelink . "main.php");
             <?php
 
             $error_message = '';
+            $ShowRedirectBtn = false;
 
-            if (isset($_POST['username']) || isset($_POST['password'])) {
-                if ($_POST['username'] == $cms_username && $_POST['password'] == $cms_password) {
-                    // if (isset($_SESSION)) {
-                    //     $_SESSION['session_id'] = uniqid();
+            //recaptcha and form validate
+            if (isset($_POST['g-recaptcha-response'])) {
+                function getCaptcha($SecretKey)
+                {
+                    $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . SECRET_KEY . "&response={$SecretKey}");
+                    $Return = json_decode($Response);
+                    return $Return;
+                }
+                $Return = getCaptcha($_POST['g-recaptcha-response']);
+                //var_dump($Return);
+                if ($Return->success == true && $Return->score > 0.5) {
+                    //good captcha
+                    if (isset($_POST['username']) || isset($_POST['password'])) {
+                        if ($_POST['username'] == $cms_username && $_POST['password'] == $cms_password) {
+                            //TODO:
+                            $_SESSION['session_id'] = $session_id = uniqid();
 
-                    //     // exit();
+                            // exit();
+                            $location = "admin.php?session_id=" . strval($session_id);
+                            $ShowRedirectBtn = true;
+                            // $location = "admin.php";
+                            // header("Location: " . $location);
+                            // unset($_POST);
+
+
+                        } else {
+                            #error message
+                            $error_message = "Incorect password or username";
+                            unset($_POST);
+                            session_unset();
+                            // exit;
+                        }
+                    }
+                    // print_r($_POST);
+                    // if (isset($_POST)) {
+                    //     echo "test;";
                     // }
-                    $_POST['sessionid'] = uniqid();
-                    $location = "admin.php?session_id=" . strval($_POST['sessionid']);
-                    // $location = "admin.php";
-                    header("Location: " . $location);
-                    unset($_POST);
                 } else {
-                    $error_message = "Incorect password or username";
-                    unset($_POST);
-                    session_unset();
-                    // exit;
+                    //bad captcha
+                    #error message
+                    $error_message = "Incorect Captcha";
                 }
             }
             ?>
@@ -88,8 +123,11 @@ require($prelink . "main.php");
                                                         <button type="submit" class="btn btn-raised btn-block btn-success"> Log In</button>
                                                     </div>
                                                 </form>
-                                                
-                                                <a href="" class="btn btn-raised btn-block btn-success">Open Admin Panel</a>
+                                                <?php
+                                                if ($ShowRedirectBtn) {
+                                                    echo '<a href="' . $location . '" class="btn btn-raised btn-block btn-success">Open Admin Panel</a>';
+                                                }
+                                                ?>
 
 
                                             </div>
@@ -115,8 +153,20 @@ require($prelink . "main.php");
             <path class="waves" fill-opacity="1" d="M0,64L15,85.3C30,107,60,149,90,170.7C120,192,150,192,180,181.3C210,171,240,149,270,122.7C300,96,330,64,360,64C390,64,420,96,450,133.3C480,171,510,213,540,208C570,203,600,149,630,149.3C660,149,690,203,720,202.7C750,203,780,149,810,133.3C840,117,870,139,900,170.7C930,203,960,245,990,234.7C1020,224,1050,160,1080,133.3C1110,107,1140,117,1170,138.7C1200,160,1230,192,1260,208C1290,224,1320,224,1350,192C1380,160,1410,96,1425,64L1440,32L1440,320L1425,320C1410,320,1380,320,1350,320C1320,320,1290,320,1260,320C1230,320,1200,320,1170,320C1140,320,1110,320,1080,320C1050,320,1020,320,990,320C960,320,930,320,900,320C870,320,840,320,810,320C780,320,750,320,720,320C690,320,660,320,630,320C600,320,570,320,540,320C510,320,480,320,450,320C420,320,390,320,360,320C330,320,300,320,270,320C240,320,210,320,180,320C150,320,120,320,90,320C60,320,30,320,15,320L0,320Z"></path>
         </svg>
     </main>
-
+    <!-- Recaptcha: -->
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('<?php echo SITE_KEY; ?>', {
+                    action: 'messageform'
+                })
+                .then(function(token) {
+                    // console.log(token);
+                    document.getElementById('g-recaptcha-response').value = token;
+                });
+        });
+    </script>
     <?php include $prelink . "includes/footer.php"; ?>
 </body>
+
 
 </html>
