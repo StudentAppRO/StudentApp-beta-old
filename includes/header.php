@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-sm navbar-fixed-top shadow-sm">
             <div class="container">
                 <a href="index.php" class="navbar-brand d-flex align-items-center">
-                    <img src="src/assets/images/logo/logo_mini.png" class="img-fluid" width="30" height="30" />
+                    <img src="<?php echo $prelink;?>src/assets/images/logo/logo_mini.png" class="img-fluid" width="30" height="30" />
                     <strong class="text-dark">StudentApp</strong>
                 </a>
 
@@ -19,18 +19,18 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.php"> Home</a>
+                            <a class="nav-link" href="<?php echo $prelink;?>index.php"> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="app.php">Lecții</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="data.php?page=subjects">BAC</a>
+                            <a class="nav-link" href="<?php echo $prelink;?>app.php">Resurse</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="contact_us.php">Contacte</a>
+                            <a class="nav-link" href="<?php echo $prelink;?>data.php?page=subjects">BAC</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="<?php echo $prelink;?>contact_us.php">Contacte</a>
                         </li>
 
                         <li class="nav-item ">

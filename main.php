@@ -45,5 +45,6 @@ $card_list = array(
     )
 );
 
-
+#important variables
+include "db_variables.php";
 ?>

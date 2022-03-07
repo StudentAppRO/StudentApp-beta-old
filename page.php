@@ -2,7 +2,9 @@
 <html lang="ro">
 
 <?php
+$prelink = "";
 include "includes/head.php";
+require "main.php";
 ?>
 
 <body>

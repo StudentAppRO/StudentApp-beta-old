@@ -37,11 +37,10 @@ function loadTheme() {
     if (isAlreadyDark) {
         body.classList = ['dark-mode'];
         //may use this one
-        //<i class="fa fa-adjust" aria-hidden="true"></i>
-        toggleButton.innerHTML = '<i class="fa fa-sun-o"></i>';
+        toggleButton.innerHTML = '<i class="fa fa-adjust"></i>';
     } else {
         body.classList = [''];
-        toggleButton.innerHTML = '<i class="fa fa-moon-o"></i>';
+        toggleButton.innerHTML = '<i class="fa fa-adjust"></i>';
     }
 }
 
@@ -49,11 +48,11 @@ function toggle() {
     var isDark = localStorage.getItem('dark') == 'true';
     if (!isDark) {
         body.classList = ['dark-mode'];
-        toggleButton.innerHTML = '<i class="fa fa-sun-o" aria-hidden="true"></i>';
+        toggleButton.innerHTML = '<i class="fa fa-adjust" aria-hidden="true"></i>';
 
     } else {
         body.classList = [''];
-        toggleButton.innerHTML = '<i class="fa fa-moon-o" aria-hidden="true"></i>';
+        toggleButton.innerHTML = '<i class="fa fa-adjust" aria-hidden="true"></i>';
     }
     localStorage.setItem('dark', !isDark);
 }

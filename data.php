@@ -2,7 +2,9 @@
 <html lang="ro">
 
 <?php
+$prelink = "";
 include "includes/head.php";
+require "main.php";
 ?>
 
 <body>
@@ -34,6 +36,7 @@ include "includes/head.php";
             if ($_GET['page'] != "subjects") {
                 //return to app with url param error
                 header('Location: app.php');
+                exit();
             }
         }
         // $title = $_GET['page'];
@@ -79,14 +82,18 @@ include "includes/head.php";
                 $img = $card_list[7]['img'];
                 //redirect to data subjects
                 header('Location: data.php?page=subjects');
+                exit();
                 break;
             default:
                 //by default redirect to App php
                 header('Location: app.php');
+                exit();
         }
     } else {
         //return to app.php
         header('Location: app.php');
+        exit();
+
     }
 
     ?>
@@ -117,8 +124,12 @@ include "includes/head.php";
                 //finish setting up files and filter them out 
                 // File-Name_bac/notBac_grade_id.pdf
                 //
-                $grade = $_GET['grade'];
                 $page = $_GET['page'];
+                if(isset($_GET['grade'])){
+                    $grade = $_GET['grade'];
+                }else if(isset($_GET['subject'])){
+
+                }
 
                 //get into folder
                 $path = 'DB/' . $page;
@@ -137,7 +148,7 @@ include "includes/head.php";
                     //keep only the number of itmes ordered
                     // $str_arr[0] = strval($str_arr[0]);
                     // $str_arr[1] = intval($str_arr[1]);
-                    // $str_arr[2] = intval($str_arr[2]);
+                    // $str_arr[2] = intval($str_arr[2])
                     
                     // print_r($str_arr);
                     //0 - name
