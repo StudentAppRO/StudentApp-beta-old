@@ -55,18 +55,6 @@ $nav_items = array(
                         $active = '';
                     }
                     ?>
-                    <!-- <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo $prelink; ?>index.php"> Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $prelink; ?>app.php">Resurse</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $prelink; ?>data.php?page=subjects">BAC</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="<?php echo $prelink; ?>contact_us.php">Contacte</a>
-                    </li> -->
                     <li class="nav-item ">
                         <p id="theme-toggle" class=" nav-link custom-control custom-switch">
                         </p>

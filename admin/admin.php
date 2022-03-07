@@ -8,7 +8,6 @@ require($prelink."main.php");
 <head>
     <?php
     include ($prelink."includes/head.php");
-    
     ?>
 </head>
 
@@ -32,17 +31,25 @@ require($prelink."main.php");
         <div class="container">
             <?php
 
-            // if (isset($_SESSION['session_id']) && isset($_GET['session_id'])) {
-            //     if ($_SESSION['session_id'] == $_GET['session_id']) {
+            // if (isset($_GET['session_id'])) {
+            //     if ($_COOKIE['session_id'] == $_GET['session_id']) {
             //         #allow acces
-                     
+            //         // $_COOKIE['session_id'] = $_GET['session_id'];
+            //          echo "allow";
             //     }else{
             //         #error
+            //         echo "error";
             //     }
             // }else{
-            //     header('Location: index.php');
+            //     // header('Location: index.php');
+            //     echo "error";
             // }
+            // print_r($_COOKIE['session_id']);
+            // print_r($_GET['session_id']);
 
+            #allow acces to DB show cards
+
+            
             ?>
 
             <div class="row">
