@@ -75,8 +75,7 @@ require($prelink . "main.php");
                     // $location = "admin.php";
                     // header("Location: " . $location);
                     // unset($_POST);
-
-
+                    unset($_POST);
                 } else {
                     #error message
                     $error_message = "Incorect password or username";
