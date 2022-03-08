@@ -19,3 +19,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <!-- Google adds: (currently off)-->
 <!-- <script data-ad-client="ca-pub-1451725678972854" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+
+<!-- Google site veification -->
+<meta name="google-site-verification" content="lIGRlLyU3tzRpLG4KK1oB_v13YrZGhxLWVBV6PyJ4B8" />
