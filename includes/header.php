@@ -18,6 +18,10 @@ $nav_items = array(
     )
 );
 ?>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-529QB69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <header>
     <nav class="navbar navbar-expand-sm navbar-fixed-top shadow-sm">
         <div class="container">
@@ -35,7 +39,7 @@ $nav_items = array(
                 <ul class="navbar-nav ml-auto">
                     <?php
                     $active = '';
-                    
+
                     foreach ($nav_items as $itm) {
                         //get page.php from url
                         $query = $_SERVER['PHP_SELF'];
