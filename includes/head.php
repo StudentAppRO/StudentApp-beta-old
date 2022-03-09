@@ -22,3 +22,13 @@
 
 <!-- Google site veification -->
 <meta name="google-site-verification" content="lIGRlLyU3tzRpLG4KK1oB_v13YrZGhxLWVBV6PyJ4B8" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6KFY3E9MS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-L6KFY3E9MS');
+</script>
