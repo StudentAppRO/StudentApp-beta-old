@@ -8,7 +8,7 @@ if (isset($_GET['subject']) && isset($_GET['year'])) {
             $title = $subject['name'];
         }
     }
-    if ($_GET['year'] = "all") {
+    if ($_GET['year'] == "all") {
         $subtitle = "toate resursele.";
     } else {
         foreach ($years as $year) {
