@@ -3,7 +3,7 @@
         <div class="container text-center">
             <p style="font-size: small">
                 Copyright &copy;
-                <a href="<?php echo $prelink;?>index.php#"><strong>Student App</strong></a>
+                <a href=""><strong>Student App</strong></a>
                 <span id="year"></span>
             </p>
         </div>
@@ -28,7 +28,7 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js "></script> -->
 
     <!-- Load core JS -->
-    <script src="<?php echo $prelink;?>src/assets/JS/core.js "></script>
+    <script src="src/assets/JS/core.js "></script>
     <script>
         // aboutHeaderText();
         // getCurrentDate();

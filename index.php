@@ -1,13 +1,13 @@
 <?php
-$prelink = "";
-require "main.php";
+$links = "";
+require $links.'inc/variables.php';
 ?>
 <!DOCTYPE html>
 <html lang="ro">
 
 <head>
     <?php
-    include "includes/head.php";
+    include $links.'inc/head.php';
     ?>
 </head>
 
@@ -19,7 +19,7 @@ require "main.php";
     <!--Content start-->
 
     <?php
-    include "includes/header.php";
+    include $links.'inc/header.php';
     ?>
 
 
@@ -38,56 +38,56 @@ require "main.php";
             <div class="col-12 text-center">
                 <p>Viitorul este acum</p>
                 <?php
-                // Method: POST, PUT, GET etc
-                // Data: array("param" => "value") ==> index.php?param=value
+                // // Method: POST, PUT, GET etc
+                // // Data: array("param" => "value") ==> index.php?param=value
 
-                function CallAPI($method, $url, $data = false)
-                {
-                    $curl = curl_init();
+                // function CallAPI($method, $url, $data = false)
+                // {
+                //     $curl = curl_init();
 
-                    switch ($method) {
-                        case "POST":
-                            curl_setopt($curl, CURLOPT_POST, 1);
+                //     switch ($method) {
+                //         case "POST":
+                //             curl_setopt($curl, CURLOPT_POST, 1);
 
-                            if ($data)
-                                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-                            break;
-                        case "PUT":
-                            curl_setopt($curl, CURLOPT_PUT, 1);
-                            break;
-                        default:
-                            if ($data)
-                                $url = sprintf("%s?%s", $url, http_build_query($data));
-                    }
+                //             if ($data)
+                //                 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                //             break;
+                //         case "PUT":
+                //             curl_setopt($curl, CURLOPT_PUT, 1);
+                //             break;
+                //         default:
+                //             if ($data)
+                //                 $url = sprintf("%s?%s", $url, http_build_query($data));
+                //     }
 
-                    // Optional Authentication:
-                    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-                    curl_setopt($curl, CURLOPT_USERPWD, "username:password");
+                //     // Optional Authentication:
+                //     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+                //     curl_setopt($curl, CURLOPT_USERPWD, "username:password");
 
-                    curl_setopt($curl, CURLOPT_URL, $url);
-                    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+                //     curl_setopt($curl, CURLOPT_URL, $url);
+                //     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-                    $result = curl_exec($curl);
+                //     $result = curl_exec($curl);
 
-                    curl_close($curl);
+                //     curl_close($curl);
 
-                    return $result;
-                }
-                //TODO: finish, and set this to repeat every 2s
-                function callMathAPI()
-                {
-                    $url = "https://x-math.herokuapp.com/api/random";
-                    $data = array(
-                        "max" => "999",
-                        "negative" => "1"
-                    );
-                    $res = CallAPI('GET', $url, $data);
-                    $res_arr = json_decode($res);
-                    // print_r($res_arr);
-                    $res_str = $res_arr->{'expression'} . ' = ' . $res_arr->{'answer'};
-                    return $res_str;
-                }
-                // echo callMathAPI();
+                //     return $result;
+                // }
+                // //TODO: finish, and set this to repeat every 2s
+                // function callMathAPI()
+                // {
+                //     $url = "https://x-math.herokuapp.com/api/random";
+                //     $data = array(
+                //         "max" => "999",
+                //         "negative" => "1"
+                //     );
+                //     $res = CallAPI('GET', $url, $data);
+                //     $res_arr = json_decode($res);
+                //     // print_r($res_arr);
+                //     $res_str = $res_arr->{'expression'} . ' = ' . $res_arr->{'answer'};
+                //     return $res_str;
+                // }
+                // // echo callMathAPI();
                 ?>
 
             </div>
@@ -309,7 +309,7 @@ require "main.php";
         </div>
     </main>
 
-    <?php include "includes/footer.php"; ?>
+    <?php include $links.'inc/footer.php'; ?>
 </body>
 
 </html>
