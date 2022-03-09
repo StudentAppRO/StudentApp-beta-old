@@ -1,6 +1,19 @@
 <?php
 $links = "../../";
-require $links.'inc/variables.php';
+require $links . 'inc/variables.php';
+//param verification
+if (!isset($_GET['subject']) || $_GET['subject']=='') {
+    //return to resources
+    header('Location: ' . $links . 'resources');
+    exit();
+} else {
+    foreach ($subjects as $subject) {
+        if ($subject['id'] == $_GET['subject']) {
+            $title = $subject['name'];
+        }
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +21,7 @@ require $links.'inc/variables.php';
 
 <head>
     <?php
-    include $links.'inc/head.php';
+    include $links . 'inc/head.php';
     ?>
 </head>
 
@@ -20,24 +33,10 @@ require $links.'inc/variables.php';
     <!--Content start-->
 
     <?php
-    include $links.'inc/header.php';
+    include $links . 'inc/header.php';
     ?>
 
-    <?php
-
-
-    if (!isset($_GET['subject'])) {
-        //return to resources
-        header('Location: '.$links.'resources');
-    }else{
-        foreach($subjects as $subject){
-            if($subject['id']==$_GET['subject']){
-                $title = $subject['name'];
-            }
-        }
-    }
-
-    ?>
+    
 
 
     <main role="main">
@@ -57,15 +56,15 @@ require $links.'inc/variables.php';
                 <!-- cards with content: -->
                 <?php
 
-                foreach($years as $year){
+                foreach ($years as $year) {
                     echo '
                     <div class="col-12 col-lg-6 col-md-12 col-sm-12 content_card">
-                    <a id="cl9" class="link-no-dec" href="resources/subject/year?subject='.$_GET['subject'].'&year='.$year['id'].'">
+                    <a id="cl9" class="link-no-dec" href="resources/subject/year?subject=' . $_GET['subject'] . '&year=' . $year['id'] . '">
                         <div class="card card-btn mx-3">
                             <div class="card-body">
                                 <br>
                                 <br>
-                                <h2 class="text-center">'.$year['name'].'</h2>
+                                <h2 class="text-center">' . $year['name'] . '</h2>
                                 <br>
                                 <br>
                             </div>
@@ -84,7 +83,7 @@ require $links.'inc/variables.php';
                 <div class="col-3">
                     <div class="d-flex flex-wrap align-items-center">
                         <!-- goet current url params and add ?type=all /grade -->
-                        <a href="resources/subject/year?subject=<?php $_GET['subject'] ?>&year=all" class="btn btn-success btn-block">Vezi tot</a>
+                        <a href="resources/subject/year?subject=<?php echo $_GET['subject'] ?>&year=all" class="btn btn-success btn-block">Vezi tot</a>
                     </div>
                 </div>
             </div>
@@ -92,7 +91,7 @@ require $links.'inc/variables.php';
         </div>
     </main>
 
-    <?php include $links.'inc/footer.php'; ?>
+    <?php include $links . 'inc/footer.php'; ?>
 </body>
 
 </html>
