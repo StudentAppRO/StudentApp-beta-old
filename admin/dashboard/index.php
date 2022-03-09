@@ -1,27 +1,28 @@
 <?php
-$prelink = "../";
-require($prelink . "main.php");
+//session start
+if (!isset($_SESSION)) {
+    session_start();
+}
+$links = "../";
+require $links.'inc/variables.php';
 ?>
 <!DOCTYPE html>
 <html lang="ro">
 
 <head>
     <?php
-    include($prelink . "includes/head.php");
+    include $links.'inc/head.php';
     ?>
+    <!-- <script src='https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>'></script> -->
 </head>
-
 <body>
-
     <!-- loading screen -->
     <div class="se-pre-con"></div>
-
     <!--Content start-->
-
     <?php
-    include $prelink . "includes/header.php";
+    include $links.'inc/header.php';
+    // header_remove("Location"); 
     ?>
-
 
     <main role="main">
 
@@ -80,7 +81,7 @@ require($prelink . "main.php");
 
     </main>
 
-    <?php include $prelink . "includes/footer.php"; ?>
+    <?php include $links."inc/footer.php"; ?>
 </body>
 
 </html>

@@ -1,13 +1,13 @@
 <?php
-$prelink = "";
-require "main.php";
+$links = '../';
+require $links.'inc/variables.php';
 ?>
 <!DOCTYPE html>
 <html lang="ro">
 
 <head>
     <?php
-    include "includes/head.php";
+    include $links.'inc/head.php';
     ?>
 </head>
 <body>
@@ -18,7 +18,7 @@ require "main.php";
     <!--Content start-->
 
     <?php
-    include "includes/header.php";
+    include $links.'inc/header.php';
     ?>
 
 
@@ -87,7 +87,7 @@ require "main.php";
 
     </main>
 
-    <?php include "includes/footer.php"; ?>
+    <?php include $links.'inc/footer.php'; ?>
 
 </body>
 

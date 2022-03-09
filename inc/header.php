@@ -2,19 +2,19 @@
 $nav_items = array(
     array(
         "name" => "Home",
-        "link" => "index.php"
+        "link" => ""
     ),
     array(
         "name" => "Resurse",
-        "link" => "app.php"
+        "link" => "resources"
     ),
     array(
         "name" => "BAC",
-        "link" => "data.php?page=subjects"
+        "link" => "bac"
     ),
     array(
-        "name" => "Contacte",
-        "link" => "contact_us.php"
+        "name" => "Contact",
+        "link" => "contact"
     )
 );
 ?>
@@ -25,8 +25,8 @@ $nav_items = array(
 <header>
     <nav class="navbar navbar-expand-sm navbar-fixed-top shadow-sm">
         <div class="container">
-            <a href="index.php" class="navbar-brand d-flex align-items-center">
-                <img src="<?php echo $prelink; ?>src/assets/images/logo/logo_mini.png" class="img-fluid" width="30" height="30" />
+            <a href="" class="navbar-brand d-flex align-items-center">
+                <img src="src/assets/images/logo/logo_mini.png" class="img-fluid" width="30" height="30" />
                 <strong class="text-dark">StudentApp</strong>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,25 +38,23 @@ $nav_items = array(
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <?php
-                    $active = '';
-
                     foreach ($nav_items as $itm) {
                         //get page.php from url
-                        $query = $_SERVER['PHP_SELF'];
-                        $path = pathinfo($query);
-                        $what_you_want = $path['basename'];
+                        $url = $_SERVER['REQUEST_URI'];
+                        $parts = parse_url($url);
+                        $file_name = basename($parts['path']);
                         //check if its good
-                        if ($what_you_want == $itm['link']) {
-                            $active = 'active';
+                        if ($file_name!=$itm['link']) {
+                            $active = '';
+                        }else{
+                            $active = ' active';
                         }
                         //output
                         echo '
-                        <li class="nav-item ' . $active . '">
-                            <a class="nav-link" href="' . $prelink . $itm['link'] . '">' . $itm['name'] . '</a>
+                        <li class="nav-item'.$active.'">
+                            <a class="nav-link" href="'.$itm['link'].'">'.$itm['name'].'</a>
                         </li>
                         ';
-                        //make active blank again
-                        $active = '';
                     }
                     ?>
                     <li class="nav-item ">
