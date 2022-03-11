@@ -37,7 +37,7 @@ require $links . 'inc/variables.php';
                     <div class="col">
                         <a href="../" class="btn btn-danger btn-lg float-right">Log out</a>
                     </div>
-                    
+
                 </div>
 
                 <?php
@@ -74,7 +74,7 @@ require $links . 'inc/variables.php';
                 ?>
             </div>
 
-           
+
         </div>
 
 

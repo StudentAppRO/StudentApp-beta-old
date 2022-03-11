@@ -1,8 +1,7 @@
 <?php
 //session start
-if (!isset($_SESSION)) {
-    session_start();
-}
+session_start();
+
 $links = "../";
 require $links . 'inc/variables.php';
 
@@ -33,7 +32,7 @@ if (isset($_POST['username']) || isset($_POST['password'])) {
     // print_r($u.'  '.$p);
     while ($row = mysqli_fetch_array($result)) {
 
-        $res = checkUserAuth($u, $p, $row['AdminName'], $row['AdminPassword']);
+        $res = checkUserAuth($u, $p, $row['Name'], $row['Password']);
         // print_r($res);
         if (!$res) {
             // $ShowRedirectBtn = false;
@@ -43,8 +42,9 @@ if (isset($_POST['username']) || isset($_POST['password'])) {
             // break;
             // $_SESSION['session_id'] = $session_id = $res;
             // exit();
-            $location = "admin/dashboard/?session_id=" . $res;
-            header("Location: " . $location);
+            // $location = "admin/dashboard/?session_id=" . $res;
+            // header("Location: " . $location);
+            header("Location: dashboard");
             // $ShowRedirectBtn = true;
             unset($_POST);
             exit();
