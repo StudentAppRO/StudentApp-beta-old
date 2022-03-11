@@ -32,60 +32,49 @@ require $links . 'inc/variables.php';
             <div class="main mt-2">
                 <div class="row">
                     <div class="col">
-                        <a href="" class="btn btn-danger btn-lg">Log out</a>
+                        <a href="" class="btn btn-primary btn-lg ">Upload files</a>
                     </div>
                     <div class="col">
-                        <!-- <?php echo $_GET['session_id'] ?> -->
+                        <a href="../" class="btn btn-danger btn-lg float-right">Log out</a>
                     </div>
+                    
                 </div>
 
                 <?php
                 #connect to db
 
                 // Create connection
-                $conn = new mysqli($db_name, $db_user, $db_pass);
+                $conn = db_connect();
 
                 // Check connection
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
-                echo "Connected successfully";
-                
-                // if (isset($_GET['session_id'])) {
-                // }
-                // if (isset($_GET['session_id'])) {
-                //     if ($_COOKIE['session_id'] == $_GET['session_id']) {
-                //         #allow acces
-                //         // $_COOKIE['session_id'] = $_GET['session_id'];
-                //          echo "allow";
-                //     }else{
-                //         #error
-                //         echo "error";
-                //     }
-                // }else{
-                //     // header('Location: index.php');
-                //     echo "error";
-                // }
-                // print_r($_COOKIE['session_id']);
 
-                #allow acces to DB show cards
-                // print_r($_GET['session_id']);
-
-                #connect to db 
+                echo "Connected successfully </br>";
 
 
+                $result = mysqli_query($conn, "SELECT *  FROM `File`");
 
-                #show db content as cards
+                // $result = mysqli_query($conn,"SELECT * FROM `Admins` WHERE `AdminID`= 1");
+                // print_r(mysqli_fetch_array($result));
+
+                while ($row = mysqli_fetch_array($result)) {
+                    #selects arr from Admins where user = inputed user (admin)
+                    // echo "admin id" . " => " . $row['AdminID'] . "</br>";
+                    // echo "admin name" . " => " . $row['AdminName'] . "</br>";
+                    // echo "admin password hash" . " => " . $row['AdminPassword'] . "</br>";
+                    // echo "admin level" . " => " . $row['AdminLevel'] . "</br>";
+                    #here check if inputed usernme is the same as the one inputed else return error message
+                    #if it is check password compatibility
+                }
+
 
 
                 ?>
             </div>
 
-            <div class="row">
-
-            </div>
-
-
+           
         </div>
 
 

@@ -4,23 +4,74 @@ if (!isset($_SESSION)) {
     session_start();
 }
 $links = "../";
-require $links.'inc/variables.php';
+require $links . 'inc/variables.php';
+
+$error_message = '';
+$ShowRedirectBtn = false;
+if (isset($_POST['username']) || isset($_POST['password'])) {
+    // Create connection
+    $conn = db_connect();
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    // echo "Connected successfully </br>";
+    $result = mysqli_query($conn, "SELECT *  FROM `Admin`");
+    //check for user and pas match hash
+    function checkUserAuth($in_username, $in_password, $user, $pass)
+    {
+        if ($user == $in_username) {
+            if (password_verify($in_password, $pass)) {
+                return $in_username;
+            }
+        }
+        return false;
+    }
+
+    $u = $_POST['username'];
+    $p = $_POST['password'];
+    // print_r($u.'  '.$p);
+    while ($row = mysqli_fetch_array($result)) {
+
+        $res = checkUserAuth($u, $p, $row['AdminName'], $row['AdminPassword']);
+        // print_r($res);
+        if (!$res) {
+            // $ShowRedirectBtn = false;
+            $error_message = "Incorect password or username";
+            // unset($_POST);
+        } else {
+            // break;
+            // $_SESSION['session_id'] = $session_id = $res;
+            // exit();
+            $location = "admin/dashboard/?session_id=" . $res;
+            header("Location: " . $location);
+            // $ShowRedirectBtn = true;
+            unset($_POST);
+            exit();
+        }
+        #here check if inputed usernme is the same as the one inputed else return error message
+        #if it is check password compatibility
+    }
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ro">
 
 <head>
     <?php
-    include $links.'inc/head.php';
+    include $links . 'inc/head.php';
     ?>
     <!-- <script src='https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>'></script> -->
 </head>
+
 <body>
     <!-- loading screen -->
     <div class="se-pre-con"></div>
     <!--Content start-->
     <?php
-    include $links.'inc/header.php';
+    include $links . 'inc/header.php';
     // header_remove("Location"); 
     ?>
 
@@ -31,8 +82,7 @@ require $links.'inc/variables.php';
         <!-- main container  -->
         <div class="container">
             <?php
-            $error_message = '';
-            $ShowRedirectBtn = false;
+
 
             //recaptcha and form validate
             // if (isset($_POST['g-recaptcha-response'])) {
@@ -46,7 +96,7 @@ require $links.'inc/variables.php';
             //     //var_dump($Return);
             //     if ($Return->success == true && $Return->score > 0.5) {
             //         //good captcha
-                    
+
             //         // print_r($_POST);
             //         // if (isset($_POST)) {
             //         //     echo "test;";
@@ -57,25 +107,7 @@ require $links.'inc/variables.php';
             //         $error_message = "Incorect Captcha";
             //     }
             // }
-            if (isset($_POST['username']) || isset($_POST['password'])) {
-                if ($_POST['username'] == $cms_username && $_POST['password'] == $cms_password) {
-                    //TODO:
-                    $_COOKIE['session_id'] = $session_id = uniqid();
-                    // exit();
-                    $location = "admin.php?session_id=" . strval($session_id);
-                    $ShowRedirectBtn = true;
-                    // $location = "admin.php";
-                    // header("Location: " . $location);
-                    // unset($_POST);
-                    unset($_POST);
-                } else {
-                    #error message
-                    $error_message = "Incorect password or username";
-                    unset($_POST);
-                    session_unset();
-                    // exit;
-                }
-            }
+
             ?>
             <!-- Form contacteaza-ne -->
             <div class="row" style="margin: auto;">
@@ -111,7 +143,7 @@ require $links.'inc/variables.php';
                                                     </div>
                                                 </form>
                                                 <?php
-                                                if ($ShowRedirectBtn) {
+                                                if ($ShowRedirectBtn == true) {
                                                     echo '<a href="' . $location . '" class="btn btn-raised btn-block btn-success">Open Admin Panel</a>';
                                                 }
                                                 ?>
@@ -142,7 +174,7 @@ require $links.'inc/variables.php';
             });
         </script>
     </main>
-    <?php include $links.'inc/footer.php'; ?>
+    <?php include $links . 'inc/footer.php'; ?>
 </body>
 
 

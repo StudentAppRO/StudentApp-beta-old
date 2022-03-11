@@ -235,11 +235,11 @@ require $links.'inc/variables.php';
                                             <br><br>
                                             <strong>Despre echipă</strong>
                                             <br><br>
-                                            Inițial, aplicația a fost concepută de @whos-gabi (hodo.codes), însă, în scurt timp, s-au alăturat echipei mai multe persoane care au contribuit la forma actuală a proiectului.
+                                            Inițial, aplicația a fost concepută de @whos-gabi, însă, în scurt timp, s-au alăturat echipei mai multe persoane care au contribuit la forma actuală a proiectului.
                                             <br><br>
                                             <strong>Despre tehnologiile folosite și codul sursă</strong>
                                             <br><br>
-                                            Partea de front-end a fost concepută folosit Bootstrap 4. Pe partea de back-end s-a folosit limbajul PHP, iar pentru baza de date am folosit MySQL. O parte a codului sursă al proiectului (reprezentând partea front-end) este disponibilă pe GitHub și oricine este invitat să contribuie.
+                                            Partea de front-end a fost concepută folosit Bootstrap 4. Pe partea de back-end s-a folosit limbajul PHP, iar pentru baza de date am folosit MySQL. O parte a codului sursă al proiectului este disponibilă pe GitHub și oricine este invitat să contribuie.
                                             <br><br>
                                             Codul sursa este open source si cei care doresc sa participe să contribuie codului pot accesa proiectul pe <a href="https://github.com/StudentAppRO/StudentApp"><strong>Github</strong></a>.
                                         </p>

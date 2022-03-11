@@ -11,21 +11,21 @@ $subjects = array(
         "name" => "Matematică",
         "img" => "src/assets/images/math.png"
     ),
-    array(
-        "id" => 2,
-        "name" => "Chimie",
-        "img" => "src/assets/images/chemistry.png"
-    ),
-    array(
-        "id" => 3,
-        "name" => "Fizică",
-        "img" => "src/assets/images/physics.png"
-    ),
-    array(
-        "id" => 4,
-        "name" => "Biologie",
-        "img" => "src/assets/images/biology.png"
-    ),
+    // array(
+    //     "id" => 2,
+    //     "name" => "Chimie",
+    //     "img" => "src/assets/images/chemistry.png"
+    // ),
+    // array(
+    //     "id" => 3,
+    //     "name" => "Fizică",
+    //     "img" => "src/assets/images/physics.png"
+    // ),
+    // array(
+    //     "id" => 4,
+    //     "name" => "Biologie",
+    //     "img" => "src/assets/images/biology.png"
+    // ),
     array(
         "id" => 5,
         "name" => "Limba Română",
