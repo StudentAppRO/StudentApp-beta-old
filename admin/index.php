@@ -42,16 +42,11 @@ if (isset($_POST['g-recaptcha-response'])) {
             // echo (password_verify($in_password, $pass) ? 'true' : 'false') . "</br>";
             if ($user == $in_username) {
                 echo "Userii sunt la fel</br>";
-                $password="Test1234";
-                $options = [
-                    'cost' => 11
-                ];
-                $hashed_password=password_hash($password, PASSWORD_BCRYPT, $options);
-                if (password_verify($password, $hashed_password)) {
-                    echo "Password match";
+                if (password_verify($in_password, $pass)) {
+                    // echo "Password match";
                     return true;
                 }else{
-                    echo "Password dont match";
+                    // echo "Password dont match";
                 }
             }
             return false;
@@ -70,9 +65,8 @@ if (isset($_POST['g-recaptcha-response'])) {
             $res = checkUserAuth($u, $p, $row['Name'], $row['Password']);
             if ($res) {
                 $_SESSION['admin_id'] = $row['AdminID'];
-                header("Location: ../admin/dashboard");
+                header("Location: dashboard");
                 exit;
-                break;
             }
         }
         if (!$res) {
@@ -96,7 +90,7 @@ if (isset($_POST['g-recaptcha-response'])) {
 
 <body>
     <!-- loading screen -->
-    <div class="se-pre-con"></div>
+    <!-- <div class="se-pre-con"></div> -->
     <!--Content start-->
     <?php
     include $links . 'inc/header.php';
@@ -109,34 +103,6 @@ if (isset($_POST['g-recaptcha-response'])) {
         </svg>
         <!-- main container  -->
         <div class="container">
-            <?php
-
-
-            //recaptcha and form validate
-            // if (isset($_POST['g-recaptcha-response'])) {
-            //     function getCaptcha($SecretKey)
-            //     {
-            //         $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . SECRET_KEY . "&response={$SecretKey}");
-            //         $Return = json_decode($Response);
-            //         return $Return;
-            //     }
-            //     $Return = getCaptcha($_POST['g-recaptcha-response']);
-            //     //var_dump($Return);
-            //     if ($Return->success == true && $Return->score > 0.5) {
-            //         //good captcha
-
-            //         // print_r($_POST);
-            //         // if (isset($_POST)) {
-            //         //     echo "test;";
-            //         // }
-            //     } else {
-            //         //bad captcha
-            //         #error message
-            //         $error_message = "Incorect Captcha";
-            //     }
-            // }
-
-            ?>
             <!-- Form contacteaza-ne -->
             <div class="row" style="margin: auto;">
                 <div class="contact_form my-5">
@@ -174,7 +140,6 @@ if (isset($_POST['g-recaptcha-response'])) {
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
