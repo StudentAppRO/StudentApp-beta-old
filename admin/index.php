@@ -1,60 +1,88 @@
 <?php
 //session start
 session_start();
-
 $links = "../";
 require $links . 'inc/variables.php';
 
 $error_message = '';
 $ShowRedirectBtn = false;
-if (isset($_POST['username']) || isset($_POST['password'])) {
-    // Create connection
-    $conn = db_connect();
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    // echo "Connected successfully </br>";
-    $result = mysqli_query($conn, "SELECT *  FROM `Admin`");
-    //check for user and pas match hash
-    function checkUserAuth($in_username, $in_password, $user, $pass)
+if (isset($_POST['g-recaptcha-response'])) {
+    function getCaptcha($SecretKey)
     {
-        if ($user == $in_username) {
-            if (password_verify($in_password, $pass)) {
-                return $in_username;
+        $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . SECRET_KEY . "&response={$SecretKey}");
+        $Return = json_decode($Response);
+        return $Return;
+    }
+    $Return = getCaptcha($_POST['g-recaptcha-response']);
+
+    if ($Return->success == true && $Return->score > 0.5) {
+        // Create connection
+        $conn = db_connect();
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        // echo "Connected successfully </br>";
+        $result = mysqli_query($conn, "SELECT * FROM `Admin`");
+
+        //test DB content
+        // while ($row = mysqli_fetch_array($result)) {
+        //     #selects arr from Admins where user = inputed user (admin)
+        //     echo "admin id" . " => " . $row['AdminID'] . "</br>";
+        //     echo "admin name" . " => " . $row['Name'] . "</br>";
+        //     echo "admin password hash" . " => " . $row['Password'] . "</br>";
+        //     echo "admin level" . " => " . $row['Level'] . "</br>";
+        // }
+
+        ///check for user and pas match hash lol :)
+        function checkUserAuth($in_username, $in_password, $user, $pass)
+        {
+            // echo $in_username . "</br>";
+            // echo $user . "</br>";
+            // echo (password_verify($in_password, $pass) ? 'true' : 'false') . "</br>";
+            if ($user == $in_username) {
+                echo "Userii sunt la fel</br>";
+                $password="Test1234";
+                $options = [
+                    'cost' => 11
+                ];
+                $hashed_password=password_hash($password, PASSWORD_BCRYPT, $options);
+                if (password_verify($password, $hashed_password)) {
+                    echo "Password match";
+                    return true;
+                }else{
+                    echo "Password dont match";
+                }
+            }
+            return false;
+
+        }
+
+        $u = $_POST['username'];
+        $p = $_POST['password'];
+        // unset($_POST);
+        // print_r($u.'  '.$p);
+        $res = false;
+        while ($row = mysqli_fetch_array($result)) {
+            # while goes through every row in the data base
+
+            # $res gets the true value if credentials are correct, false if not
+            $res = checkUserAuth($u, $p, $row['Name'], $row['Password']);
+            if ($res) {
+                $_SESSION['admin_id'] = $row['AdminID'];
+                header("Location: ../admin/dashboard");
+                exit;
+                break;
             }
         }
-        return false;
-    }
-
-    $u = $_POST['username'];
-    $p = $_POST['password'];
-    // print_r($u.'  '.$p);
-    while ($row = mysqli_fetch_array($result)) {
-
-        $res = checkUserAuth($u, $p, $row['Name'], $row['Password']);
-        // print_r($res);
         if (!$res) {
             // $ShowRedirectBtn = false;
             $error_message = "Incorect password or username";
-            // unset($_POST);
-        } else {
-            // break;
-            // $_SESSION['session_id'] = $session_id = $res;
-            // exit();
-            // $location = "admin/dashboard/?session_id=" . $res;
-            // header("Location: " . $location);
-            header("Location: dashboard");
-            // $ShowRedirectBtn = true;
-            unset($_POST);
-            exit();
         }
-        #here check if inputed usernme is the same as the one inputed else return error message
-        #if it is check password compatibility
+    } else {
+        $error_message = "reCaptcha doesn&apos;t let you to make that request.";
     }
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="ro">
@@ -63,7 +91,7 @@ if (isset($_POST['username']) || isset($_POST['password'])) {
     <?php
     include $links . 'inc/head.php';
     ?>
-    <!-- <script src='https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>'></script> -->
+    <script src='https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>'></script>
 </head>
 
 <body>
@@ -125,15 +153,15 @@ if (isset($_POST['username']) || isset($_POST['password'])) {
                                     <div class="form_in loading">
                                         <div class="panel panel-danger">
                                             <div class="panel-body">
-                                                <form id='login' name='login' method='POST' action="">
+                                                <form method='POST' action="" form-validate>
                                                     <!-- Currently with no action="/StudentApp/success.html" tag in <form> -->
                                                     <div class="form-group">
                                                         <label><?php echo $error_message; ?></label>
-                                                        <input type="text" name="username" class="form-control" placeholder="Username">
+                                                        <input type="text" name="username" class="form-control" placeholder="Username" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <!-- <label><i class="fa fa-envelope" aria-hidden="true"></i> Email</label> -->
-                                                        <input type="password" name="password" class="form-control" placeholder="Password">
+                                                        <input type="password" name="password" class="form-control" placeholder="Password" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <p></p>
@@ -142,11 +170,6 @@ if (isset($_POST['username']) || isset($_POST['password'])) {
                                                         <button type="submit" class="btn btn-raised btn-block btn-success" id="g-recaptcha-response" name="g-recaptcha-response"> Log In</button>
                                                     </div>
                                                 </form>
-                                                <?php
-                                                if ($ShowRedirectBtn == true) {
-                                                    echo '<a href="' . $location . '" class="btn btn-raised btn-block btn-success">Open Admin Panel</a>';
-                                                }
-                                                ?>
                                             </div>
                                         </div>
                                     </div>

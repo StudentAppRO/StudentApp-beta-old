@@ -1,8 +1,10 @@
 <?php
 //session start
-// if (!isset($_SESSION)) {
-//     session_start();
-// }
+session_start();
+if(!isset($_SESSION['AdminID'])){
+    header("Location: ../admin");
+    exit;
+}
 $links = "../../";
 require $links . 'inc/variables.php';
 ?>
