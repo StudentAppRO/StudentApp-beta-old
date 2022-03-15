@@ -1,5 +1,5 @@
 *.exe 
 node_modules/
 .DS_Store
-DB/
+# DB/
 db_variables.php

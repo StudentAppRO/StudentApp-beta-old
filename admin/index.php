@@ -1,26 +1,99 @@
 <?php
 //session start
-if (!isset($_SESSION)) {
-    session_start();
-}
+session_start();
 $links = "../";
-require $links.'inc/variables.php';
+require $links . 'inc/variables.php';
+
+$error_message = '';
+$ShowRedirectBtn = false;
+if (isset($_POST['g-recaptcha-response'])) {
+    function getCaptcha($SecretKey)
+    {
+        $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . SECRET_KEY . "&response={$SecretKey}");
+        $Return = json_decode($Response);
+        return $Return;
+    }
+    $Return = getCaptcha($_POST['g-recaptcha-response']);
+
+    if ($Return->success == true && $Return->score > 0.5) {
+        // Create connection
+        $conn = db_connect();
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        // echo "Connected successfully </br>";
+        $result = mysqli_query($conn, "SELECT * FROM `Admin`");
+
+        //test DB content
+        // while ($row = mysqli_fetch_array($result)) {
+        //     #selects arr from Admins where user = inputed user (admin)
+        //     echo "admin id" . " => " . $row['AdminID'] . "</br>";
+        //     echo "admin name" . " => " . $row['Name'] . "</br>";
+        //     echo "admin password hash" . " => " . $row['Password'] . "</br>";
+        //     echo "admin level" . " => " . $row['Level'] . "</br>";
+        // }
+
+        ///check for user and pas match hash lol :)
+        function checkUserAuth($in_username, $in_password, $user, $pass)
+        {
+            // echo $in_username . "</br>";
+            // echo $user . "</br>";
+            // echo (password_verify($in_password, $pass) ? 'true' : 'false') . "</br>";
+            if ($user == $in_username) {
+                echo "Userii sunt la fel</br>";
+                if (password_verify($in_password, $pass)) {
+                    // echo "Password match";
+                    return true;
+                }else{
+                    // echo "Password dont match";
+                }
+            }
+            return false;
+
+        }
+
+        $u = $_POST['username'];
+        $p = $_POST['password'];
+        // unset($_POST);
+        // print_r($u.'  '.$p);
+        $res = false;
+        while ($row = mysqli_fetch_array($result)) {
+            # while goes through every row in the data base
+
+            # $res gets the true value if credentials are correct, false if not
+            $res = checkUserAuth($u, $p, $row['Name'], $row['Password']);
+            if ($res) {
+                $_SESSION['admin_id'] = $row['AdminID'];
+                header("Location: dashboard");
+                exit;
+            }
+        }
+        if (!$res) {
+            // $ShowRedirectBtn = false;
+            $error_message = "Incorect password or username";
+        }
+    } else {
+        $error_message = "reCaptcha doesn&apos;t let you to make that request.";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="ro">
 
 <head>
     <?php
-    include $links.'inc/head.php';
+    include $links . 'inc/head.php';
     ?>
-    <!-- <script src='https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>'></script> -->
+    <script src='https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>'></script>
 </head>
+
 <body>
     <!-- loading screen -->
-    <div class="se-pre-con"></div>
+    <!-- <div class="se-pre-con"></div> -->
     <!--Content start-->
     <?php
-    include $links.'inc/header.php';
+    include $links . 'inc/header.php';
     // header_remove("Location"); 
     ?>
 
@@ -30,53 +103,6 @@ require $links.'inc/variables.php';
         </svg>
         <!-- main container  -->
         <div class="container">
-            <?php
-            $error_message = '';
-            $ShowRedirectBtn = false;
-
-            //recaptcha and form validate
-            // if (isset($_POST['g-recaptcha-response'])) {
-            //     function getCaptcha($SecretKey)
-            //     {
-            //         $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . SECRET_KEY . "&response={$SecretKey}");
-            //         $Return = json_decode($Response);
-            //         return $Return;
-            //     }
-            //     $Return = getCaptcha($_POST['g-recaptcha-response']);
-            //     //var_dump($Return);
-            //     if ($Return->success == true && $Return->score > 0.5) {
-            //         //good captcha
-                    
-            //         // print_r($_POST);
-            //         // if (isset($_POST)) {
-            //         //     echo "test;";
-            //         // }
-            //     } else {
-            //         //bad captcha
-            //         #error message
-            //         $error_message = "Incorect Captcha";
-            //     }
-            // }
-            if (isset($_POST['username']) || isset($_POST['password'])) {
-                if ($_POST['username'] == $cms_username && $_POST['password'] == $cms_password) {
-                    //TODO:
-                    $_COOKIE['session_id'] = $session_id = uniqid();
-                    // exit();
-                    $location = "admin.php?session_id=" . strval($session_id);
-                    $ShowRedirectBtn = true;
-                    // $location = "admin.php";
-                    // header("Location: " . $location);
-                    // unset($_POST);
-                    unset($_POST);
-                } else {
-                    #error message
-                    $error_message = "Incorect password or username";
-                    unset($_POST);
-                    session_unset();
-                    // exit;
-                }
-            }
-            ?>
             <!-- Form contacteaza-ne -->
             <div class="row" style="margin: auto;">
                 <div class="contact_form my-5">
@@ -93,15 +119,15 @@ require $links.'inc/variables.php';
                                     <div class="form_in loading">
                                         <div class="panel panel-danger">
                                             <div class="panel-body">
-                                                <form id='login' name='login' method='POST' action="">
+                                                <form method='POST' action="" form-validate>
                                                     <!-- Currently with no action="/StudentApp/success.html" tag in <form> -->
                                                     <div class="form-group">
                                                         <label><?php echo $error_message; ?></label>
-                                                        <input type="text" name="username" class="form-control" placeholder="Username">
+                                                        <input type="text" name="username" class="form-control" placeholder="Username" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <!-- <label><i class="fa fa-envelope" aria-hidden="true"></i> Email</label> -->
-                                                        <input type="password" name="password" class="form-control" placeholder="Password">
+                                                        <input type="password" name="password" class="form-control" placeholder="Password" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <p></p>
@@ -110,16 +136,10 @@ require $links.'inc/variables.php';
                                                         <button type="submit" class="btn btn-raised btn-block btn-success" id="g-recaptcha-response" name="g-recaptcha-response"> Log In</button>
                                                     </div>
                                                 </form>
-                                                <?php
-                                                if ($ShowRedirectBtn) {
-                                                    echo '<a href="' . $location . '" class="btn btn-raised btn-block btn-success">Open Admin Panel</a>';
-                                                }
-                                                ?>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -142,7 +162,7 @@ require $links.'inc/variables.php';
             });
         </script>
     </main>
-    <?php include $links.'inc/footer.php'; ?>
+    <?php include $links . 'inc/footer.php'; ?>
 </body>
 
 

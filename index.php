@@ -62,7 +62,7 @@ require $links.'inc/variables.php';
                                 <br>
                                 <br>
                                 <div class="text-left">
-                                    <a class="btn btn-success btn-lg animated-btn " href="app.php" role="button">
+                                    <a class="btn btn-success btn-lg animated-btn " href="resources/" role="button">
                                         Resurse scolare 👀</a>
                                 </div>
                                 <br><br>
@@ -174,7 +174,7 @@ require $links.'inc/variables.php';
                                         <img src="src/assets/images/math.png" class="img-fluid" alt="Responsive image " />
                                         <div class="card-body">
                                             <div class="d-flex flex-wrap align-items-center">
-                                                <a href="page.php?page=math" class="btn btn-success btn-block">Matematica</a>
+                                                <a href="resources/subject?subject=1" class="btn btn-success btn-block">Matematica</a>
                                             </div>
                                         </div>
                                     </div>
@@ -185,7 +185,7 @@ require $links.'inc/variables.php';
                                         <img src="src/assets/images/coding.png " class="img-fluid" alt="Responsive image " />
                                         <div class="card-body">
                                             <div class="d-flex flex-wrap align-items-center">
-                                                <a href="page.php?page=coding" class="btn btn-success btn-block">Informatica</a>
+                                                <a href="resources/subject?subject=7" class="btn btn-success btn-block">Informatica</a>
                                             </div>
                                         </div>
                                     </div>
@@ -193,10 +193,10 @@ require $links.'inc/variables.php';
 
                                 <div class=" col-12 col-md-4 col-lg-4 cardx ">
                                     <div class="card shadow-sm">
-                                        <img src="src/assets/images/english.png " class="img-fluid" alt="Responsive image " />
+                                        <img src="src/assets/images/lectures.png " class="img-fluid" alt="Responsive image " />
                                         <div class="card-body">
                                             <div class="d-flex flex-wrap align-items-center">
-                                                <a href="page.php?page=english" class="btn btn-success btn-block">Engleza</a>
+                                                <a href="resources/subject?subject=5" class="btn btn-success btn-block">Limba Română</a>
                                             </div>
                                         </div>
                                     </div>
@@ -205,7 +205,7 @@ require $links.'inc/variables.php';
                                 <div class=" col-12 col-md-4 col-lg-4 mx-auto w-100">
                                     <h5 class="d-flex flex-wrap align-items-center mb-3 mx-3">
                                         <!-- <a href="app.php" class="mx-auto"><u>Mai multe...</u></a> -->
-                                        <a href="app.php" class="mx-auto btn btn-success btn-block">Mai multe...</a>
+                                        <a href="resources" class="mx-auto btn btn-success btn-block">Mai multe...</a>
 
                                     </h5>
                                 </div>
@@ -235,11 +235,11 @@ require $links.'inc/variables.php';
                                             <br><br>
                                             <strong>Despre echipă</strong>
                                             <br><br>
-                                            Inițial, aplicația a fost concepută de @whos-gabi (hodo.codes), însă, în scurt timp, s-au alăturat echipei mai multe persoane care au contribuit la forma actuală a proiectului.
+                                            Inițial, aplicația a fost concepută de @whos-gabi, însă, în scurt timp, s-au alăturat echipei mai multe persoane care au contribuit la forma actuală a proiectului.
                                             <br><br>
                                             <strong>Despre tehnologiile folosite și codul sursă</strong>
                                             <br><br>
-                                            Partea de front-end a fost concepută folosit Bootstrap 4. Pe partea de back-end s-a folosit limbajul PHP, iar pentru baza de date am folosit MySQL. O parte a codului sursă al proiectului (reprezentând partea front-end) este disponibilă pe GitHub și oricine este invitat să contribuie.
+                                            Partea de front-end a fost concepută folosit Bootstrap 4. Pe partea de back-end s-a folosit limbajul PHP, iar pentru baza de date am folosit MySQL. O parte a codului sursă al proiectului este disponibilă pe GitHub și oricine este invitat să contribuie.
                                             <br><br>
                                             Codul sursa este open source si cei care doresc sa participe să contribuie codului pot accesa proiectul pe <a href="https://github.com/StudentAppRO/StudentApp"><strong>Github</strong></a>.
                                         </p>
