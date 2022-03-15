@@ -53,52 +53,91 @@ if (isset($_GET['subject']) && isset($_GET['year'])) {
             <div class="row">
                 <!-- cards with content: -->
                 <?php
+                #sort 
+                #get vars  
+                $s = $_GET['subject'];
+                $y = $_GET['year'];
+                $img = '';
+                $out_card_nr = 0;
+                foreach ($subjects as $sub){
+                    if($sub['id']==$s){
+                        $img = $sub['img'];
+                    }
+                }
+                
+                function sortByYearOrTrue($get_year, $value){
+                    #if year val is all, allways true
+                    if($get_year=="all"){
+                        return true;
+                    }else if($value==$get_year){
+                        #sort by year
+                        return true;
+                    }else{
+                        #if != year, allways false
+                        return false;
+                    }
+                }
 
-
-                /*
-                echo '
-                    <div class="col-12 col-lg-6 col-md-12 col-sm-12 cardx">
-                        <div class="card shadow-md">
-                            <div class="row">
-                                <div class="col-3">
-                                    <img src="' . $img . '" class="img-fluid" alt="' . $alt . '" />
-                                </div>
-                                <div class="col-9">
-                                    <div class="card-body">
-                                        <h5 class="card-body">' . $file['title'] . '</h5>
+                foreach ($content[$s] as $file){
+                    if(sortByYearOrTrue($y,$file['year'])){
+                        #TODO add all case
+                        echo '
+                            <div class="col-12 col-lg-6 col-md-12 col-sm-12 cardx">
+                                <div class="card shadow-md">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="' . $img . '" class="img-fluid" alt="' . $alt . '" />
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="card-body">
+                                                <h5 class="card-body">' . $file['name'] . '</h5>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <a href="" class="btn btn-success btn-block" data-toggle="modal" data-target="#id' . $file['id'] . '">Vezi tema</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="modal" id="id' . $file['id'] . '" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-lg py-2" style="margin:auto;">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">' . $file['title'] . '</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true" >&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row justify-content-center">
-                                    <div class="col-12 m-auto">
-                                        <div class="m-2">
-                                            <iframe src="' . $file['path'] . '" class="w-100 " height="800"></iframe>                                         
+                                    <div class="card-body">
+                                        <div class="d-flex flex-wrap align-items-center">
+                                            <a href="" class="btn btn-success btn-block" data-toggle="modal" data-target="#id' . $file['id'] . '">Vezi tema</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>';
-                */
+            
+                            <div class="modal" id="id' . $file['id'] . '" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg py-2" style="margin:auto;">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">' . $file['name'] . '</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true" >&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 m-auto">
+                                                <div class="m-2">
+                                                    <iframe src="' . $file['path'] . '" class="w-100 " height="800"></iframe>                                         
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                        $out_card_nr++;
+                    }
+                }
+                if ($out_card_nr==0){
+                    echo '
+                    </br>
+                    <h4>Nu exista continut :(</h4>
+                    ';
+                }
+                #create array
+
+                #if array null, echo no content
+
+                
+                
 
                 ?>
                 <!-- Large modal -->
