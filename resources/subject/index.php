@@ -13,6 +13,9 @@ if (!isset($_GET['subject']) || $_GET['subject'] == '') {
         }
     }
 }
+if($_GET['subject'] == '5') {
+    header('Location: ' . $links . 'resources/subject/year?subject=5&year=all');
+}
 
 ?>
 

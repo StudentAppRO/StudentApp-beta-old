@@ -90,10 +90,16 @@ if (isset($_GET['subject']) && isset($_GET['year'])) {
                                             <img src="' . $img . '" class="img-fluid" alt="' . $alt . '" />
                                         </div>
                                         <div class="col-9">
-                                            <div class="card-body">
-                                                <h5 class="card-body">' . $file['name'] . '</h5>
-                                            </div>
-                                        </div>
+                                            <div class="card-title">
+                                                <h5 class="card-title">' . $file['name'] . '</h5>
+                                            </div>';
+                                        if($y=='all'){
+                                            echo '<div class="card-body">
+                                                 <p>Clasa: ' . $file['year'] . '</p>
+                                             </div>';
+                                        }
+
+                                      echo  '</div>
                                     </div>
                                     <div class="card-body">
                                         <div class="d-flex flex-wrap align-items-center">

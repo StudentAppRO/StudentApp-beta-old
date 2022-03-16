@@ -64,91 +64,152 @@ $years = array(
 
 $content = array(
     //mate - 1
-    "1"=>array( 
+    "1" => array(
         array(
-            'name' => "Combinatorica",
+            'name' => "Progresii Aritmetice ",
+            'path' => "DB/mate/Progresii_aritmetice.pdf",
+            'year' => "9",
+            'bac' => false,
+            'id' => uniqid()
+        ),
+        array(
+            'name' => "Functia de gradul 1",
+            'path' => "DB/mate/FunctiaDeGrad1.pdf",
+            'year' => "9",
+            'bac' => false,
+            'id' => uniqid()
+        ),
+        array(
+            'name' => "Combinatorica - Permutari - Aranjamente",
             'path' => "DB/mate/Combinatorica.pdf",
             'year' => "10",
             'bac' => false,
-            'id'=>uniqid()
+            'id' => uniqid()
+        ),
+        array(
+            'name' => "Numere Complexe",
+            'path' => "DB/mate/NumereComplexe.pdf",
+            'year' => "10",
+            'bac' => false,
+            'id' => uniqid()
         ),
         array(
             'name' => "Matrici",
             'path' => "DB/mate/Matrici.pdf",
             'year' => "11",
             'bac' => false,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
             'name' => "Formule Analiza Matematica",
             'path' => "DB/mate/Formule_Analiza.pdf",
             'year' => "11",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
             'name' => "Formule Matematica BAC",
             'path' => "DB/mate/Formule_Matematica.pdf",
-            'year' => "11",
+            'year' => "12",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
+        ),
+        array(
+            'name' => "Integrla Nedefinita",
+            'path' => "DB/mate/IntegralaNedefinita.pdf",
+            'year' => "12",
+            'bac' => false,
+            'id' => uniqid()
+        ),
+        array(
+            'name' => "Structuri Algebrice BAC",
+            'path' => "DB/mate/StructuriAlgebriceBac.pdf",
+            'year' => "12",
+            'bac' => true,
+            'id' => uniqid()
         )
     ),
     //fizica - 3
-    "3"=>array( 
+    "3" => array(
         array(
             'name' => "Gruparea Rezistoarelor",
             'path' => "DB/fizica/Gruparea_rezistoarelor.pdf",
             'year' => "10",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
             'name' => "Legile lui Kirchhoff",
             'path' => "DB/fizica/legile_kirchhoff.pdf",
-            'quiz' => 'https://docs.google.com/forms/d/e/1FAIpQLSfcd8WKSpYm9xMVooDJW5nc89kpcct2kide9beDeOs6kPAbKg/viewform?embedded=true',
             'year' => "10",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
             'name' => "Propagarea si Reflexia Luminii",
             'path' => "DB/fizica/propagarea_luminii_reflexia.pdf",
-            'year' => "10",
+            'year' => "9",
             'bac' => false,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
-            'name' => "Test",
-            'path' => "DB/fizica/Gruparea_rezistoarelor.pdf",
-            'quiz' => 'https://docs.google.com/forms/d/e/1FAIpQLSfcd8WKSpYm9xMVooDJW5nc89kpcct2kide9beDeOs6kPAbKg/viewform?embedded=true',
+            'name' => "Proprietatile miscarii oscilatorii armonice, pendulul gravitational",
+            'path' => "DB/fizica/proprietatile-miscarii-oscilatorii-armonice-pendulul-gravitational.pdf",
+            'year' => "11",
+            'bac' => false,
+            'id' => uniqid()
+        ),
+        array(
+            'name' => "Miscarea oscilatorie - miscarea oscilatorie armonica, pendulul elastic",
+            'path' => "DB/fizica/miscarea-oscilatorie-miscarea-oscilatorie-armonica-pendulul-elastic.pdf",
+            'year' => "11",
+            'bac' => true,
+            'id' => uniqid()
+        ),
+        array(
+            'name' => "Transformarile galilei, principiul relativitatii restranse",
+            'path' => "DB/fizica/transformarile-galilei-principiul-relativitatii-restranse.pdf",
             'year' => "12",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
+        ),
+        array(
+            'name' => "Experimentul Michelson",
+            'path' => "DB/fizica/Experimentul-Michelson.pdf",
+            'year' => "12",
+            'bac' => true,
+            'id' => uniqid()
         )
     ),
     //romana - 5
-    "5"=>array( 
+    "5" => array(
         array(
             'name' => "Comentarii Literale",
             'path' => "DB/romana/Comentarii_3.pdf",
             'year' => "12",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
             'name' => "Eseuri Si Sabloane BAC",
             'path' => "DB/romana/eseuri_sabloane_bac.pdf",
             'year' => "12",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
+        ),
+        array(
+            'name' => "Bibliografie BAC",
+            'path' => "DB/romana/PROGRAMA-BAC-SINTETIZATA.pdf",
+            'year' => "12",
+            'bac' => true,
+            'id' => uniqid()
         ),
         array(
             'name' => "Portofoliu: Curente Genuri Eseuri",
             'path' => "DB/romana/portofoliu_romana.pdf",
             'year' => "12",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
         )
     ),
     //engleza -6
@@ -162,69 +223,71 @@ $content = array(
     //     ),
     // ),
     //info - 7
-    "7"=>array( 
+    "7" => array(
         array(
-            'name' => "Cifrele Unui Numar",
+            'name' => "Algoritmi Elementari",
             'path' => "DB/info/Cifrele_unui_numar_2.pdf",
             'year' => "9",
             'bac' => false,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
-            'name' => "Divizori",
+            'name' => "Algoritmi de Divizibilitate",
             'path' => "DB/info/Divizori_9.pdf",
             'year' => "9",
             'bac' => false,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
             'name' => "Functii - Siruri de Caracrtere",
             'path' => "DB/info/Functii_siruri_de_caractere_5.pdf",
+            'quiz'=> 'https://docs.google.com/forms/d/e/1FAIpQLSfe3TKN7t8ctlyJULwh3mLfBpgOLTv8jC4OC6XsCUjLIvXWyw/viewform?embedded=true',
             'year' => "10",
             'bac' => false,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
-            'name' => "Limbajul de Preudocod",
+            'name' => "Limbajul de Pseudocod",
             'path' => "DB/info/Limbajul_pseudocod_6.pdf",
             'year' => "9",
             'bac' => false,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
-            'name' => "Parcurgerea Numerelor",
+            'name' => "Prelucrarea unei multimi de date",
             'path' => "DB/info/Parcurgerea_numerelor_7.pdf",
             'year' => "9",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
             'name' => "Teorie Grafuri Si Arbori",
             'path' => "DB/info/Teorie_grafuri_si_arbori_8.pdf",
+            'quiz' => "https://docs.google.com/forms/d/e/1FAIpQLSfX5lnxbsHtCRgXlh2QvtqdbAguTk9AF7aUYnG2pgcbWFn49Q/viewform?embedded=true",
             'year' => "11",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
             'name' => "Teorie Informatică BAC",
             'path' => "DB/info/Teorie_Informatică_bac_4.pdf",
             'year' => "12",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
             'name' => "Teorie Matrici",
             'path' => "DB/info/Teorie_matrici_1.pdf",
-            'year' => "10",
+            'year' => "9",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
         ),
         array(
             'name' => "Tipul Struct",
             'path' => "DB/info/Tipul_struct_3.pdf",
             'year' => "10",
             'bac' => true,
-            'id'=>uniqid()
+            'id' => uniqid()
         )
     )
 

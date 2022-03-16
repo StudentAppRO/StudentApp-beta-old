@@ -24,7 +24,7 @@ require $links . 'inc/variables.php';
 
 
     <main role="main">
-        <div class="container-fluid">
+        <!-- <div class="container-fluid">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -46,23 +46,24 @@ require $links . 'inc/variables.php';
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-        </div>
-        <div class="my-5 justify-content-center">
-            <div class="col-12 text-center">
-                <h1 class="typewrite" data-period="2000" data-type='[ " Student App", " Subiecte BAC"]'>
-                    Student App
-                    <span class="wrap"></span>
-                </h1>
+        </div> -->
+        <div class="my-5">
+            <div class="my-5 justify-content-center">
+                <div class="col-12 text-center">
+                    <h1 class="typewrite" data-period="2000" data-type='[ " Student App", " Subiecte BAC"]'>
+                        Student App
+                        <span class="wrap"></span>
+                    </h1>
+                </div>
+                <div class="col-12 text-center">
+                    <p>Viitorul este acum</p>
+                </div>
             </div>
-            <div class="col-12 text-center">
-                <p>Viitorul este acum</p>
-            </div>
         </div>
-        <hr />
         <!-- main container  -->
         <div class="container">
             <!-- Row start-->
-            <div class="row">
+            <div class="row mx-1">
                 <div class="col-12">
                     <div class="jumbotron bg-glass">
                         <div class="row px-4">
@@ -89,7 +90,7 @@ require $links . 'inc/variables.php';
             </div>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row mx-1">
                 <div class="col-12">
                     <div class="card">
                         <div class="mx-auto my-3">
@@ -139,7 +140,7 @@ require $links . 'inc/variables.php';
                 <div class="row">
                     <div class="col-12 card-blank my-3 ">
                         <div class="text-center mx-auto my-3">
-                            <h3>Subiecte apreciate de alți elevi</h3>
+                            <h3>TOP Subiecte</h3>
                         </div>
                         <div class="row">
                             <div class=" col-12 col-md-4 col-lg-4 cardx  ">
@@ -189,7 +190,7 @@ require $links . 'inc/variables.php';
             </div>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row mx-1">
                 <div class="col-12 card">
                     <h2 class="text-center mx-auto my-3"><i class="fa fa-info-circle"></i> Intrebări frecvente</h2>
                     <div id="accordion" class=" my-3">
