@@ -92,7 +92,7 @@ $content = array(
             'year' => "11",
             'bac' => true,
             'id'=>uniqid()
-        ),
+        )
     ),
     //fizica - 3
     "3"=>array( 
@@ -106,6 +106,7 @@ $content = array(
         array(
             'name' => "Legile lui Kirchhoff",
             'path' => "DB/fizica/legile_kirchhoff.pdf",
+            'quiz' => 'https://docs.google.com/forms/d/e/1FAIpQLSfcd8WKSpYm9xMVooDJW5nc89kpcct2kide9beDeOs6kPAbKg/viewform?embedded=true',
             'year' => "10",
             'bac' => true,
             'id'=>uniqid()
@@ -117,6 +118,14 @@ $content = array(
             'bac' => false,
             'id'=>uniqid()
         ),
+        array(
+            'name' => "Test",
+            'path' => "DB/fizica/Gruparea_rezistoarelor.pdf",
+            'quiz' => 'https://docs.google.com/forms/d/e/1FAIpQLSfcd8WKSpYm9xMVooDJW5nc89kpcct2kide9beDeOs6kPAbKg/viewform?embedded=true',
+            'year' => "12",
+            'bac' => true,
+            'id'=>uniqid()
+        )
     ),
     //romana - 5
     "5"=>array( 
@@ -140,7 +149,7 @@ $content = array(
             'year' => "12",
             'bac' => true,
             'id'=>uniqid()
-        ),
+        )
     ),
     //engleza -6
     // "6"=>array( 
@@ -198,7 +207,7 @@ $content = array(
         ),
         array(
             'name' => "Teorie Informatică BAC",
-            'path' => "DB/info/Teorie_Informatică_bac_4.pdf",
+            'path' => "DB/info/Teorie_Informatică_bac_4.pdf",
             'year' => "12",
             'bac' => true,
             'id'=>uniqid()
@@ -217,7 +226,7 @@ $content = array(
             'bac' => true,
             'id'=>uniqid()
         )
-    ),
+    )
 
 ); //
 

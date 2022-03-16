@@ -43,13 +43,13 @@ if (isset($_GET['subject']) && isset($_GET['year'])) {
         <!-- main container  -->
         <div class="container">
             <!-- Row start-->
-            <div class="row">
-                <div class="col-sm-12 col-12">
-                    <br>
+            <div class="row my-5">
+                <div class="col-12">
                     <h2 class="text-center"><?php echo $title . ', ' . $subtitle; ?></h2>
                 </div>
             </div>
-            <br>
+        </div>
+        <div class="container">
             <div class="row">
                 <!-- cards with content: -->
                 <?php
@@ -59,31 +59,32 @@ if (isset($_GET['subject']) && isset($_GET['year'])) {
                 $y = $_GET['year'];
                 $img = '';
                 $out_card_nr = 0;
-                foreach ($subjects as $sub){
-                    if($sub['id']==$s){
+                foreach ($subjects as $sub) {
+                    if ($sub['id'] == $s) {
                         $img = $sub['img'];
                     }
                 }
-                
-                function sortByYearOrTrue($get_year, $value){
+
+                function sortByYearOrTrue($get_year, $value)
+                {
                     #if year val is all, allways true
-                    if($get_year=="all"){
+                    if ($get_year == "all") {
                         return true;
-                    }else if($value==$get_year){
+                    } else if ($value == $get_year) {
                         #sort by year
                         return true;
-                    }else{
+                    } else {
                         #if != year, allways false
                         return false;
                     }
                 }
 
-                foreach ($content[$s] as $file){
-                    if(sortByYearOrTrue($y,$file['year'])){
+                foreach ($content[$s] as $file) {
+                    if (sortByYearOrTrue($y, $file['year'])) {
                         #TODO add all case
                         echo '
-                            <div class="col-12 col-lg-6 col-md-12 col-sm-12 cardx">
-                                <div class="card shadow-md">
+                            <div class="col-12 col-lg-6 cardx" style="margin: 12px 0 12px 0;">
+                                <div class="card shadow-md h-100">
                                     <div class="row">
                                         <div class="col-3">
                                             <img src="' . $img . '" class="img-fluid" alt="' . $alt . '" />
@@ -96,12 +97,26 @@ if (isset($_GET['subject']) && isset($_GET['year'])) {
                                     </div>
                                     <div class="card-body">
                                         <div class="d-flex flex-wrap align-items-center">
-                                            <a href="" class="btn btn-success btn-block" data-toggle="modal" data-target="#id' . $file['id'] . '">Vezi tema</a>
+                                            <style>
+                                                .d-flex a {
+                                                    width: 70% !important;
+                                                    margin: 8px auto 0 auto !important;
+                                                }
+                                            </style>
+                                            <a href="" class="btn btn-success btn-block" data-toggle="modal" data-target="#id' . $file['id'] . '">Vezi tema</a>';
+
+                        if (isset($file['quiz'])) {
+                            if ($file['quiz'] != '') {
+                                echo '<a href="" class="btn btn-success btn-block" data-toggle="modal" data-target="#quizid' . $file['id'] . '">Rezolvă testul</a>';
+                            }
+                        }
+                        echo '    
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-            
+                            </div>';
+
+                        echo '    
                             <div class="modal" id="id' . $file['id'] . '" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog modal-lg py-2" style="margin:auto;">
                                 <div class="modal-content">
@@ -123,10 +138,38 @@ if (isset($_GET['subject']) && isset($_GET['year'])) {
                                 </div>
                             </div>
                         </div>';
+
+                        if (isset($file['quiz'])) {
+                            if ($file['quiz'] != '') {
+                                echo '    
+                                <div class="modal" id="quizid' . $file['id'] . '" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg py-2" style="margin:auto;">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Test - ' . $file['name'] . '</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true" >&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-12 m-auto">
+                                                        <div class="m-2">
+                                                            <iframe src="' . $file['quiz'] . '" class="w-100 mt-5" height="800"></iframe>                                         
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>';
+                            }
+                        }
+
                         $out_card_nr++;
                     }
                 }
-                if ($out_card_nr==0){
+                if ($out_card_nr == 0) {
                     echo '
                     </br>
                     <h4>Nu exista continut :(</h4>
@@ -136,8 +179,8 @@ if (isset($_GET['subject']) && isset($_GET['year'])) {
 
                 #if array null, echo no content
 
-                
-                
+
+
 
                 ?>
                 <!-- Large modal -->
