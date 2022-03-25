@@ -184,7 +184,7 @@ $content = array(
     //romana - 5
     "5" => array(
         array(
-            'name' => "Comentarii Literale",
+            'name' => "Comentarii Literare",
             'path' => "DB/romana/Comentarii_3.pdf",
             'year' => "12",
             'bac' => true,
@@ -239,7 +239,7 @@ $content = array(
             'id' => uniqid()
         ),
         array(
-            'name' => "Functii - Siruri de Caracrtere",
+            'name' => "Functii - Siruri de Caractere",
             'path' => "DB/info/Functii_siruri_de_caractere_5.pdf",
             'quiz'=> 'https://docs.google.com/forms/d/e/1FAIpQLSfe3TKN7t8ctlyJULwh3mLfBpgOLTv8jC4OC6XsCUjLIvXWyw/viewform?embedded=true',
             'year' => "10",

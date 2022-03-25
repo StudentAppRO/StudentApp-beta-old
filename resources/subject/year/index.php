@@ -91,7 +91,7 @@ if (isset($_GET['subject']) && isset($_GET['year'])) {
                                         </div>
                                         <div class="col-9">
                                             <div class="card-title">
-                                                <h5 class="card-title">' . $file['name'] . '</h5>
+                                                <h5 class="card-body">' . $file['name'] . '</h5>
                                             </div>';
                                         if($y=='all'){
                                             echo '<div class="card-body">
