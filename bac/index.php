@@ -59,9 +59,9 @@ require $links . 'inc/variables.php';
                         }
                         foreach ($content as $sid => $subj) {
                             echo '
-                            <div class="row">
+                            <div class="row mt-5">
                                 <div class="col-12 text-center">
-                                <h3 class="m-2">' . chackSubjId_Name($subjects, $sid) . '</h3>
+                                    <h3 class="m-2">'.chackSubjId_Name($subjects, $sid).'</h3>
                                 </div>
                             </div>
                             <br>
@@ -70,7 +70,7 @@ require $links . 'inc/variables.php';
                             //reset image for every row
                             $key = array_search($sid, array_column($subjects, 'id'));
                             $img=$subjects[$key]['img'];
-
+                            echo '<div class="row">';
                             foreach ($subj as $file) {
                                 if($file['bac']){
                                     echo '
@@ -78,45 +78,45 @@ require $links . 'inc/variables.php';
                                             <div class="card shadow-md">
                                                 <div class="row">
                                                     <div class="col-3">
-                                                        <img src="' . $img . '" class="img-fluid" alt="' . $alt . '" />
+                                                        <img src="'.$img.'" class="img-fluid" alt="'.$alt.'" />
                                                     </div>
                                                     <div class="col-9">
                                                         <div class="card-body">
-                                                            <h5 class="card-body">' . $file['name'] . '</h5>
+                                                            <h5 class="card-body">'.$file['name'].'</h5>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="d-flex flex-wrap align-items-center">
-                                                        <a href="" class="btn btn-success btn-block" data-toggle="modal" data-target="#id' . $file['id'] . '">Vezi tema</a>
+                                                        <a href="" class="btn btn-success btn-block" data-toggle="modal" data-target="#id'.$file['id'].'">Vezi tema</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-    
-                                        <div class="modal" id="id' . $file['id'] . '" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg py-2" style="margin:auto;">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">' . $file['name'] . '</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true" >&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-12 m-auto">
-                                                            <div class="m-2">
-                                                                <iframe src="' . $file['path'] . '" class="w-100 " height="800"></iframe>                                         
+                                        <div class="modal" id="id'.$file['id'].'" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg py-2" style="margin:auto;">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">'.$file['name'].'</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true" >&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-12 m-auto">
+                                                                <div class="m-2">
+                                                                    <iframe src="'.$file['path'].'" class="w-100 " height="800"></iframe>                                         
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>';
+                                        </div>';
                                 }
                             }
+                            echo '</div>';
                         }
 
 

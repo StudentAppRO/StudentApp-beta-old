@@ -2,7 +2,7 @@
 $links = "../../";
 require $links . 'inc/variables.php';
 //param verification
-if (!isset($_GET['subject']) || $_GET['subject']=='') {
+if (!isset($_GET['subject']) || $_GET['subject'] == '') {
     //return to resources
     header('Location: ' . $links . 'resources');
     exit();
@@ -12,6 +12,9 @@ if (!isset($_GET['subject']) || $_GET['subject']=='') {
             $title = $subject['name'];
         }
     }
+}
+if($_GET['subject'] == '5') {
+    header('Location: ' . $links . 'resources/subject/year?subject=5&year=all');
 }
 
 ?>
@@ -36,49 +39,39 @@ if (!isset($_GET['subject']) || $_GET['subject']=='') {
     include $links . 'inc/header.php';
     ?>
 
-    
+
 
 
     <main role="main">
         <!-- main container  -->
         <div class="container">
             <!-- Row start-->
-
-            <div class="row">
-                <div class="col-sm-12 col-12">
-                    <br>
+            <div class="row mt-5">
+                <div class="col-12">
                     <h2 class="text-center"><?php echo $title; ?></h2>
                 </div>
             </div>
-
-            <br>
-            <div class="row">
+        </div>
+        <div class="container">
+            <div class="row mt-5">
                 <!-- cards with content: -->
                 <?php
-
                 foreach ($years as $year) {
                     echo '
-                    <div class="col-12 col-lg-6 col-md-12 col-sm-12 content_card">
-                    <a id="cl9" class="link-no-dec" href="resources/subject/year?subject=' . $_GET['subject'] . '&year=' . $year['id'] . '">
-                        <div class="card card-btn mx-3">
-                            <div class="card-body">
-                                <br>
-                                <br>
-                                <h2 class="text-center">' . $year['name'] . '</h2>
-                                <br>
-                                <br>
+                    <div class="col-12 col-lg-6 content_card" style="margin: 16px 0 16px 0;">
+                        <a class="link-no-dec" href="resources/subject/year?subject='.$_GET['subject'].'&year='.$year['id'].'">
+                            <div class="card card-btn mx-3">
+                                <div class="card-body">
+                                    <h2 class="text-center py-5">'.$year['name'].'</h2>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
                     </div>';
                 }
-
                 ?>
-
-
-
             </div>
-            <br>
+        </div>
+        <div class="container">
             <div class="row justify-content-center mt-3">
                 <div class="col-3">
                     <div class="d-flex flex-wrap align-items-center">
